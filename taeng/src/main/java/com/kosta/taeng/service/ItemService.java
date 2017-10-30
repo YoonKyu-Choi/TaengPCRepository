@@ -1,21 +1,20 @@
 package com.kosta.taeng.service;
 
+import java.util.List;
+import com.kosta.taeng.Exception.ItemNotFoundException;
 import com.kosta.taeng.vo.Item;
 
-public class ItemService {
-	private static ItemService instance;
-
-	private ItemService() {
-	}
-
-	public static ItemService getInstance() {
-		if (instance == null)
-			instance = new ItemService();
-		return instance;
-	}
-	//글을 등록하는 메소드
-	public void addItem(Item item) {
-		System.out.println("-----글을 등록-----");
-		System.out.printf("등록된 상품 정보 : %s%n", item);
-	}
+public interface ItemService {
+	
+	void addItem(Item item);
+	
+	void updateItemByName(Item item) throws ItemNotFoundException;
+	
+	void removeItemByName(String itemName) throws ItemNotFoundException;
+	
+	List<Item> getItemList();
+	
+	Item findItemByName(String name);
+	
+	void insertItem(Item item);
 }

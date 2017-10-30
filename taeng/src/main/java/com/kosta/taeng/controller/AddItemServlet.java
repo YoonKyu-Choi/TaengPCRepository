@@ -16,20 +16,22 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.kosta.taeng.service.ItemService;
+import com.kosta.taeng.service.impl.ItemServiceImpl;
 import com.kosta.taeng.vo.Item;
 
 /**
  * Servlet implementation class AddServlet
  */
 @WebServlet("/item/addItem")
-public class AddServlet extends HttpServlet {
+public class AddItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		ItemService service = ItemServiceImpl.getInstance();
 		String imageDir = getServletContext().getRealPath("/itemImage");
 		ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
 		
@@ -43,6 +45,10 @@ public class AddServlet extends HttpServlet {
 					// VO에 요청 파라미터 넣기
 					if (requestName.equals("name")) {
 						item.setItemName(requestValue);
+					}else if(requestName.equals("price")) {
+						item.setItemPrice(Integer.parseInt(requestValue));
+					}else if(requestName.equals("stock")) {
+						item.setItemStock(Integer.parseInt(requestValue));
 					}
 				} else {// 파일
 					// 파일 정보 조회 - 업로드된 파일명, 파일 크기
@@ -54,18 +60,16 @@ public class AddServlet extends HttpServlet {
 					if (items.getSize() != 0) {
 						// 파일 처리 - 카피, 삭제
 						items.write(new File(imageDir, fileName));// 카피
-						items.delete(); // 임시경로의 파일을 삭제
 						item.setItemImage(fileName);// VO에 파일명 set.
 					}
 				} // else
 			} // for
 				// 2. 비지니스 로직 - Model 메소드 호출
-			ItemService service = ItemService.getInstance();
+			service.insertItem(item);
 			service.addItem(item);
-
 			// 3. 응답처리 - register_result.jsp로 이동
 			request.setAttribute("result", item);
-			request.getRequestDispatcher("test_result.jsp").forward(request, response);
+			request.getRequestDispatcher("/test_result.jsp").forward(request, response);
 			// RequestDispatch 방식으로 넘기는것보다 redirect방법이 더 좋음.
 		} catch (Exception e) {
 			e.printStackTrace();// 처리

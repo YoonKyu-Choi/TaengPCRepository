@@ -14,7 +14,7 @@
 		<result column="item_stock" property="itemStock"/>
 		<result column="item_image" property="itemImage"/>
 	</resultMap>
-	<insert id="insertItem" parameterType="item">
+	<insert id="addItem" parameterType="item">
 		insert into item values(#{itemName}, #{itemPrice}, #{itemStock},#{itemImage})
 	</insert>
 	<update id="updateItemByName" parameterType="item">
@@ -30,5 +30,9 @@
 	</delete>
 	<select id="selectAllItem" resultMap="item-resultmap">
 		<include refid="select-sql"></include>
+	</select>
+	<select id="selectItemByName" parameterType="String" resultMap="item-resultmap">
+		<include refid="select-sql"></include>
+		where item_name = #{value}
 	</select>
 </mapper>
