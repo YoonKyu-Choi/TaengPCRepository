@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.kosta.taeng.Exception.SalesNotFoundException;
 import com.kosta.taeng.vo.Sales;
 
 public interface SalesDao {
@@ -22,15 +23,17 @@ public interface SalesDao {
 	 * 총 PC 요금 매출
 	 * @param session
 	 * @return
+	 * @throws SalesNotFoundException 
 	 */
-	int selectAllPcSales(SqlSession session);
+	int selectAllPcSales(SqlSession session) throws SalesNotFoundException;
 	
 	/**
 	 * 총 상품매출
 	 * @param session
 	 * @return
+	 * @throws SalesNotFoundException 
 	 */
-	int selectAllItemSales(SqlSession session);
+	int selectAllItemSales(SqlSession session) throws SalesNotFoundException;
 	
-	List<Sales> selectSalesDate(SqlSession session, Map<String,Date> date);
+	List<Sales> selectSalesDate(SqlSession session, Map<String,String> date);
 }

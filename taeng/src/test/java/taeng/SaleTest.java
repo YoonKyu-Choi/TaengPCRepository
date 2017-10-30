@@ -2,9 +2,10 @@ package taeng;
 
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
+import com.kosta.taeng.Exception.SalesNotFoundException;
 import com.kosta.taeng.service.SalesService;
 import com.kosta.taeng.service.impl.SalesServiceImpl;
 import com.kosta.taeng.vo.Sales;
@@ -12,7 +13,7 @@ import com.kosta.taeng.vo.Sales;
 public class SaleTest {
 
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, SalesNotFoundException {
 		SalesService service = SalesServiceImpl.getInstance();
 		
 		System.out.println(service.getAllSales());
@@ -22,17 +23,17 @@ public class SaleTest {
 		System.out.println(service.getItemSales());
 		System.out.println("-----------------------------------------------");
 		
-		Date sDate = new Date(2015,10, 1);
-		Date eDate = new Date(2017,10,24);
+		int i=service.doSales(new Date(99,10,10,10,14,34), 5000, 10000);
+		System.out.println(i);
+		System.out.println("-----------------------------------------------");
+		Date sDate = new Date(117, 7, 3, 15, 10, 48);
+		Date eDate = new Date(117, 11, 4, 21, 4, 48);
 		
 		List<Sales> list = service.getSalesByDate(sDate, eDate);
 		
 		for(Sales s : list) {
 			System.out.println(s);
 		}
-		System.out.println("-----------------------------------------------");
-		int i=service.doSales(new Date(1999,10,10), 5000, 10000);
-		System.out.println(i);
 	}
 	
 	

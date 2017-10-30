@@ -1,17 +1,18 @@
 package com.kosta.taeng.service;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
+import com.kosta.taeng.Exception.SalesNotFoundException;
 import com.kosta.taeng.vo.Sales;
 
 public interface SalesService {
 	
-	int getAllSales();
+	int getAllSales() throws SalesNotFoundException;
 	
-	int getPcSales();
+	int getPcSales() throws SalesNotFoundException;
 	
-	int getItemSales();
+	int getItemSales() throws SalesNotFoundException;
 	
 	List<Sales> getSalesByDate(Date startDay, Date endDay);
 	
