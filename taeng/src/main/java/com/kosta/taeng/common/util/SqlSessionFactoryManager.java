@@ -13,14 +13,14 @@ public class SqlSessionFactoryManager {
 	
 	private static SqlSessionFactoryManager instance;
 	
-	public static SqlSessionFactoryManager getInstance() throws IOException{
+	private SqlSessionFactoryManager() throws IOException {
+		InputStream is = Resources.getResourceAsStream("com/kosta/taeng/config/mybatis-config.xml");
+		factory = new SqlSessionFactoryBuilder().build(is);
+	}
+
+	public static SqlSessionFactoryManager getInstance() throws IOException {
 		if(instance == null) instance = new SqlSessionFactoryManager();
 		return instance;
-	}
-	
-	private SqlSessionFactoryManager() throws IOException{
-		InputStream in = Resources.getResourceAsStream("com/kosta/taeng/config/mybatis-config.xml");
-		factory = new SqlSessionFactoryBuilder().build(in);
 	}
 	
 	public SqlSessionFactory getSqlSessionFactory(){
