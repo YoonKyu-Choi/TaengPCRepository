@@ -13,8 +13,8 @@ import com.kosta.taeng.service.MemberService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
 import com.kosta.taeng.vo.Member;
 
-@WebServlet("/member")
-public class MemberServlet extends HttpServlet {
+@WebServlet("/addmember")
+public class AddMemberServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -27,6 +27,6 @@ public class MemberServlet extends HttpServlet {
 		} catch (DuplicatedIdException e) {
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/webapp/result.jsp");
+		request.getRequestDispatcher("/test_result.jsp").forward(request, response);
 	}
 }

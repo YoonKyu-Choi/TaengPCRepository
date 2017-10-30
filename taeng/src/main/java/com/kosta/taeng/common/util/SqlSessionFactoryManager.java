@@ -7,22 +7,22 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
-
 public class SqlSessionFactoryManager {
 	
-	private static SqlSessionFactoryManager instance;
 	private SqlSessionFactory factory;
-	private SqlSessionFactoryManager() throws IOException {
-		InputStream is = Resources.getResourceAsStream("paging/config/mybatis-config.xml");
-		factory = new SqlSessionFactoryBuilder().build(is);
-				
-	}
-
-	public static SqlSessionFactoryManager getInstance() throws IOException {
+	
+	private static SqlSessionFactoryManager instance;
+	
+	public static SqlSessionFactoryManager getInstance() throws IOException{
 		if(instance == null) instance = new SqlSessionFactoryManager();
 		return instance;
 	}
+	
+	private SqlSessionFactoryManager() throws IOException{
+		InputStream in = Resources.getResourceAsStream("com/kosta/taeng/config/mybatis-config.xml");
+		factory = new SqlSessionFactoryBuilder().build(in);
+	}
+	
 	public SqlSessionFactory getSqlSessionFactory(){
 		return factory;
 	}

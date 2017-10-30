@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-회원가입 완료쓰
+회원가입 완료쓰 / 삭제도 완료쓰  / 수정도 완료쓰
 </body>
 </html>

@@ -7,3 +7,5 @@ create table member (
 	member_name varchar2(20) not null, /* 이름 */
 	member_pctime number(5) /* 남은시간 */
 );
+
+select * from member;
