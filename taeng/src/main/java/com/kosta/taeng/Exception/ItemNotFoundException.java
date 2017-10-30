@@ -1,5 +1,5 @@
 package com.kosta.taeng.Exception;
 
-public class ItemNotFoundException {
+public class ItemNotFoundException extends Exception {
 
 }
