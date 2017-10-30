@@ -1,5 +1,7 @@
 package com.kosta.taeng.vo;
 
-public class Item {
+import java.io.Serializable;
 
+public class Item implements Serializable{
+	
 }
