@@ -3,7 +3,7 @@
 <configuration>
 
 	<typeAliases>
-		<package name="vo" />
+		<package name="com.kosta.taeng.vo" />
 	</typeAliases>
 	
 	<environments default="local">
@@ -20,5 +20,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="config/mapper/salesMapper.xml" />
+		<mapper resource="config/mapper/itemMapper.xml"/>
 	</mappers>
 </configuration>
