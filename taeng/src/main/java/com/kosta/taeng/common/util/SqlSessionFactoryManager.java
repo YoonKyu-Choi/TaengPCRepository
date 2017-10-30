@@ -14,7 +14,7 @@ public class SqlSessionFactoryManager {
 	private static SqlSessionFactoryManager instance;
 	private SqlSessionFactory factory;
 	private SqlSessionFactoryManager() throws IOException {
-		InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+		InputStream is = Resources.getResourceAsStream("com/kosta/taeng/config/mybatis-config.xml");
 		factory = new SqlSessionFactoryBuilder().build(is);
 				
 	}

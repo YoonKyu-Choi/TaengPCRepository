@@ -19,13 +19,13 @@
 		select member_id, member_phonenum, member_personnum, member_pw, member_name, member_pctime from member
 	</sql>
 	
-	<select id="selectMemberById" parameterType="string">
-		<include refid="select-member-sql" resultMap="member-resultmap"/>
+	<select id="selectMemberById" parameterType="string"  resultMap="member-resultmap">
+		<include refid="select-member-sql"/>
 		where member_id = #{value}
 	</select>
 	
-	<select id="selectMemberByName" parameterType="string">
-		<include refid="select-member-sql" resultMap="member-resultmap"/>
+	<select id="selectMemberByName" parameterType="string"  resultMap="member-resultmap">
+		<include refid="select-member-sql"/>
 		where member_name like '%'||#{value}||'%'
 	</select>
 	
