@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	제목 : ${requestScope.result.name }<br>
+	<img src='<c:url value="/upImage/${requestScope.result.image }"/>'>
 </body>
 </html>

@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1>글 등록</h1>
-<form action='<c:url value="/board/register"/>' method="post" enctype="multipart/form-data">
-제목 : <input type="text" name="name"><br>
-사진 : <input type="file" name="image"><br>
+<form action='<c:url value="/item/addItem"/>' method="post" enctype="multipart/form-data">
+<input type="text" name="name"><br>
+<input type="file" name="image"><br>
 <button>등록</button>
 </form>
 </body>
