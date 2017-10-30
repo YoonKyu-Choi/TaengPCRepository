@@ -18,7 +18,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="config/mapper/taengMapper.xml" />
-		<mapper resource="config/mapper/memberMapper.xml"/>
+		<mapper resource="com/kosta/taeng/config/mapper/salesMapper.xml"/>
 	</mappers>
 </configuration>

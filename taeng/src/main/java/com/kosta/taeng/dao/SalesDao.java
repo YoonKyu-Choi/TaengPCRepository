@@ -1,6 +1,8 @@
 package com.kosta.taeng.dao;
 
+import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -21,19 +23,14 @@ public interface SalesDao {
 	 * @param session
 	 * @return
 	 */
-	List<Sales> selectAllPcSales(SqlSession session);
+	int selectAllPcSales(SqlSession session);
 	
 	/**
 	 * 총 상품매출
 	 * @param session
 	 * @return
 	 */
-	List<Sales> selectAllItemSales(SqlSession session);
+	int selectAllItemSales(SqlSession session);
 	
-	/**
-	 * 총 매출액.
-	 * @param session
-	 * @return
-	 */
-	int selectAllSales(SqlSession session);
+	List<Sales> selectSalesDate(SqlSession session, Map<String,Date> date);
 }

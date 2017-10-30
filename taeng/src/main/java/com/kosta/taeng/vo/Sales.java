@@ -2,22 +2,22 @@ package com.kosta.taeng.vo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
-public class Sales implements Serializable{
-	
-	 private Date salesDate;
-	 private int pcSales;
-	 private int itemSales;
-	 private Item item;
-	
-	 public Sales() {}
+public class Sales implements Serializable {
 
-	public Sales(Date salesDate, int pcSales, int itemSales, Item item) {
+	private Date salesDate;
+	private int pcSales;
+	private int itemSales;
+
+	public Sales() {
+	}
+
+	public Sales(Date salesDate, int pcSales, int itemSales) {
 		this.salesDate = salesDate;
 		this.pcSales = pcSales;
 		this.itemSales = itemSales;
 	}
-	
 
 	public Date getSalesDate() {
 		return salesDate;
@@ -41,14 +41,6 @@ public class Sales implements Serializable{
 
 	public void setItemSales(int itemSales) {
 		this.itemSales = itemSales;
-	}
-
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem(Item item) {
-		this.item = item;
 	}
 
 	@Override
@@ -84,7 +76,7 @@ public class Sales implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Sales [salesDate=" + salesDate + ", pcSales=" + pcSales + ", itemSales=" + itemSales + ", item=" + item
-				+ "]";
+		return "Sales [salesDate=" + salesDate + ", pcSales=" + pcSales + ", itemSales=" + itemSales + "]";
 	}
+
 }
