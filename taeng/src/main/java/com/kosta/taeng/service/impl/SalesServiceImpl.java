@@ -21,11 +21,17 @@ public class SalesServiceImpl implements SalesService {
 
 	private SalesDao dao;
 	private SqlSessionFactory factory;
+	private SqlSession session;
 	private static SalesServiceImpl instance;
 
-	private SalesServiceImpl() throws IOException {
+	private SalesServiceImpl() {
 		dao = SalesDaoImpl.getInstance();
-		factory = SqlSessionFactoryManager.getInstance().getSqlSessionFactory();
+		try {
+			factory = SqlSessionFactoryManager.getInstance().getSqlSessionFactory();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static SalesServiceImpl getInstance() throws IOException {
@@ -36,40 +42,66 @@ public class SalesServiceImpl implements SalesService {
 
 	@Override
 	public int getAllSales() throws SalesNotFoundException {
-		SqlSession session = factory.openSession();
-		return dao.selectAllItemSales(session) + dao.selectAllPcSales(session);
+		try {
+			session = factory.openSession();
+			int num1 = dao.selectAllItemSales(session);
+			int num2 = dao.selectAllPcSales(session);
+			return num1 + num2;
+		} finally {
+			session.close();
+		}
 	}
 
 	@Override
 	public int getPcSales() throws SalesNotFoundException {
-		SqlSession session = factory.openSession();
-		return dao.selectAllPcSales(session);
+		try {
+			session = factory.openSession();
+			return dao.selectAllPcSales(session);
+			
+		}finally {
+			session.close();
+		}
 	}
 
 	@Override
 	public int getItemSales() throws SalesNotFoundException {
-		SqlSession session = factory.openSession();
-		return dao.selectAllItemSales(session);
+		try {
+			session = factory.openSession();
+			return dao.selectAllItemSales(session);
+			
+		}finally {
+			session.close();
+		}
 	}
 
 	@Override
 	public List<Sales> getSalesByDate(Date startDay, Date endDay) {
-		SqlSession session = factory.openSession();
-		Map<String, String> map = new HashMap(); 
-		String sStr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startDay);
-		String eStr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(endDay);
-		map.put("startDay", sStr);
-		map.put("endDay", eStr);
-		return dao.selectSalesDate(session, map);
+		
+		try {
+			session = factory.openSession();
+			Map<String, String> map = new HashMap();
+			String sStr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startDay);
+			String eStr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(endDay);
+			map.put("startDay", sStr);
+			map.put("endDay", eStr);
+			return dao.selectSalesDate(session, map);
+			
+		}finally {
+			session.close();
+		}
 
 	}
 
 	@Override
-	public int doSales(Date date, int pc, int item) {
-		SqlSession session = factory.openSession();
-		
-		return dao.insertSales(session, new Sales(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date), pc, item));
+	public void doSales(Date date, int pc, int item) {
+		try {
+			SqlSession session = factory.openSession();
+			dao.insertSales(session, new Sales(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date), pc, item));
+			session.commit();
+		}finally {
+			session.close();
+		}
+
 	}
 
-}
-;
+};

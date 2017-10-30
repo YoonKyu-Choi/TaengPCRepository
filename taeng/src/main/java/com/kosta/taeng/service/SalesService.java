@@ -16,5 +16,5 @@ public interface SalesService {
 	
 	List<Sales> getSalesByDate(Date startDay, Date endDay);
 	
-	int doSales(Date date,int pc, int item);
+	void doSales(Date date,int pc, int item);
 }

@@ -23,8 +23,7 @@ public class SaleTest {
 		System.out.println(service.getItemSales());
 		System.out.println("-----------------------------------------------");
 		
-		int i=service.doSales(new Date(99,10,10,10,14,34), 5000, 10000);
-		System.out.println(i);
+		service.doSales(new Date(99,10,10,10,14,34), 5000, 1100);
 		System.out.println("-----------------------------------------------");
 		Date sDate = new Date(117, 7, 3, 15, 10, 48);
 		Date eDate = new Date(117, 11, 4, 21, 4, 48);
