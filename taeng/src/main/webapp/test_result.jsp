@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	제목 : ${requestScope.result.name }<br>
-	<img src='<c:url value="/upImage/${requestScope.result.image }"/>'>
+회원가입 완료쓰
 </body>
 </html>
