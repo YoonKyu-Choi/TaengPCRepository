@@ -1,13 +1,13 @@
-package dao.impl;
+package com.kosta.taeng.dao.impl;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import dao.SalesDao;
-import vo.Sales;
+import com.kosta.taeng.dao.SalesDao;
+import com.kosta.taeng.vo.Sales;
 
-public class SalesDaoImpl implements SalesDao{
+public class SalesDaoImpl implements SalesDao {
 
 	@Override
 	public int insertSales(SqlSession session, Sales sales) {
