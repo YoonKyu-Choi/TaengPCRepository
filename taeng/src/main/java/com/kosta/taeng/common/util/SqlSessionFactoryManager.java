@@ -1,4 +1,4 @@
-package common.util;
+package com.kosta.taeng.common.util;
 
 import java.io.IOException;
 import java.io.InputStream;
