@@ -14,10 +14,10 @@
 		<result column="item_stock" property="itemStock"/>
 		<result column="item_image" property="itemImage"/>
 	</resultMap>
-	<insert id="addItem" parameterType="item">
+	<insert id="addItem" parameterType="Item">
 		insert into item values(#{itemName}, #{itemPrice}, #{itemStock},#{itemImage})
 	</insert>
-	<update id="updateItemByName" parameterType="item">
+	<update id="updateItemByName" parameterType="Item">
 		update item
 		set item_name = #{itemName},
 			item_price = #{itemPrice},

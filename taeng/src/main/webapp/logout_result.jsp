@@ -7,5 +7,6 @@
 </head>
 <body>
 로그아웃 됐습니다.
+${sessionScope.login }
 </body>
 </html>

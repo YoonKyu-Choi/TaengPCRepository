@@ -41,6 +41,7 @@ public class ItemServiceImpl implements ItemService{
 
 	@Override
 	public void addItem(Item item) {
+		
 		try {
 			session = factory.openSession();
 			dao.addItem(session, item);
