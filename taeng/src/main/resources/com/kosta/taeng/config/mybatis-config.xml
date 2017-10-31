@@ -24,5 +24,6 @@
 		<mapper resource="com/kosta/taeng/config/mapper/memberMapper.xml"/>
 		<mapper resource="com/kosta/taeng/config/mapper/salesMapper.xml"/>
 		<mapper resource="com/kosta/taeng/config/mapper/itemMapper.xml" />
+		<mapper resource="com/kosta/taeng/config/mapper/pcMapper.xml" />
 	</mappers>
 </configuration>
