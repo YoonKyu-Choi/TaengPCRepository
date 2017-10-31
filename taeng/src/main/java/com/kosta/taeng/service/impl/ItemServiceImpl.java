@@ -15,7 +15,7 @@ import com.kosta.taeng.vo.Item;
 public class ItemServiceImpl implements ItemService{
 	ItemDaoImpl dao = null;
 	SqlSessionFactory factory = null;
-	SqlSession session = null;
+	
 	private static ItemServiceImpl instance;
 
 	private ItemServiceImpl() {
@@ -41,6 +41,7 @@ public class ItemServiceImpl implements ItemService{
 
 	@Override
 	public void addItem(Item item) {
+		SqlSession session = null;
 		try {
 			session = factory.openSession();
 			dao.addItem(session, item);
@@ -52,9 +53,10 @@ public class ItemServiceImpl implements ItemService{
 
 	@Override
 	public void updateItemByName(Item item) throws ItemNotFoundException {
+		SqlSession session = null;
 		try {
 			session = factory.openSession();
-			if (findItemByName(item.getItemName()) == null) {
+			if (dao.selectItemByName(session, item.getItemName()) == null) {
 				throw new ItemNotFoundException("수정할 상품이 없습니다.", item.getItemName());
 			}
 			dao.updateItemByName(session, item);
@@ -68,6 +70,7 @@ public class ItemServiceImpl implements ItemService{
 
 	@Override
 	public List<Item> getItemList() {
+		SqlSession session = null;
 		try {
 			session = factory.openSession();
 			return dao.selectAllItem(session);
@@ -77,6 +80,7 @@ public class ItemServiceImpl implements ItemService{
 	}
 	
 	public Item findItemByName(String name) {
+		SqlSession session = null;
 		try {
 			session = factory.openSession();
 			return dao.selectItemByName(session, name);
@@ -87,9 +91,10 @@ public class ItemServiceImpl implements ItemService{
 
 	@Override
 	public void removeItemByName(String itemName) throws ItemNotFoundException {
+		SqlSession session = null;
 		try {
 			session = factory.openSession();
-			if (findItemByName(itemName) == null) {
+			if (dao.selectItemByName(session, itemName) == null) {
 				throw new ItemNotFoundException("삭제할 상품이 없습니다.", itemName);
 			}
 			dao.deleteItemByName(session, itemName);

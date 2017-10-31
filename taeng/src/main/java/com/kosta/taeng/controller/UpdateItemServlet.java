@@ -15,6 +15,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.kosta.taeng.Exception.ItemNotFoundException;
 import com.kosta.taeng.service.ItemService;
 import com.kosta.taeng.service.impl.ItemServiceImpl;
 import com.kosta.taeng.vo.Item;
@@ -57,7 +58,10 @@ public class UpdateItemServlet extends HttpServlet {
 			service.insertItem(item);
 			service.updateItemByName(item);
 			request.getRequestDispatcher("/test_result.jsp").forward(request, response);
-		} catch (Exception e) {
+		}catch(ItemNotFoundException itemException) {
+			request.setAttribute("errMsg", itemException.getMessage());
+			request.getRequestDispatcher("/item_test.jsp").forward(request, response);
+		}catch (Exception e) {
 			e.printStackTrace();// 처리
 			throw new ServletException(e);
 		}

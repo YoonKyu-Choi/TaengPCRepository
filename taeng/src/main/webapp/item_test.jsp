@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${requestScope.errMsg != null}">
+	<h1 style="color:red">${requestScope.errMsg }</h1>
+</c:if>
 <h1>상품 추가</h1>
 <form action='<c:url value="/item/addItem"/>' method="post" enctype="multipart/form-data">
 이름 : <input type="text" name="itemName"><br>
@@ -32,8 +35,9 @@
 </form>
 
 <h1>상품 삭제</h1>
-<form action=''>
-
+<form action='<c:url value="/item/deleteItem"/>' method="post">
+	삭제할 상품의 이름 : <input type="text" name="itemName"><br>
+	<button>삭제</button>
 </form>
 </body>
 </html>

@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="../item_test.jsp"></a>
-	<c:forEach items="${requestScope.itemList }" var="item">
+<a href="../item_test.jsp">돌아가기</a><br>
+	<c:forEach items="${requestScope.itemList}" var="item">
 		이름 : ${item.itemName}<br>
 		가격 : ${item.itemPrice }<br>
 		수량 : ${item.itemStock }<br>
