@@ -25,6 +25,6 @@ public class UpdateMemberServlet extends HttpServlet {
 		} catch (MemberNotFoundException e) {
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/test_result.jsp").forward(request, response);
+		request.getRequestDispatcher("/update_member_result.jsp").forward(request, response);
 	}
 }

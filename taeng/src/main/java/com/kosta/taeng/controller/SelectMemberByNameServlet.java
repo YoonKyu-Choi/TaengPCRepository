@@ -1,6 +1,7 @@
 package com.kosta.taeng.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,24 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kosta.taeng.Exception.MemberNotFoundException;
 import com.kosta.taeng.service.MemberService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.vo.Member;
 
-@WebServlet("/deletemember")
-public class DeleteMemberServlet extends HttpServlet {
+@WebServlet("/selectmemberbyname")
+public class SelectMemberByNameServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String id = request.getParameter("id");
+		String name = request.getParameter("name");
 		MemberService service = MemberServiceImpl.getInstance();
-		try {
-			service.deleteMember(id);
-		} catch (MemberNotFoundException e) {
-			e.printStackTrace();
-		}
-		request.getRequestDispatcher("/delete_member_result.jsp").forward(request, response);
+		List<Member> memberList = service.selectMemberByName(name);
+		request.setAttribute("memberList", memberList);
+		request.getRequestDispatcher("/select_member_name_result.jsp").forward(request, response);
 	}
 }
