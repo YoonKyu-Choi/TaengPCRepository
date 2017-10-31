@@ -24,7 +24,8 @@ public class DeleteMemberServlet extends HttpServlet {
 		try {
 			service.deleteMember(id);
 		} catch (MemberNotFoundException e) {
-			e.printStackTrace();
+			request.setAttribute("errMsg", e.getMessage());
+			request.getRequestDispatcher("/delete_member.jsp").forward(request, response);
 		}
 		request.getRequestDispatcher("/delete_member_result.jsp").forward(request, response);
 	}

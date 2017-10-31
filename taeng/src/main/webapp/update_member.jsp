@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${requestScope.errMsg != null}">
+	<span style="color:red">${requestScope.errMsg }</span>
+</c:if>
 <%-- 여기서 받은 데이터를 update_forward.jsp로 보내고 update_forward.jsp에서 member형태로 UpdateMemberServlet으로 보낸다. --%>
 <form action="/taeng/update_forward.jsp" method="post">
 ID : <input type="text" name="id"><br>
