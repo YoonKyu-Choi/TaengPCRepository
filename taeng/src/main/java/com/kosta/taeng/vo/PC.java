@@ -45,6 +45,10 @@ public class PC implements Serializable {
 	}
 
 	public void setId(String id) {
+		if(id.equals("null") || id.equals("")) {
+			this.id = null;
+			return;
+		}
 		this.id = id;
 	}
 
