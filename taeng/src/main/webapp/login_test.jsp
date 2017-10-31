@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>login test!</h1>
-<form action="/taeng/admin/login" method="post">
+<form action="/taeng/login" method="post">
 id : <input type="text" name="id">	
 password : <input type="password" name="password">
 <br>

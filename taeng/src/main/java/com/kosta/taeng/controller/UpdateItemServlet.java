@@ -20,13 +20,14 @@ import com.kosta.taeng.service.impl.ItemServiceImpl;
 import com.kosta.taeng.vo.Item;
 
 /**
- * Servlet implementation class AddServlet
+ * Servlet implementation class UpdateItemServlet
  */
-@WebServlet("/item/addItem")
-public class AddItemServlet extends HttpServlet {
+@WebServlet("/item/updateItem")
+public class UpdateItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		ItemService service = ItemServiceImpl.getInstance();
 		String imageDir = getServletContext().getRealPath("/itemImage");
 		ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
@@ -54,7 +55,7 @@ public class AddItemServlet extends HttpServlet {
 				} // else
 			} // for
 			service.insertItem(item);
-			service.addItem(item);
+			service.updateItemByName(item);
 			request.getRequestDispatcher("/test_result.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();// 처리

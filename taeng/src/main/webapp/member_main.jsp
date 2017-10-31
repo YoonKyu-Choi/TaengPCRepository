@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>admin_main.jsp</h1>
+<h1>member_main.jsp</h1>
 </body>
 </html>
