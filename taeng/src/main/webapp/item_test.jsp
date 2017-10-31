@@ -39,5 +39,10 @@
 	삭제할 상품의 이름 : <input type="text" name="itemName"><br>
 	<button>삭제</button>
 </form>
+
+<h1>상품 주문</h1>
+<form action='<c:url value="/item/itemLists"/>' method="post">
+	<button>상품 주문</button>
+</form>
 </body>
 </html>
