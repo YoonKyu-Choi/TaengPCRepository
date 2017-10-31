@@ -9,3 +9,8 @@ create table member (
 );
 
 select * from member;
+
+insert into member values('id1','010-1111-1111',940627,'pw1','이름1',1);
+insert into member values('id2','010-1111-1111',940627,'pw2','이름1',2);
+insert into member values('id3','010-1111-1111',940627,'pw3','이름1',3);
+insert into member values('id4','010-1111-1111',940627,'pw4','이름1',4);

@@ -18,15 +18,16 @@ public class AddMemberServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Member member = (Member) request.getAttribute("member");
 		MemberService service = MemberServiceImpl.getInstance();
 		try {
 			service.insertMember(member);
 		} catch (DuplicatedIdException e) {
-			e.printStackTrace();
+			request.setAttribute("errMsg", e.getMessage());
+			request.getRequestDispatcher("/insert_member.jsp").forward(request, response);
 		}
-		request.getRequestDispatcher("/test_result.jsp").forward(request, response);
+		request.getRequestDispatcher("/insert_member_result.jsp").forward(request, response);
 	}
 }
