@@ -35,7 +35,7 @@ public class ItemServiceImpl implements ItemService{
 	}
 	//글을 등록하는 메소드
 	public void insertItem(Item item) {
-		System.out.println("-----글을 등록-----");
+		System.out.println("-----상품 등록-----");
 		System.out.printf("등록된 상품 정보 : %s%n", item);
 	}
 
@@ -75,6 +75,7 @@ public class ItemServiceImpl implements ItemService{
 			session.close();
 		}
 	}
+	
 	public Item findItemByName(String name) {
 		try {
 			session = factory.openSession();
@@ -88,8 +89,8 @@ public class ItemServiceImpl implements ItemService{
 	public void removeItemByName(String itemName) throws ItemNotFoundException {
 		try {
 			session = factory.openSession();
-			if (findItemByName(itemName) == null) {// 삭제할 ID의 회원이 없으면 삭제 작업을 처리하지 않는다.
-				throw new ItemNotFoundException("삭제할 회원이 없습니다.", itemName);
+			if (findItemByName(itemName) == null) {
+				throw new ItemNotFoundException("삭제할 상품이 없습니다.", itemName);
 			}
 			dao.deleteItemByName(session, itemName);
 			session.commit();
