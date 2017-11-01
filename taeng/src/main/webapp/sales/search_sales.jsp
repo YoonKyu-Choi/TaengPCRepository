@@ -62,7 +62,7 @@ form {
 		<div>
 			<span>날짜로 조회하기</span>
 		</div>
-		<form action="/sales/salesByDate" method="post">
+		<form action="/taeng/salesList" method="post">
 			<input type="date" class="day" name="sDay"> ~ <input type="date" name="eDay" class="day">
 			<button>조회</button>
 		</form>

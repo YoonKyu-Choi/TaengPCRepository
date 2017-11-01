@@ -38,4 +38,6 @@ public interface SalesDao {
 	List<Sales> selectSalesDate(SqlSession session, Map<String,String> date);
 	
 	List<Sales> selectAllSales(SqlSession session);
+	
+	List<Sales> selectSalesList(SqlSession session, int beginSalesNum, int endSalesNum);
 }

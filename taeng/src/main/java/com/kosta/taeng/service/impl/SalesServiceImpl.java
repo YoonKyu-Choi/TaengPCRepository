@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kosta.taeng.Exception.SalesNotFoundException;
+import com.kosta.taeng.common.util.PagingBean;
 import com.kosta.taeng.common.util.SqlSessionFactoryManager;
 import com.kosta.taeng.dao.SalesDao;
 import com.kosta.taeng.dao.impl.SalesDaoImpl;
@@ -115,6 +116,33 @@ public class SalesServiceImpl implements SalesService {
 		try {
 			session = factory.openSession();
 			return dao.selectAllSales(session);
+		}finally {
+			session.close();
+		}
+	}
+
+
+
+	@Override
+	public Map<String, Object> getSalesList(int page) {
+		SqlSession session = null;
+		
+		HashMap<String, Object> map = new HashMap<>();
+		try {
+			session = factory.openSession();
+			PagingBean pb = new PagingBean(dao.selectAllSales(session).size(),page);
+			map.put("pageBean", pb);
+			
+			System.out.println(pb.getBeginItemInPage());
+			System.out.println(pb.getEndItemInPage());
+			
+			List<Sales> list = dao.selectSalesList(session, pb.getBeginItemInPage(), pb.getEndItemInPage());
+			map.put("list", list);
+			for(Sales s : list) {
+				System.out.println(s);
+			}
+			
+			return map;
 		}finally {
 			session.close();
 		}

@@ -1,5 +1,6 @@
 package com.kosta.taeng.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -56,6 +57,14 @@ public class SalesDaoImpl implements SalesDao {
 	@Override
 	public List<Sales> selectSalesDate(SqlSession session, Map<String,String> date) {
 		return session.selectList(makeSql("selectSalesDate"), date);
+	}
+	
+	@Override
+	public List<Sales> selectSalesList(SqlSession session, int beginSalesNum, int endSalesNum){
+		HashMap<String,Integer> map = new HashMap<>();
+		map.put("begin", beginSalesNum);
+		map.put("end",endSalesNum);
+		return session.selectList(makeSql("selectSalesList"),map);
 	}
 
 	private String makeSql(String sqlId) {
