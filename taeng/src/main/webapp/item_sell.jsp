@@ -10,6 +10,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function minus(){
+		var a = document.getElementById("up");
+		
+		a.value="-";
+	}
+	function errer(){
+		var a = document.getElementById("error");
+		var b = document.getElementById("min");
+		
+		alert("상품을 추가해주세요.");
+	}
+</script>
 </head>
 <body>
 	<div class="sell_content">
@@ -18,15 +31,21 @@
 				<c:forEach items="${requestScope.itemLists}" var="item">
 					<div class="item">
 						<form action="../item/cart" method="post">
-							<img src='<c:url value="/itemImage/${item.itemImage}"/>'> <br>
-							이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"><br>
-							가격 : ${item.itemPrice}<br>
-							<button type="submit">선택</button>
+							<ul>
+								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
+								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
+								<li>가격 : ${item.itemPrice}</li>
+								<li><button type="submit">추가</button>
+									<input type="hidden" id="up" name="up" value="+">
+									<button type="submit" id="min" onclick="minus();">감소</button>
+									</li>
+							</ul>
 						</form>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
+		<form action="/item/order" method="post">
 		<div class="item_order">
 			<%
 				HashMap<String, Integer> list = new HashMap<>();
@@ -43,12 +62,18 @@
 			%>
 			상품명 : <%=items.getItemName()%> |
 			<%=items.getItemPrice()%>원 |
+			<%if(list.get(item)>=0){ %>
 			<%=list.get(item)%>개
-			<%
+			<input type="hidden" name="itemName" value="<%=list.get(item)%>">
+			<input type="hidden" name="itemStock" value="<%=items.getItemName()%>">
+			<%		
+					}
 				}
 			}
 			%>
 		</div>
+		<button>주문하기</button>
+	</form>
 	</div>
 </body>
 </html>
