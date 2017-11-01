@@ -29,18 +29,6 @@ public class PCServiceImpl implements PCService {
 		if (instance == null) instance = new PCServiceImpl();
 		return instance;
 	}
-	
-	@Override
-	public void insertPC(PC pc) {
-		SqlSession session = null;
-		try {
-			session = factory.openSession();
-			dao.insertPC(session, pc);
-			session.commit();
-		} finally {
-			session.close();
-		}
-	}
 
 	@Override
 	public PC selectPCByNum(int pcNum) throws PCNotFoundException {
