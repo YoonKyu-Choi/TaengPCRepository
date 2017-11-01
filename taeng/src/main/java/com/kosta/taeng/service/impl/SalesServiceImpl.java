@@ -21,7 +21,6 @@ public class SalesServiceImpl implements SalesService {
 
 	private SalesDao dao;
 	private SqlSessionFactory factory;
-	private SqlSession session;
 	private static SalesServiceImpl instance;
 
 	private SalesServiceImpl() {
@@ -33,6 +32,8 @@ public class SalesServiceImpl implements SalesService {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 	public static SalesServiceImpl getInstance() throws IOException {
 		if (instance == null)
@@ -42,6 +43,7 @@ public class SalesServiceImpl implements SalesService {
 
 	@Override
 	public int getAllSales() throws SalesNotFoundException {
+		SqlSession session=null;
 		try {
 			session = factory.openSession();
 			int num1 = dao.selectAllItemSales(session);
@@ -54,6 +56,7 @@ public class SalesServiceImpl implements SalesService {
 
 	@Override
 	public int getPcSales() throws SalesNotFoundException {
+		SqlSession session=null;
 		try {
 			session = factory.openSession();
 			return dao.selectAllPcSales(session);
@@ -65,6 +68,7 @@ public class SalesServiceImpl implements SalesService {
 
 	@Override
 	public int getItemSales() throws SalesNotFoundException {
+		SqlSession session = null;
 		try {
 			session = factory.openSession();
 			return dao.selectAllItemSales(session);
@@ -76,6 +80,7 @@ public class SalesServiceImpl implements SalesService {
 
 	@Override
 	public List<Sales> getSalesByDate(Date startDay, Date endDay) {
+		SqlSession session=null;
 		
 		try {
 			session = factory.openSession();
@@ -85,7 +90,6 @@ public class SalesServiceImpl implements SalesService {
 			map.put("startDay", sStr);
 			map.put("endDay", eStr);
 			return dao.selectSalesDate(session, map);
-			
 		}finally {
 			session.close();
 		}
@@ -94,8 +98,9 @@ public class SalesServiceImpl implements SalesService {
 
 	@Override
 	public void doSales(Date date, int pc, int item) {
+		SqlSession session=null;
 		try {
-			SqlSession session = factory.openSession();
+			session = factory.openSession();
 			dao.insertSales(session, new Sales(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date), pc, item));
 			session.commit();
 		}finally {
@@ -103,5 +108,18 @@ public class SalesServiceImpl implements SalesService {
 		}
 
 	}
+
+	@Override
+	public List<Sales> getAllSalesList() throws SalesNotFoundException {
+		SqlSession session=null;
+		try {
+			session = factory.openSession();
+			return dao.selectAllSales(session);
+		}finally {
+			session.close();
+		}
+	}
+	
+	
 
 };

@@ -33,4 +33,9 @@
 		WHERE sales_date > #{startDay} AND #{endDay} > sales_date
 	</select>
 	
+	<select id="selectAllSales" resultType="Sales">
+		<include refid="sales-sql"/>
+		ORDER BY sales_date DESC
+	</select>
+	
 </mapper>

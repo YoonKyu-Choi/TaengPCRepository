@@ -17,4 +17,6 @@ public interface SalesService {
 	List<Sales> getSalesByDate(Date startDay, Date endDay);
 	
 	void doSales(Date date,int pc, int item);
+	
+	List<Sales> getAllSalesList() throws SalesNotFoundException;
 }

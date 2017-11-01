@@ -19,20 +19,28 @@ public class AllSalesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		SalesService service = SalesServiceImpl.getInstance();
-		
+		String select = request.getParameter("select");
 		try {
-			request.setAttribute("allSales", service.getAllSales());
-			request.setAttribute("pcSales",service.getPcSales());
-			request.setAttribute("itemSales", service.getItemSales());
+
+			if (select.equals("all")) {
+				request.setAttribute("allSales", service.getAllSales());
+			} else if (select.equals("pc")) {
+				request.setAttribute("pcSales", service.getPcSales());
+			} else if (select.equals("item")) {
+				request.setAttribute("itemSales", service.getItemSales());
+			}
+
 		} catch (SalesNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		request.getRequestDispatcher("/sales_test_result.jsp").forward(request, response);
+
+		request.getRequestDispatcher("/sales/search_sales.jsp").forward(request, response);
 	}
 
 }
