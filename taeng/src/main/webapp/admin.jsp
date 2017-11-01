@@ -43,6 +43,8 @@
 		background-color:#cecece;
 		box-shadow:0px 0px 10px white;
 	}
+	
+	.box:
 
 	.bottom {
 		width:700px;
@@ -81,16 +83,16 @@
 <body>
 	<div class="contents">
 		<div class="sit">
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
-			<div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>
+			<div class="box" id="box1"></div><div class="box" id="box2"></div><div class="box" id="box3"></div><div class="box" id="box4"></div><div class="box" id="box5"></div>
+			<div class="box" id="box6"></div><div class="box" id="box7"></div><div class="box" id="box8"></div><div class="box" id="box9"></div><div class="box" id="box10"></div>
+			<div class="box" id="box11"></div><div class="box" id="box12"></div><div class="box" id="box13"></div><div class="box" id="box14"></div><div class="box" id="box15"></div>
+			<div class="box" id="box16"></div><div class="box" id="box17"></div><div class="box" id="box18"></div><div class="box" id="box19"></div><div class="box" id="box20"></div>
+			<div class="box" id="box21"></div><div class="box" id="box22"></div><div class="box" id="box23"></div><div class="box" id="box24"></div><div class="box" id="box25"></div>
+			<div class="box" id="box26"></div><div class="box" id="box27"></div><div class="box" id="box28"></div><div class="box" id="box29"></div><div class="box" id="box30"></div>
+			<div class="box" id="box31"></div><div class="box" id="box32"></div><div class="box" id="box33"></div><div class="box" id="box34"></div><div class="box" id="box35"></div>
+			<div class="box" id="box36"></div><div class="box" id="box37"></div><div class="box" id="box38"></div><div class="box" id="box39"></div><div class="box" id="box40"></div>
+			<div class="box" id="box41"></div><div class="box" id="box42"></div><div class="box" id="box43"></div><div class="box" id="box44"></div><div class="box" id="box45"></div>
+			<div class="box" id="box46"></div><div class="box" id="box47"></div><div class="box" id="box48"></div><div class="box" id="box49"></div><div class="box" id="box50"></div>
 		</div>
 	</div>
 	<div class="clear"></div>
