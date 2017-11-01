@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kosta.taeng.config.mapper.salesMapper">
+
+	<sql id="sales-sql">
+		SELECT 	sales_date salesDate,
+				sales_pccost pcSales,
+				sales_itemprice itemSales
+		FROM 	sales
+	</sql>
+	
+	<insert id="insertSales" parameterType="Sales">
+		INSERT INTO sales
+		VALUES(
+			#{salesDate},
+			#{pcSales},
+			#{itemSales}
+		)
+	</insert>
+	
+	<select id="selectAllPcSales" resultType="_int">
+		SELECT sum(sales_pccost)
+		FROM sales
+	</select>
+	
+	<select id="selectAllItemSales" resultType="_int">
+		SELECT sum(sales_itemprice)
+		FROM sales
+	</select>
+	
+	<select id="selectSalesDate" parameterType="map" resultType="Sales">
+		<include refid="sales-sql"/>
+		WHERE sales_date > #{startDay} AND #{endDay} > sales_date
+	</select>
+	
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kosta.taeng.config.mapper.pcMapper">
+	
+	<insert id="insertPC" parameterType="pc">
+		insert into pc values (#{pcNum}, #{pcCost}, #{id})
+	</insert>
+	
+	<resultMap type="pc" id="pc-resultmap">
+		<id column="pc_num" property="pcNum"/>
+		<result column="pc_cost" property="pcCost"/>
+	</resultMap>
+
+	<resultMap type="pc" id="pc-join-member-resultmap" extends="pc-resultmap">
+		<association property="member" javaType="member">
+			<id column="member_id" property="id"/>
+			<result column="member_phonenum" property="phoneNum"/>
+			<result column="member_personnum" property="personNum"/>
+			<result column="member_pw" property="password"/>
+			<result column="member_name" property="name"/>
+			<result column="member_pctime" property="pcTime"/>
+		</association>
+	</resultMap>
+	
+	<select id="selectPCByNum" resultMap="pc-join-member-resultmap" parameterType="_int">
+		select p.pc_num, p.pc_cost, m.member_id, m.member_name, m.member_pctime
+		from pc p, member m where p.member_id = m.member_id
+	</select>
+	
+	<update id="updatePC" parameterType="pc">
+		update	pc p
+		set		p.pc_cost = #{pcCost},
+				p.member_id = #{id}
+		where	p.pc_num = #{pcNum}
+	</update>
+</mapper>

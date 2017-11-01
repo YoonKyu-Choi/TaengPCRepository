@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kosta.taeng.config.mapper.memberMapper">
+	
+	<insert id="insertMember" parameterType="member">
+		insert into member values(#{id}, #{phoneNum}, #{personNum}, #{password}, #{name}, #{pcTime})
+	</insert>
+
+	<resultMap type="member" id="member-resultmap">
+		<id column="member_id" property="id"/>
+		<result column="member_phonenum" property="phoneNum"/>
+		<result column="member_personnum" property="personNum"/>
+		<result column="member_pw" property="password"/>
+		<result column="member_name" property="name"/>
+		<result column="member_pctime" property="pcTime"/>
+	</resultMap>
+	
+	<sql id="select-member-sql">
+		select member_id, member_phonenum, member_personnum, member_pw, member_name, member_pctime from member
+	</sql>
+	
+	<select id="selectMemberById" parameterType="string" resultMap="member-resultmap">
+		<include refid="select-member-sql"/>
+		where member_id = #{value}
+	</select>
+	
+	<select id="selectMemberByName" parameterType="string" resultMap="member-resultmap">
+		<include refid="select-member-sql"/>
+		where member_name like '%'||#{value}||'%'
+	</select>
+	
+	<select id="selectPCtimeById" parameterType="string" resultType="_int">
+		select member_pctime from member where member_id = #{value}
+	</select>
+	
+	<update id="updateMember" parameterType="member">
+		update	member
+		set		member_phonenum = #{phoneNum}, 
+				member_personnum = #{personNum}, 
+				member_pw = #{password},
+				member_name = #{name},
+				member_pctime = #{pcTime}
+		where	member_id = #{id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="string">
+		delete from member where member_id = #{value}
+	</delete>
+</mapper>

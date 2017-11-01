@@ -1,9 +1,15 @@
 
-drop table sales constraint cascade;
+drop table sales
 
 create table sales(
-	sales_date DATE,
+	sales_date VARCHAR2(20),
 	sales_pccost NUMBER(7),
-	sales_itemprice NUMBER(5),
-	item_name VARCHAR2(20) CONSTRAINT fk_item_name REFERENCES item 
-)
+	sales_itemprice NUMBER(7)
+);
+
+insert into SALES values('2017-08-22 12-12-12', 1000, 0);
+insert into SALES values('2015-04-22 12-12-12',3000,2000);
+INSERT INTO sales values('2017-10-22 12-12-12', 1000, 500);
+
+
+select * from sales;

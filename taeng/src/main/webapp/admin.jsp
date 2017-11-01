@@ -4,6 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script></script>
 <style>
 	* {
 		margin:0 auto;
@@ -20,8 +22,7 @@
 
 	.contents {
 		width:100%;
-		height:02%;
-		float:center;
+		height:0%;
 	}
 	
 	.sit {
@@ -68,11 +69,10 @@
 		font-size:18px;
 		cursor:pointer;
 	}
-
+	
 	.clear {
 		clear:both;
 	}
-	
 
 </style>
 </head>
@@ -105,11 +105,5 @@
 		</div>
 	</div>
 
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-		$(document).ready(function(){
-			
-		});
-	</script>
 </body>
 </html>
