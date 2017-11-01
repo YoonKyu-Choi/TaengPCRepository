@@ -5,8 +5,6 @@ import com.kosta.taeng.vo.PC;
 
 public interface PCService {
 
-	void insertPC(PC pc);
-	
 	PC selectPCByNum(int pcNum) throws PCNotFoundException;
 	
 	void updatePC(PC pc);

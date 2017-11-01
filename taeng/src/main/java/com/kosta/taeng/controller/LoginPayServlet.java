@@ -36,9 +36,9 @@ public class LoginPayServlet extends HttpServlet {
 			request.getRequestDispatcher("/gusukTest/login_payment.jsp").forward(request, response);
 			return;
 		}
-		if(hour.equals("")) {
+		if(hour==null || hour.equals("")) {
 			request.setAttribute("errMsg", "시간을 선택해주세요.");
-			request.getRequestDispatcher("/gusukTest/login_payment.jsp").forward(request, response);;
+			request.getRequestDispatcher("/gusukTest/login_payment.jsp").forward(request, response);
 			return;
 		}
 		

@@ -39,10 +39,8 @@ public class SearchSalesServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		for(Sales s : list) {
-			System.out.println(s);
-		}
-		request.getRequestDispatcher("/sales_test_result.jsp").forward(request, response);
+		
+		request.getRequestDispatcher("/sales/sales_test_result.jsp").forward(request, response);
 	}
 	
 	public String makeDate(String year, String month, String day, String hour, String minute, String second) {

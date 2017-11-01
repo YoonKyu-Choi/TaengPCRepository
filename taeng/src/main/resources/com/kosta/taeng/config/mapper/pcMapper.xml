@@ -2,10 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kosta.taeng.config.mapper.pcMapper">
 	
-	<insert id="insertPC" parameterType="pc">
-		insert into pc values (#{pcNum}, #{pcCost}, #{id})
-	</insert>
-	
 	<resultMap type="pc" id="pc-resultmap">
 		<id column="pc_num" property="pcNum"/>
 		<result column="pc_cost" property="pcCost"/>

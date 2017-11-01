@@ -31,25 +31,28 @@ a:active {
 }
 
 body {
-	background-color: cyan;
+	background-color: #2cb74a;
 	width: 1000px;
 }
 
-.box1, .box2, .box3 {
-	width: 100px;
+.box1, .box2, .box3, .box4 {
+	width: 150px;
 	height: 100px;
-	padding: 50px;
+	padding: 40px;
 	border: 1px solid black;
 	background-color: white;
 	margin-top: 5px;
+	align-content:center;
+	text-align:center;
 }
 
 .resultBox {
 	width: 300px;
-	height: 300px;
+	height: 100px;
 	border: 1px solid blue;
 	background-color: white;
-	margin-top: 100px;
+	margin-top: 50px;
+	
 }
 
 form {
@@ -62,20 +65,29 @@ form {
 		<div>
 			<span>날짜로 조회하기</span>
 		</div>
-		<form action="/sales/salesByDate" method="post">
+		<br>
+		<form action="/taeng/sales/salesByDate" method="post">
 			<input type="date" class="day" name="sDay"> ~ <input type="date" name="eDay" class="day">
 			<button>조회</button>
 		</form>
 	</div>
 	<div class="box2">
-		<form>
-			<a href="/taeng/sales/allSales?select=all"> <span class="all">전체매출조회</span>
-			</a>
+		<form action="/taeng/salesList" method="post">
+			전체매출목록조회
+			<button>조회</button>
 		</form>
 	</div>
 	<div class="box3">
 		<form>
+		<br>
+			<a href="/taeng/sales/allSales?select=all"> <span class="all">전체매출조회</span>
+			</a>
+		</form>
+	</div>
+	<div class="box4">
+		<form>
 			<a href="/taeng/sales/allSales?select=pc"> <span class="pc">PC요금매출조회</span></a><br> 
+			<br><br>
 			<a href="/taeng/sales/allSales?select=item"> <span class="item">상품요금매출조회</span></a>
 		</form>
 	</div>

@@ -15,14 +15,16 @@
 	font-family: "맑은 고딕";
 }
 
-.body {
-	
+body {
+	background-color:#2cb74a;
 }
 
 form {
 	width:1000px;
 	height:300px;
-	margin-top:20px;
+	margin-top:150px;
+	background-color:white;
+	box-shadow:0px 0px 15px black;
 }
 
 .timelist {
@@ -39,7 +41,9 @@ form {
 	height: 50px;
 	float:left;
 	line-height:50px;
-	border:1px solid black;
+	border:1px solid white;
+	background-color:#2db72d;
+	color:white;
 }
 
 button{
@@ -49,25 +53,36 @@ button{
 	text-align : center;
 	line-height:70px;
 	margin-top: 20px;
+	background-color:gray;
+	border-radius:10px;
+	color:white;
 }
+
+.clear {
+	clear:both;
+}
+
+
 </style>
 
 </head>
 <body>
 	<form action="/taeng/login/payment" method="post">
-		<div class="idinput">
-			id : <input type="text" name="id">
-		</div>
-		
-		<div class="timelist">
-			<ul>
-				<li class="one"><span>1시간 : 1000원</span> <input type="radio" name="hour" value="1"></li>
-				<li class="one"><span>2시간 : 2000원</span> <input type="radio" name="hour" value="2"></li>
-				<li class="one"><span>3시간 : 3000원</span> <input type="radio" name="hour" value="3"></li>
-				<li class="one"><span>4시간 : 4000원</span> <input type="radio" name="hour" value="4"></li>
-				<li class="one"><span>5시간 : 5000원</span> <input type="radio" name="hour" value="5"></li>
-			</ul>
-			<button>결제</button>
+		<div class="input">
+			<div class="idinput">
+				ID : <input type="text" name="id">
+			</div>
+			
+			<div class="timelist">
+				<ul>
+					<li class="one"><span>1시간 : 1000원</span> <input type="radio" name="hour" value="1"></li>
+					<li class="one"><span>2시간 : 2000원</span> <input type="radio" name="hour" value="2"></li>
+					<li class="one"><span>3시간 : 3000원</span> <input type="radio" name="hour" value="3"></li>
+					<li class="one"><span>4시간 : 4000원</span> <input type="radio" name="hour" value="4"></li>
+					<li class="one"><span>5시간 : 5000원</span> <input type="radio" name="hour" value="5"></li>
+				</ul>
+				<button>결제</button>
+			</div>
 		</div>
 	</form>
 	<c:if test="${requestScope.errMsg != null}">

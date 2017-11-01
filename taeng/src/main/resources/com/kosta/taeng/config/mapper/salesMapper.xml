@@ -38,4 +38,18 @@
 		ORDER BY sales_date DESC
 	</select>
 	
+	<select id="selectSalesList" parameterType="map" resultType="sales">
+		<![CDATA[
+		SELECT rn, sales_date salesDate, sales_pccost pcSales, sales_itemprice itemSales
+		FROM(
+			SELECT rownum rn, sales_date, sales_pccost, sales_itemprice
+			FROM(
+				SELECT sales_date, sales_pccost, sales_itemprice from sales ORDER BY sales_date asc
+				)
+			WHERE rownum <= #{end}
+			)
+		WHERE rn >= #{begin}
+		]]>
+	</select>
+	
 </mapper>
