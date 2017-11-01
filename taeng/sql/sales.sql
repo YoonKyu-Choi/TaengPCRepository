@@ -13,3 +13,5 @@ INSERT INTO sales values('2017-10-22 12-12-12', 1000, 500);
 
 
 select * from sales;
+
+SELECT * FROM sales ORDER BY sales_date DESC;

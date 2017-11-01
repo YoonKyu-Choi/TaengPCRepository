@@ -36,4 +36,6 @@ public interface SalesDao {
 	int selectAllItemSales(SqlSession session) throws SalesNotFoundException;
 	
 	List<Sales> selectSalesDate(SqlSession session, Map<String,String> date);
+	
+	List<Sales> selectAllSales(SqlSession session);
 }

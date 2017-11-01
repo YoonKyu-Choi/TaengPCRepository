@@ -47,8 +47,11 @@ public class SalesDaoImpl implements SalesDao {
 			return cnt;
 		}
 	}
-	
-	
+
+	@Override
+	public List<Sales> selectAllSales(SqlSession session) {
+		return session.selectList(makeSql("selectAllSales"));
+	}
 
 	@Override
 	public List<Sales> selectSalesDate(SqlSession session, Map<String,String> date) {
