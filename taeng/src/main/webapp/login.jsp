@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,10 +69,6 @@ $(document).ready(function(){
 		cursor:pointer;
 	}
 
-	#sign {
-		cursor:pointer;
-	}
-
 	.my {
 		width:600px;
 		height:400px;
@@ -83,10 +80,14 @@ $(document).ready(function(){
 		display:none;
 	}
 	
+	#sign {
+		cursor:pointer;
+	}
+	
 	.information {
 		width:400px;
 		height:100%;
-		margin-top:70px;
+		margin-top:10px;
 	}
 
 	.information > #done {
@@ -104,6 +105,8 @@ $(document).ready(function(){
 			I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D : &nbsp;<input type="text" name="id" id="id" class="up" placeholder="ID"/><br>
 			P&nbsp;&nbsp;&nbsp;&nbsp;W : &nbsp;<input type="password" name="pw" id="pw" class="up" placeholder="PASSWORD"/><br>
 			EMAIL : &nbsp;<input type="email" name="email" id="email" class="up" placeholder="EMAIL"/><br>
+			전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"><br>
+			주민번호 : <input type="number" name="personNum" id="personNum" class="up" placeholder="PERSONNUM"><br>
 			<button id="done">완료</button>
 		</div>
 	</div>
@@ -111,9 +114,11 @@ $(document).ready(function(){
 
 	<div class="mainbox">
 		<div class="box">
-			<input type="text" id="id" name="id" placeholder="ID"/><br>
-			<input type="password" id="pw" name="pw" placeholder="PassWord"/><br>
-			<button id="btn" type="">LOGIN</button><br>
+			<form action="/taeng/login" method="post">
+				<input type="text" id="id" name="id" placeholder="ID"/><br>
+				<input type="password" id="pw" name="pw" placeholder="PassWord"/><br>
+				<button id="btn">LOGIN</button><br>
+			</form>
 			<span id="sign">Sign Up</span>
 		</div>
 	</div>
