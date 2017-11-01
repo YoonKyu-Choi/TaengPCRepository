@@ -75,7 +75,7 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 				ManageClient mc = new ManageClient(sc);
 				client.add(mc.sc);
 				mc.start();
-				mc.join();
+//				mc.join();
 			}
 		} catch (Exception e) {
 			ta.append("메세지 프로그램을 실행시키지 못 했습니다.");
