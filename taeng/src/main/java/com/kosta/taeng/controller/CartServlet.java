@@ -21,11 +21,16 @@ import com.kosta.taeng.vo.Item;
 @WebServlet("/item/cart")
 public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String itemName = request.getParameter("itemName");
-		if (itemName == null || itemName=="") {
+		String up = request.getParameter("up");
+		System.out.println(up);
+		ItemService service = ItemServiceImpl.getInstance();
+		Item item = new Item();
+		if (itemName == null || itemName == "") {
 			request.setAttribute("errMsg", "상품이 선택되지 않았습니다.");
 			request.getRequestDispatcher("/item/itemLists").forward(request, response);
 			return;
@@ -35,15 +40,23 @@ public class CartServlet extends HttpServlet {
 			items = new HashMap<>();
 			session.setAttribute("itemOrder", items);
 		}
-		if (items.containsKey(itemName)) {
-			items.put(itemName, items.get(itemName) + 1);
+		if (up.equals("+")) {
+			if (items.containsKey(itemName)) {
+				items.put(itemName, items.get(itemName) + 1);
+			} else {
+				items.put(itemName, 1);
+			}
 		} else {
-			items.put(itemName, 1);
+			if (items.containsKey(itemName)) {
+				if(items.get(itemName)>0) {
+					items.put(itemName, items.get(itemName) - 1);
+				}
+			} else {
+				items.put(itemName, 1);
+			}
 		}
 		
-		ItemService service = ItemServiceImpl.getInstance();
-		Item item = new Item();
-		
+
 		List<Item> list = service.getItemList();
 		request.setAttribute("itemLists", list);
 		request.getRequestDispatcher("/item_sell.jsp").forward(request, response);

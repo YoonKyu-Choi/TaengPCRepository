@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Payment</title>
 <style>
+
 * {
 	margin: 0 auto;
 	padding: 0;
@@ -15,48 +16,39 @@
 }
 
 .body {
-	background-color: grey;
+	
+}
+
+form {
+	width:1000px;
+	height:300px;
+	margin-top:20px;
 }
 
 .timelist {
-	width: 500px;
-	height: 500px;
+	width: 1000px;
+	height: 200px;
 	text-align: center;
-	background-color: black;
 	margin: 0 auto;
 	font-color: white;
+	margin-top:30px;
 }
 
 .one {
-	height: 100px;
-	background-color: red;
-}
-
-.two {
-	height: 100px;
-	background-color: tomato;
-}
-
-.three {
-	height: 100px;
-	background-color: orange;
-}
-
-.four {
-	height: 100px;
-	background-color: MediumSeaGreen;
-}
-
-.five {
-	height: 100px;
-	background-color: DodgerBlue;
+	width:198px;
+	height: 50px;
+	float:left;
+	line-height:50px;
+	border:1px solid black;
 }
 
 button{
-	width:50px;
-	height:50px;
-	font-size:10px;
-	align : center;
+	width:100px;
+	height:70px;
+	font-size:15px;
+	text-align : center;
+	line-height:70px;
+	margin-top: 20px;
 }
 </style>
 
@@ -68,25 +60,15 @@ button{
 		</div>
 		
 		<div class="timelist">
-			<div class="one">
-				<span>1시간 : 1000원</span><input type="radio" name="hour" value="1">
-			</div>
-			<div class="two">
-				<span>2시간 : 2000원</span> <input type="radio" name="hour" value="2">
-			</div>
-			<div class="three">
-				<span>3시간 : 3000원</span> <input type="radio" name="hour" value="3">
-			</div>
-			<div class="four">
-				<span>4시간 : 4000원</span> <input type="radio" name="hour" value="4">
-			</div>
-			<div class="five">
-				<span>5시간 : 5000원</span> <input type="radio" name="hour" value="5">
-			</div>
+			<ul>
+				<li class="one"><span>1시간 : 1000원</span> <input type="radio" name="hour" value="1"></li>
+				<li class="one"><span>2시간 : 2000원</span> <input type="radio" name="hour" value="2"></li>
+				<li class="one"><span>3시간 : 3000원</span> <input type="radio" name="hour" value="3"></li>
+				<li class="one"><span>4시간 : 4000원</span> <input type="radio" name="hour" value="4"></li>
+				<li class="one"><span>5시간 : 5000원</span> <input type="radio" name="hour" value="5"></li>
+			</ul>
+			<button>결제</button>
 		</div>
-		
-		
-		<button>결제</button>
 	</form>
 	<c:if test="${requestScope.errMsg != null}">
 		<span style="color:red">${requestScope.errMsg }</span>
