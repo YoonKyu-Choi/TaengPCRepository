@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ChatClients extends Frame implements ActionListener, Runnable {
+public class MsgClients extends Frame implements ActionListener, Runnable {
 	private static final long serialVersionUID = 1L;
 
 	private TextArea ta = new TextArea();
@@ -26,7 +26,7 @@ public class ChatClients extends Frame implements ActionListener, Runnable {
 
 	private Socket sc;
 
-	public ChatClients() {
+	public MsgClients() {
 		add(ta, BorderLayout.CENTER);
 		add(tf, BorderLayout.SOUTH);
 
@@ -46,7 +46,7 @@ public class ChatClients extends Frame implements ActionListener, Runnable {
 	}
 
 	public static void main(String[] args) {
-		new ChatClients().connect();
+		new MsgClients().connect();
 
 	}
 

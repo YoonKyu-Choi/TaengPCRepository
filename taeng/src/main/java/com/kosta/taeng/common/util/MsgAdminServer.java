@@ -17,7 +17,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 
-public class ChatAdminServer extends Frame implements ActionListener, Runnable { 
+public class MsgAdminServer extends Frame implements ActionListener, Runnable { 
 	// 이벤트를 처리하기 위한 액션뭐시기, 보내기 받기를 동시에 하기 위한 러너블
 	private static final long serialVersionUID = 1L;
 
@@ -39,10 +39,10 @@ public class ChatAdminServer extends Frame implements ActionListener, Runnable {
 	PrintWriter pw;
 
 	public static void main(String[] args) {
-		new ChatAdminServer().serverStart();
+		new MsgAdminServer().serverStart();
 	}
 
-	public ChatAdminServer() {
+	public MsgAdminServer() {
 		add(ta, BorderLayout.CENTER);
 		add(tf, BorderLayout.SOUTH);
 		tf.addActionListener(this);
