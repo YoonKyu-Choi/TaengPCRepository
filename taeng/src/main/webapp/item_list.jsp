@@ -15,5 +15,6 @@
 		수량 : ${item.itemStock }<br>
 		<h2>상품 이미지 :</h2> <img src='<c:url value="/itemImage/${item.itemImage}"/>'><br>
 	</c:forEach>
+	
 </body>
 </html>
