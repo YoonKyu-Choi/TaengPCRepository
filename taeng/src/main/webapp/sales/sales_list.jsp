@@ -42,6 +42,10 @@ table {
 td, th {
 	padding: 10px;
 }
+
+body{
+	align-content:center;
+}
 </style>
 </head>
 <body>
@@ -128,6 +132,8 @@ td, th {
 		<%-- 마지막 페이지로 이동 --%>
 		<a href="/taeng/salesList?page=${requestScope.pageBean.totalPage}">마지막 페이지</a>
 	</p>
+	<br>
+	<a href="/taeng/sales/search_sales.jsp">돌아가기</a>
 </body>
 </html>
 
