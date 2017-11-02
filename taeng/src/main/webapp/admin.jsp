@@ -103,7 +103,7 @@
 				<li class="one">화면</li>
 				<li class="one">회원</li>
 				<li class="one">재고</li>
-				<li class="one">매상</li>
+				<li class="one"><a href="/taeng/sales/search_sales.jsp">매상</a></li>
 			</ul>
 		</div>
 	</div>

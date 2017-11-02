@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kosta.taeng.Exception.SalesNotFoundException;
 import com.kosta.taeng.service.SalesService;
@@ -22,25 +23,26 @@ public class AllSalesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SalesService service = SalesServiceImpl.getInstance();
 		String select = request.getParameter("select");
+		
 		try {
 
 			if (select.equals("all")) {
-				request.setAttribute("allSales", service.getAllSales());
+				request.setAttribute("money", service.getAllSales());
 			} else if (select.equals("pc")) {
-				request.setAttribute("pcSales", service.getPcSales());
+				request.setAttribute("money", service.getPcSales());
 			} else if (select.equals("item")) {
-				request.setAttribute("itemSales", service.getItemSales());
+				request.setAttribute("money", service.getItemSales());
 			}
 
 		} catch (SalesNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		request.getRequestDispatcher("/sales/search_sales.jsp").forward(request, response);
+		request.getRequestDispatcher("/sales/sales_result.jsp").forward(request, response);
 	}
 
 }
