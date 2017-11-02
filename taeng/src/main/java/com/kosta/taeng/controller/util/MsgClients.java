@@ -71,13 +71,13 @@ public class MsgClients extends Frame implements ActionListener, Runnable {
 					e4.printStackTrace();
 				}
 			}
-			if (conn != null) {
+			/*if (conn != null) {
 				try {
 					conn.close();
 				} catch (SQLException e5) {
 					e5.printStackTrace();
 				}
-			}
+			}*/
 		}
 	}
 
@@ -121,6 +121,7 @@ public class MsgClients extends Frame implements ActionListener, Runnable {
 	public void actionPerformed(ActionEvent e) {
 		Component comp = (Component) e.getSource();
 		int pcNum=0;
+		String memberId;
 
 		if (comp instanceof TextField) {
 			String s = tf.getText().trim();
@@ -134,10 +135,11 @@ public class MsgClients extends Frame implements ActionListener, Runnable {
 				
 				conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "taeng", "9999");
 				stmt = conn.createStatement();
-				rset = stmt.executeQuery("select pc_num from pc");
+				rset = stmt.executeQuery("select pc_num,member_id from pc");
 
 				while (rset.next()) {
 					pcNum = rset.getInt(1);
+					memberId = rset.getString(2);
 				}
 //				
 //				rset.close();

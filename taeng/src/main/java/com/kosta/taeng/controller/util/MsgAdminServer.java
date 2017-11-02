@@ -104,7 +104,7 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 			
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "taeng", "9999");
 			stmt = conn.createStatement();
-			rset = stmt.executeQuery("select pc_num from pc");
+			rset = stmt.executeQuery("select pc_num,member_id from pc");
 
 			while (true) {
 				// 클라이언트가 접속해서 들어오기를 기다린다.
@@ -161,6 +161,7 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 		BufferedReader br;
 		PrintWriter pw;
 		int pcNum;
+		String memberId;
 
 		public ManageClient(Socket sc) {
 			this.sc = sc;
@@ -179,6 +180,7 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 
 				while (rset.next()) {
 					pcNum = rset.getInt(1);
+					memberId = rset.getString(2);
 				}
 				
 				// 접속한 클라이언트의 IP주소 얻기
