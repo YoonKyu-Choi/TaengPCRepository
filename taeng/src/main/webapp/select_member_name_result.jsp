@@ -16,5 +16,7 @@
 	이름 : ${member.name }<br>
 	남은 시간 : ${member.pcTime }<br>
 </c:forEach>
+<a href="/taeng/admin.jsp">관리자 페이지로 돌아가기</a>
+<a href="/taeng/manage_member.jsp">이전 페이지로 돌아가기</a>
 </body>
 </html>

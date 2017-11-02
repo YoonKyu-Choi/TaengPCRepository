@@ -101,7 +101,7 @@
 		<div class="option">
 			<ul>
 				<li class="one">화면</li>
-				<li class="one">회원</li>
+				<li class="one"><a href="/taeng/manage_member.jsp">회원</a></li>
 				<li class="one">재고</li>
 				<li class="one">매상</li>
 			</ul>
