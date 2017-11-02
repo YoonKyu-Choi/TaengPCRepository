@@ -136,8 +136,6 @@ $(document).ready(function(){
       </div>
    </div>
 </form>
-      
-
    <div class="mainbox">
       <div class="box">
          <form action="/taeng/login" method="post">

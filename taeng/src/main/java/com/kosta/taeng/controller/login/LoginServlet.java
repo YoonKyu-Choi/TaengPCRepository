@@ -34,9 +34,10 @@ public class LoginServlet extends HttpServlet {
 			}
 		} else if (member != null) {
 			if (password.equals(member.getPassword())) {
-
+				
 				if (member.getPcTime() == 0) {
 					request.setAttribute("errMsg", "요금 충전 후 사용해주세요.");
+					request.getRequestDispatcher("/login.jsp").forward(request, response);
 				} else if (member.getPcTime() > 0) {
 					request.getSession().setAttribute("id",id);
 					response.sendRedirect("/taeng/login/seat");
