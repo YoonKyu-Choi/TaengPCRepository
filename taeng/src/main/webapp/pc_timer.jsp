@@ -17,19 +17,13 @@
 <%Member member = new Member("id", "123-1234-1234", 987654, "1234", "파파", 60);
 			PC pc = new PC(1, 2000, "id");
 			int time = member.getPcTime();%>
-	var time =
-<%=time%>
+	var time =<%=time%>
 	function pcTimer() {
-		time = time <= 0 ? alert('종료') : time -= 1;
+		time = time <= 0 ? alert('시간 종료')  : time -= 1;
 		document.getElementById("timeid").innerHTML = "<b>" + time + "</b>";
 	}
 	$(document).ready(function() {
-		var pcTime = setInterval(pcTimer, 60000);
-		/* 		setInterval(function(){
-		
-		 alert(now);
-		
-		 },1000); */
+		var pcTime = setInterval(pcTimer, 1000);
 	});
 </script>
 </head>

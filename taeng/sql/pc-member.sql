@@ -7,14 +7,8 @@ create table member (
 	member_pw varchar2(20) not null, /* 비밀번호 */
 	member_name varchar2(20) not null, /* 이름 */
 	member_pctime number(5) /* 남은시간 */
-);
+)
 
-select * from member;
-
-drop sequence pc_num_seq;
-create sequence pc_num_seq;
-
-drop table pc;
 create table pc (
 	pc_num number primary key,
 	pc_cost number(7),
@@ -22,6 +16,13 @@ create table pc (
 	constraint fk_member_to_pc foreign key (member_id) references member (member_id)
 );
 
+
+select * from member;
+
+drop sequence pc_num_seq;
+create sequence pc_num_seq;
+
+drop table pc;
 insert into member values('admin','111-1111-11111',111111,'admin','이름55',0)
 
 insert into pc values (pc_num_seq, NULL, 'NULL');
