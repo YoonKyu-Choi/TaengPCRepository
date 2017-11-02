@@ -1,6 +1,7 @@
 package com.kosta.taeng.service.impl;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -55,4 +56,18 @@ public class PCServiceImpl implements PCService {
 			session.close();
 		}
 	}
+
+	@Override
+	public List<Integer> selectPcNull() {
+		
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			return dao.selectPcNull(session);
+		}finally {
+			session.close();
+		}
+	}
+	
+	
 }

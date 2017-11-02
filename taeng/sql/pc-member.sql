@@ -9,6 +9,16 @@ create table member (
 	member_pctime number(5) /* 남은시간 */
 )
 
+select pc_num
+from pc
+where member_id is null;
+
+select * from member;
+
+drop sequence pc_num_seq;
+create sequence pc_num_seq;
+
+drop table pc;
 create table pc (
 	pc_num number primary key,
 	pc_cost number(7),
@@ -25,6 +35,56 @@ create sequence pc_num_seq;
 drop table pc;
 insert into member values('admin','111-1111-11111',111111,'admin','이름55',0)
 
+insert into pc values (pc_num_seq.nextval , NULL, 'id1');
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, 'id3');
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, 'id2');
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, 'id4');
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
+insert into pc values (pc_num_seq.nextval , NULL, null);
 insert into pc values (pc_num_seq.nextval, 1000, 'id1');
 select * from pc;
 

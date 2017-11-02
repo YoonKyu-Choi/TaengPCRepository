@@ -37,7 +37,7 @@
 <body>
 <form id="form" method="post" action="/taeng/pctimer">
 	<span id="timeid"><%=time%></span>
-	<input type="text" id="pcTime" name="pcTime" value="">
+	<input type="hidden" id="pcTime" name="pcTime" value="">
 </form>
 </body>
 </html>

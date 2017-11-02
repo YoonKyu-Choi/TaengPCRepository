@@ -10,10 +10,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 	function minus(btn){
 		btn.previousSibling.previousSibling.value="-";
 	}
+
+	
 </script>
 <style>
 	* {
@@ -72,7 +75,8 @@
 								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
 								<li>가격 : ${item.itemPrice}</li>
-								<li><button type="submit">추가</button>
+								<li>
+									<button type="submit">추가</button>
 									<input type="hidden" id="up" name="up" value="+">
 									<button type="submit" id="min" onclick="minus(this);">감소</button>
 								</li>

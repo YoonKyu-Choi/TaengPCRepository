@@ -59,14 +59,26 @@ $(document).ready(function(){
       font-size:20px;
    }
    
-   #btn {
-      width:300px;
+   #btn1 {
+      width:200px;
       height:50px;
       border:none;
       background-color:green;
       color:white;
       font-size:20px;
       cursor:pointer;
+      border-right:2px solid white;
+   }
+   
+   #btn2 {
+      width:90px;
+      height:50px;
+      border:none;
+      background-color:green;
+      color:white;
+      font-size:20px;
+      cursor:pointer;
+      margin-left:10px;
    }
 
    .my {
@@ -95,13 +107,22 @@ $(document).ready(function(){
       text-align:center;
       cursor:pointer;
    }
-
+   
+   .error {
+   	  text-align:center;
+   	  width:200px;
+   	  height:40px;
+   	  line-height:40px;
+   	  background-color:white;
+   }
 </style>
 </head>
 <body>
-<c:if test="${requestScope.errMsg != null}">
-   <span style="color:red">${requestScope.errMsg }</span><br>
-</c:if>
+	<c:if test="${requestScope.errMsg != null}">
+		<div class="error">
+		 	 <span style="color:red">${requestScope.errMsg }</span><br>
+		</div>
+	</c:if>
 <form action="/taeng/add_forward.jsp" method="post">
    <div class="my">
       <div class="information">
@@ -115,14 +136,12 @@ $(document).ready(function(){
       </div>
    </div>
 </form>
-      
-
    <div class="mainbox">
       <div class="box">
          <form action="/taeng/login" method="post">
             <input type="text" id="id" name="id" placeholder="ID"/><br>
             <input type="password" id="pw" name="pw" placeholder="PassWord"/><br>
-            <button id="btn">LOGIN</button><br>
+            <button id="btn1">LOGIN</button><button id="btn2">결제</button><br>
          </form>
          <span id="sign">Sign Up</span>
       </div>

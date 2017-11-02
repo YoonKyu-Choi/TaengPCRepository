@@ -1,5 +1,7 @@
 package com.kosta.taeng.dao.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.kosta.taeng.dao.PCDao;
@@ -33,5 +35,10 @@ public class PCDaoImpl implements PCDao {
 	@Override
 	public int updatePC(SqlSession session, PC pc) {
 		return session.update(makeSql("updatePC"), pc);
+	}
+	
+	@Override
+	public List<Integer> selectPcNull(SqlSession session){
+		return session.selectList(makeSql("selectPcNull"));
 	}
 }
