@@ -18,12 +18,16 @@ $(document).ready(function(){
 });
 </script>
 <style type="text/css">
+	@font-face {
+	font-family:"DXWNDS-KSCPC-EUC-H";
+	src:url("font/DXWNDS-KSCPC-EUC-H.TTF") format("truetype");
+	}
+	
    * {
       margin:0 auto;
       padding:0;
       list-style:none;
       text-decoration:none;
-      font-family:"맑은 고딕";
    }
    
    body{
@@ -48,7 +52,7 @@ $(document).ready(function(){
       width:300px;
       height:200px;
       line-height:60px;
-      padding-top:90px;
+      padding-top:40px;
    }
    
    input {
@@ -96,6 +100,14 @@ $(document).ready(function(){
       cursor:pointer;
    }
 
+	.title{
+		width:400px;
+		height:20px;
+		padding-top:50px;
+		font-size:30px;
+		text-align:center;
+		font-family:"DXWNDS-KSCPC-EUC-H";
+	}
 </style>
 </head>
 <body>
@@ -118,6 +130,7 @@ $(document).ready(function(){
       
 
    <div class="mainbox">
+   	<div class="title">태은이네 PC방</div>
       <div class="box">
          <form action="/taeng/login" method="post">
             <input type="text" id="id" name="id" placeholder="ID"/><br>
