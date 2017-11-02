@@ -86,7 +86,7 @@
 				</c:forEach>
 			</div>
 		</div>
-		<form action="/item/order" method="post" class="eat2">
+		<form action="/taeng/item/order" method="post" class="eat2">
 			<div class="item_order">
 				<%
 					HashMap<String, Integer> list = new HashMap<>();
@@ -105,8 +105,8 @@
 				<%=items.getItemPrice()%>원 |
 				<%if(list.get(item)>=0){ %>
 				<%=list.get(item)%>개<br>
-				<input type="hidden" name="itemName" value="<%=list.get(item)%>">
-				<input type="hidden" name="itemStock" value="<%=items.getItemName()%>">
+				<input type="hidden" name="itemName" value="<%=items.getItemName()%>">
+				<input type="hidden" name="itemStock" value="<%=list.get(item)%>">
 				<%		
 						}
 					}

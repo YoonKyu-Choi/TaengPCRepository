@@ -65,7 +65,7 @@ public class LoginPayServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		request.getRequestDispatcher("/gusukTest/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 
 }
