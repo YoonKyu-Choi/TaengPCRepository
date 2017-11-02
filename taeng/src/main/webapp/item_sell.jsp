@@ -11,8 +11,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	function minus(){
-		document.getElementById("up").value="-";
+	function minus(btn){
+		btn.previousSibling.previousSibling.value="-";
 	}
 </script>
 <style>
@@ -74,7 +74,7 @@
 								<li>가격 : ${item.itemPrice}</li>
 								<li><button type="submit">추가</button>
 									<input type="hidden" id="up" name="up" value="+">
-									<button type="submit" id="min" onclick="minus();">감소</button>
+									<button type="submit" id="min" onclick="minus(this);">감소</button>
 								</li>
 							</ul>
 						</form>

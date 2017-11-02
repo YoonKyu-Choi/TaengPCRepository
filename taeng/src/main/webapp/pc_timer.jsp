@@ -21,8 +21,11 @@
 			%>
 	var time = <%=time%>
 	function pcTimer() {
-		
-		time = time <= 0 ? document.getElementById("form").submit() : time -= 1;
+		if(time == 0 ){
+			document.getElementById("form").submit();
+			return;
+		}
+		time -= 1;
 		document.getElementById("timeid").innerHTML = "<b>" + time + "</b>";
 		document.getElementById("pcTime").value = time;
 	}

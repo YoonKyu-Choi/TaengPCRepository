@@ -24,21 +24,22 @@ public class PCTimerServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-//		MemberService mservice = MemberServiceImpl.getInstance();
-//		PCService pservice = PCServiceImpl.getInstance();
+		HttpSession session = request.getSession();
+		MemberService mservice = MemberServiceImpl.getInstance();
+		PCService pservice = PCServiceImpl.getInstance();
 		
-//		mservice.selectMemberById("id1");
+		mservice.selectMemberById("id1");
 		
-//		try {
-////			pservice.selectPCByNum(1);
-//			
-//		} catch (PCNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			pservice.selectPCByNum(1);
+			
+		} catch (PCNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
-		//		session.setAttribute("pcTime", pcTime);
+//		session.setAttribute("pcTime", pcTime);
 		request.getRequestDispatcher("/pc_timer.jsp").forward(request, response);
 	}
 }
