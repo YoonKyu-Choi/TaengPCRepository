@@ -7,18 +7,47 @@
 <title>search</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-	$(".lookup").click(function(){
-		$(".resultBox").show();
+	$(document).ready(function() {
+		$("#menu1").click(function() {
+			$(".content1").show();
+			$(".content2").hide();
+			$(".content3").hide();
+			$(".content4").hide();
+			$(".content5").hide();
+		});
+		$("#menu2").click(function() {
+			$(".content1").hide();
+			$(".content2").show();
+			$(".content3").hide();
+			$(".content4").hide();
+			$(".content5").hide();
+		});
+		$("#menu3").click(function() {
+			$(".content1").hide();
+			$(".content2").hide();
+			$(".content3").show();
+			$(".content4").hide();
+			$(".content5").hide();
+		});
+		$("#menu4").click(function() {
+			$(".content1").hide();
+			$(".content2").hide();
+			$(".content3").hide();
+			$(".content4").show();
+			$(".content5").hide();
+		});
+		$("#menu5").click(function() {
+			$(".content1").hide();
+			$(".content2").hide();
+			$(".content3").hide();
+			$(".content4").hide();
+			$(".content5").show();
+		});
 	});
-});
 </script>
 <style type="text/css">
 * {
-	margin: 0 auto;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
+	box-sizing: border-box;
 	font-family: "맑은 고딕";
 }
 
@@ -39,82 +68,134 @@ a:active {
 }
 
 body {
-	background-color: #2cb74a;
-	width: 1000px;
+	background-color: #F6F792;
+	margin: 0;
 }
 
-.boxform {
-	width:950px;
-	height:300px;
-	margin-top:50px;
-}
-
-.box {
-	width: 150px;
-	height: 100px;
-	padding: 40px;
-	border: 1px solid black;
-	background-color: white;
-	margin-top: 5px;
-	align-content: center;
+/* Style the header */
+.header {
+	background-color: #4e63ad;
+	padding: 20px;
 	text-align: center;
-	float:left;
+	color: #F6F792;
 }
 
-.resultBox {
-	width: 300px;
-	height: 100px;
-	border: 1px solid blue;
-	background-color: white;
-	margin-top: 50px;
-	text-align:center;
-	line-height:100px;
-	position:absolute;
-	display:none;
+/* Style the side navigation */
+.sidenav {
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #4e63ad;
+	overflow-x: hidden;
+	cursor: pointer;
+	font-size: 18px;
 }
 
-form {
-	text-align: center;
+/* Side navigation links */
+.sidenav a {
+	color: #F6F792;
+	padding: 20px;
+	text-decoration: none;
+	display: block;
 }
+
+/* Change color on hover */
+.sidenav a:hover {
+	background-color: #F6F792;
+	color: black;
+}
+
+/* Style the content */
+.content1, .content2, .content3, .content4, .content5 {
+	font-size: 20px;
+	line-height: 60px;
+	margin-top: 20px;
+	margin-left: 250px;
+	padding-left: 20px;
+}
+
+.content2, .content3, .content4, .content5 {
+	display: none;
+}
+
+.input {
+	height: 30px;
+}
+
+.btn {
+	width: 110px;
+	height: 30px;
+	border: none;
+	background-color: #DBD4D0;
+	color: black;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.backbtn {
+	width: 110px;
+	height: 30px;
+	border: none;
+	background-color: #DBD4D0;
+	color: black;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+
+
 </style>
 </head>
 <body>
-	<div class="boxform">
-		<div class="box">
-			<div>
-				<span>날짜로 조회하기</span>
-			</div>
-			<br>
-			<form action="/taeng/sales/salesByDate" method="post">
-				<input type="date" class="day" name="sDay"> ~ <input type="date" name="eDay" class="day">
-				<button>조회</button>
-			</form>
+	<div class="header">
+		<h1>조회하기</h1>
+	</div>
+
+	<div class="sidenav">
+	<br><br><br><br><br>
+		<a id="menu1">날짜로 조회</a>
+		 <a id="menu2">전체 매출 목록 조회</a> 
+		 <a id="menu3">전체매출 조회</a> 
+		 <a id="menu4">PC요금 조회</a> 
+		 <a id="menu5">상품요금 조회 </a>
+	</div>
+	<div class="content1">
+		<div><br>
+			<span>날짜로 조회하기</span>
 		</div>
-		<div class="box">
-			<form action="/taeng/salesList" method="post">
-				전체매출목록조회
-				<button>조회</button>
-			</form>
-		</div>
-		<div class="box">
-			<form action="/taeng/sales/allSales" method="post">
-				<br>
-				<input type="hidden" name="select" value="all">
-				<button>전체매출조회</button>
-			</form>
-		</div>
-		<div class="box">
-			<form action="/taeng/sales/allSales" method="post">
-				<br>
-				<input type="hidden" name="select" value="pc">
-				<button>PC요금조회</button>
-			</form>
-			<form action="/taeng/sales/allSales" method="post">
-				<br>
-				<input type="hidden" name="select" value="item">
-				<button>상품요금조회</button>
-			</form>
-		</div>
+		<br>
+		<form action="/taeng/sales/salesByDate" method="post">
+			<input type="date" class="day" name="sDay"> ~ <input
+				type="date" name="eDay" class="day">
+			<button>조회</button>
+		</form>
+	</div>
+	<div class="content2">
+		<form action="/taeng/salesList" method="post">
+			전체 매출 목록조회
+			<button>조회</button>
+		</form>
+	</div>
+	<div class="content3">
+		<form action="/taeng/sales/allSales" method="post">
+			<input type="hidden" name="select" value="all">
+			<button>전체매출조회</button>
+		</form>
+	</div>
+	<div class="content4">
+		<form action="/taeng/sales/allSales" method="post">
+			<input type="hidden" name="select" value="pc">
+			<button>PC요금조회</button>
+		</form>
+	</div>
+	<div class="content5">
+		<form action="/taeng/sales/allSales" method="post">
+			<input type="hidden" name="select" value="item">
+			<button>상품요금조회</button>
+		</form>
 	</div>
 </body>
 </html>
