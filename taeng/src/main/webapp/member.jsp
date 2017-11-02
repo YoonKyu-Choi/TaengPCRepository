@@ -7,14 +7,14 @@
 <title>member</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
+/* $(document).ready(function(){
 	$(".add").click(function(){
 		$(".buy").fadeIn();
 	});
 	$(".close").click(function(){
 		$(".buy").fadeOut();
 	});
-});
+}); */
 </script>
 <style>
 	
@@ -45,7 +45,7 @@ $(document).ready(function(){
 		float:right;
 	}
 	
-	.add {
+	/* .add {
 		width:150px;
 		height:50px;
 		text-align:center;
@@ -57,15 +57,15 @@ $(document).ready(function(){
 		background-color:black;
 		color:white;
 		cursor:pointer;
-	}
+	} */
 	
-	#thing > img {
+	/* #thing > img {
 		width:30px;
 		height:30px;
 		float:left;
 		margin-top:10px;
 		margin-left:10px;
-	}
+	} */
 	
 	.log {
 		width:200px;
@@ -85,6 +85,18 @@ $(document).ready(function(){
 		border-radius:5px;
 		width:80px;
 		height:30px;
+	}
+	
+	#thing {
+		width:150px;
+		height:50px;
+		text-align:center;
+		float:left;
+		font-size:20px;
+		border-radius:5px;
+		background-color:black;
+		color:white;
+		cursor:pointer;
 	}
 	
 	.contents {
@@ -150,7 +162,10 @@ $(document).ready(function(){
 	<header>
 		<div class="top">
 			<div class="add">
-				<span id="thing"><img src="image/eat.png">상품구매</span>
+				<!-- <span id="thing"><img src="image/eat.png">상품구매</span> -->
+				<form action='<c:url value="/item/itemLists"/>' method="post">
+					<button id="thing">상품 주문</button>
+				</form>
 			</div>
 			<div class="log">
 				<ul>
