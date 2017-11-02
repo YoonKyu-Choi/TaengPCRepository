@@ -118,6 +118,9 @@ $(document).ready(function(){
 		margin-left:15px;
 	}
 	
+	.buy {
+		display:none;
+	}
 	
 	.eat {
 		width:700px;
@@ -142,7 +145,6 @@ $(document).ready(function(){
 	<div class="buy">
 		<div class="eat">
 			<span class="close">X</span>
-			<>
 		</div>
 	</div>
 	<header>
@@ -159,14 +161,12 @@ $(document).ready(function(){
 				<div class="btn">
 					<button id="latter">쪽지</button><br>
 					<button id="move">자리이동</button><br>
-					<button id="logout">로그아웃</button>
+					<button id="logout" onclick='window.close()'>종료</button>
 				</div>
 			</div>
 		</div>
 	</header>
 	<div class="clear"></div>
-	
-	
 	
 	<div class="contents">
 		<div class="image">
