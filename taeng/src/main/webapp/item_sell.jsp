@@ -12,17 +12,8 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function minus(){
-		var a = document.getElementById("up");
-		
-		a.value="-";
+		document.getElementById("up").value="-";
 	}
-	function errer(){
-		var a = document.getElementById("error");
-		var b = document.getElementById("min");
-		
-		alert("상품을 추가해주세요.");
-	}
-	
 </script>
 <style>
 	* {
