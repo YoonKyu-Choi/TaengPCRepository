@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		if (id.equals("admin")) {
 			if (password.equals("admin")) {
 				request.getSession().setAttribute("login", true);
-				response.sendRedirect("/taeng/gusukTest/admin.jsp");
+				response.sendRedirect("/taeng/admin.jsp");
 			} else {
 				request.setAttribute("errMsg", "비밀번호가 틀립니다.");
 				request.getRequestDispatcher("/login_test.jsp").forward(request, response);
