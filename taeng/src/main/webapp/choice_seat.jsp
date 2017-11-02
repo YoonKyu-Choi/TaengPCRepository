@@ -30,7 +30,7 @@
 <body>
 	<div class="contents">
 		<div class="sit">
-			<form action="/taeng/member.jsp" method="post">
+			<form action="/taeng/bridge" method="post">
 				<c:forEach begin="1" end="50" varStatus="cnt">
 					<c:forEach items="${sessionScope.list }" var="pc">
 						<c:choose>

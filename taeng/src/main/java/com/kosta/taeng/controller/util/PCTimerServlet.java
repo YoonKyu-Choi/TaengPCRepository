@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.kosta.taeng.Exception.MemberNotFoundException;
+import com.kosta.taeng.Exception.PCNotFoundException;
 import com.kosta.taeng.service.MemberService;
+import com.kosta.taeng.service.PCService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
 import com.kosta.taeng.vo.PC;
 
@@ -19,13 +23,30 @@ public class PCTimerServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		PC pc = (PC) session.getAttribute("pc");
-		Member member = pc.getMember();
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		// 요청파라미터
+		String id = request.getParameter("id");
+		int pcTime = Integer.parseInt(request.getParameter("pcTime"));
+		
+		System.out.println(id+pcTime);
+		System.out.println(pcTime);
+		
+		// 서비스
 		MemberService service = MemberServiceImpl.getInstance();
-		int pcTime = service.selectPCtimeById(member.getId());
-		session.setAttribute("pcTime", pcTime);
-		request.getRequestDispatcher("/pc_timer.jsp").forward(request, response);
+		Member member = service.selectMemberById(id);
+		
+		System.out.println(member.getPcTime());
+		
+		member.setPcTime(pcTime);
+		
+		try {
+			service.updateMember(member);
+		} catch (MemberNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		// 응답
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 }

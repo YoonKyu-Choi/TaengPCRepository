@@ -16,17 +16,17 @@ import com.kosta.taeng.vo.Member;
 @WebServlet("/addmember")
 public class AddMemberServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Member member = (Member) request.getAttribute("member");
-		MemberService service = MemberServiceImpl.getInstance();
-		try {
-			service.insertMember(member);
-		} catch (DuplicatedIdException e) {
-			request.setAttribute("errMsg", e.getMessage());
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
-		}
-		request.getRequestDispatcher("/login.jsp").forward(request, response);
-	}
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      Member member = (Member) request.getAttribute("member");
+      MemberService service = MemberServiceImpl.getInstance();
+      try {
+         service.insertMember(member);
+      } catch (DuplicatedIdException e) {
+         request.setAttribute("errMsg", e.getMessage());
+         //request.getRequestDispatcher("/login.jsp").forward(request, response);
+      }
+      request.getRequestDispatcher("/login.jsp").forward(request, response);
+   }
 }
