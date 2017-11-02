@@ -147,8 +147,6 @@ $(document).ready(function(){
       </div>
    </div>
 </form>
-      
-
    <div class="mainbox">
    	<div class="title">태은이네 PC방</div>
       <div class="box">
