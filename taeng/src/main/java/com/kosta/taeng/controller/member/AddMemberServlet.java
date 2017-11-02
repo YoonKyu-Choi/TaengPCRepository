@@ -25,8 +25,8 @@ public class AddMemberServlet extends HttpServlet {
 			service.insertMember(member);
 		} catch (DuplicatedIdException e) {
 			request.setAttribute("errMsg", e.getMessage());
-			request.getRequestDispatcher("/insert_member.jsp").forward(request, response);
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
 		}
-		request.getRequestDispatcher("/insert_member_result.jsp").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 }

@@ -6,6 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-회원가입이 완료됐습니다.
+회원가입이 완료됐습니다.<br>
+<a href="/taeng/login.jsp">로그인 화면</a>
 </body>
 </html>

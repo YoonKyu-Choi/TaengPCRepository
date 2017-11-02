@@ -22,7 +22,53 @@
 		
 		alert("상품을 추가해주세요.");
 	}
+	
 </script>
+<style>
+	* {
+		margin:0 auto;
+		padding:0;
+		list-style:none;
+		text-decoration:none;
+	}
+	
+	img {
+		width:200px;
+		height:200px;
+	}
+	
+	.items {
+		width:1000px;
+		height:0%;
+		float:left;
+	}
+	
+	
+	.eat {
+		float:left;
+		width:200px;
+		height:300px;
+	}
+	
+	.eat2 {
+		float:right;
+		font-size:15px;
+		width:250px;
+		height:0%;
+		border:1px solid black;
+		line-height:30px;
+	}
+	
+	form > ul > li {
+		text-align:center;
+	}
+	
+	.btn {
+		width:70px;
+		height:40px;
+		font-size:16px;
+	}
+</style>
 </head>
 <body>
 	<div class="sell_content">
@@ -30,7 +76,7 @@
 			<div class="items">
 				<c:forEach items="${requestScope.itemLists}" var="item">
 					<div class="item">
-						<form action="../item/cart" method="post">
+						<form action="../item/cart" method="post"  class="eat">
 							<ul>
 								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
@@ -38,41 +84,41 @@
 								<li><button type="submit">추가</button>
 									<input type="hidden" id="up" name="up" value="+">
 									<button type="submit" id="min" onclick="minus();">감소</button>
-									</li>
+								</li>
 							</ul>
 						</form>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
-		<form action="/item/order" method="post">
-		<div class="item_order">
-			<%
-				HashMap<String, Integer> list = new HashMap<>();
-				list = (HashMap<String, Integer>) session.getAttribute("itemOrder");
-				Item items = new Item();
-				ItemService service = ItemServiceImpl.getInstance();
-				
-			%>
-			<%if(list == null){%>
-				
-			<%}else{
-				for (String item : list.keySet()) {
-					items = service.findItemByName(item);
-			%>
-			상품명 : <%=items.getItemName()%> |
-			<%=items.getItemPrice()%>원 |
-			<%if(list.get(item)>=0){ %>
-			<%=list.get(item)%>개
-			<input type="hidden" name="itemName" value="<%=list.get(item)%>">
-			<input type="hidden" name="itemStock" value="<%=items.getItemName()%>">
-			<%		
+		<form action="/item/order" method="post" class="eat2">
+			<div class="item_order">
+				<%
+					HashMap<String, Integer> list = new HashMap<>();
+					list = (HashMap<String, Integer>) session.getAttribute("itemOrder");
+					Item items = new Item();
+					ItemService service = ItemServiceImpl.getInstance();
+					
+				%>
+				<%if(list == null){%>
+					
+				<%}else{
+					for (String item : list.keySet()) {
+						items = service.findItemByName(item);
+				%>
+				상품명 : <%=items.getItemName()%> |
+				<%=items.getItemPrice()%>원 |
+				<%if(list.get(item)>=0){ %>
+				<%=list.get(item)%>개<br>
+				<input type="hidden" name="itemName" value="<%=list.get(item)%>">
+				<input type="hidden" name="itemStock" value="<%=items.getItemName()%>">
+				<%		
+						}
 					}
 				}
-			}
-			%>
-		</div>
-		<button>주문하기</button>
+				%>
+			</div>
+		<button class="btn">주문하기</button>
 	</form>
 	</div>
 </body>

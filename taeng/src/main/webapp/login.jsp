@@ -99,17 +99,22 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
+<c:if test="${requestScope.errMsg != null}">
+	<span style="color:red">${requestScope.errMsg }</span><br>
+</c:if>
+<form action="/taeng/add_forward.jsp" method="post">
 	<div class="my">
 		<div class="information">
-			NAME : &nbsp;<input type="text" name="name" id="name" class="up" placeholder="NAME"/><br>
-			I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D : &nbsp;<input type="text" name="id" id="id" class="up" placeholder="ID"/><br>
-			P&nbsp;&nbsp;&nbsp;&nbsp;W : &nbsp;<input type="password" name="pw" id="pw" class="up" placeholder="PASSWORD"/><br>
-			EMAIL : &nbsp;<input type="email" name="email" id="email" class="up" placeholder="EMAIL"/><br>
-			전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"><br>
-			주민번호 : <input type="number" name="personNum" id="personNum" class="up" placeholder="PERSONNUM"><br>
-			<button id="done">완료</button>
+			NAME : &nbsp;<input type="text" name="name" id="name" class="up" placeholder="NAME" required/><br>
+			I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D : &nbsp;<input type="text" name="id" id="id" class="up" placeholder="ID" required/><br>
+			P&nbsp;&nbsp;&nbsp;&nbsp;W : &nbsp;<input type="password" name="password" id="password" class="up" placeholder="PASSWORD" required/><br>
+			전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"/><br>
+			주민번호 : <input type="number" name="personNum" id="personNum" class="up" placeholder="PERSONNUM" required/><br>
+			<input type="hidden" name="pcTime" value="0">
+			<input type="submit" value="등록">
 		</div>
 	</div>
+</form>
 		
 
 	<div class="mainbox">
