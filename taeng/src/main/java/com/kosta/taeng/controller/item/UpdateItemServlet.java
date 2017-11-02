@@ -1,4 +1,4 @@
-package com.kosta.taeng.controller;
+package com.kosta.taeng.controller.item;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,18 +15,20 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.kosta.taeng.Exception.ItemNotFoundException;
 import com.kosta.taeng.service.ItemService;
 import com.kosta.taeng.service.impl.ItemServiceImpl;
 import com.kosta.taeng.vo.Item;
 
 /**
- * Servlet implementation class AddServlet
+ * Servlet implementation class UpdateItemServlet
  */
-@WebServlet("/item/addItem")
-public class AddItemServlet extends HttpServlet {
+@WebServlet("/item/updateItem")
+public class UpdateItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		ItemService service = ItemServiceImpl.getInstance();
 		String imageDir = getServletContext().getRealPath("/itemImage");
 		ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
@@ -54,9 +56,12 @@ public class AddItemServlet extends HttpServlet {
 				} // else
 			} // for
 			service.insertItem(item);
-			service.addItem(item);
+			service.updateItemByName(item);
 			request.getRequestDispatcher("/test_result.jsp").forward(request, response);
-		} catch (Exception e) {
+		}catch(ItemNotFoundException itemException) {
+			request.setAttribute("errMsg", itemException.getMessage());
+			request.getRequestDispatcher("/item_test.jsp").forward(request, response);
+		}catch (Exception e) {
 			e.printStackTrace();// 처리
 			throw new ServletException(e);
 		}

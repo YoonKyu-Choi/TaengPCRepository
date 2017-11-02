@@ -1,4 +1,4 @@
-package com.kosta.taeng.controller;
+package com.kosta.taeng.controller.login;
 
 import java.io.IOException;
 

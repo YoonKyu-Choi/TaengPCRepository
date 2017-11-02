@@ -1,4 +1,4 @@
-package com.kosta.taeng.controller;
+package com.kosta.taeng.controller.item;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,11 +14,12 @@ import com.kosta.taeng.service.impl.ItemServiceImpl;
 import com.kosta.taeng.vo.Item;
 
 /**
- * Servlet implementation class SelectAllItemServlet
+ * Servlet implementation class ItemListServlet
  */
-@WebServlet("/item/selectAllItem")
-public class SelectAllItemServlet extends HttpServlet {
+@WebServlet("/item/itemLists")
+public class ItemListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,8 +27,9 @@ public class SelectAllItemServlet extends HttpServlet {
 		Item item = new Item();
 		
 		List<Item> list = service.getItemList();
-		request.setAttribute("itemList", list);
-		request.getRequestDispatcher("/item_list.jsp").forward(request, response);
+		request.setAttribute("itemLists", list);
+		request.getRequestDispatcher("/item_sell.jsp").forward(request, response);
+		
 	}
 
 }

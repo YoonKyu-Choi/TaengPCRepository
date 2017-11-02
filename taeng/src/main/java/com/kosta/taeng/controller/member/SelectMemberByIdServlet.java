@@ -1,4 +1,4 @@
-package com.kosta.taeng.controller;
+package com.kosta.taeng.controller.member;
 
 import java.io.IOException;
 
@@ -8,25 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kosta.taeng.Exception.DuplicatedIdException;
 import com.kosta.taeng.service.MemberService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
 import com.kosta.taeng.vo.Member;
 
-@WebServlet("/addmember")
-public class AddMemberServlet extends HttpServlet {
+@WebServlet("/selectmemberbyid")
+public class SelectMemberByIdServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Member member = (Member) request.getAttribute("member");
+		String id = request.getParameter("id");
 		MemberService service = MemberServiceImpl.getInstance();
-		try {
-			service.insertMember(member);
-		} catch (DuplicatedIdException e) {
-			request.setAttribute("errMsg", e.getMessage());
-			request.getRequestDispatcher("/insert_member.jsp").forward(request, response);
-		}
-		request.getRequestDispatcher("/insert_member_result.jsp").forward(request, response);
+		Member member = service.selectMemberById(id);
+		request.setAttribute("member", member);
+		request.getRequestDispatcher("/select_member_id_result.jsp").forward(request, response);
 	}
 }

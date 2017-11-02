@@ -1,4 +1,4 @@
-package com.kosta.taeng.controller;
+package com.kosta.taeng.controller.item;
 
 import java.io.IOException;
 import java.util.Date;

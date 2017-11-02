@@ -1,4 +1,4 @@
-package com.kosta.taeng.controller;
+package com.kosta.taeng.controller.sales;
 
 import java.io.IOException;
 import java.util.Map;
