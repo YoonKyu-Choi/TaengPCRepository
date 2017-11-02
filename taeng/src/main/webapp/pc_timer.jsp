@@ -19,16 +19,11 @@
 			int time = member.getPcTime();%>
 	var time = <%=time%>
 	function pcTimer() {
-		time = time <= 0 ? alert('종료') : time -= 1;
+		time = time <= 0 ? alert('시간 종료')  : time -= 1;
 		document.getElementById("timeid").innerHTML = "<b>" + time + "</b>";
 	}
 	$(document).ready(function() {
-		var pcTime = setInterval(pcTimer, 60000);
-		/* 		setInterval(function(){
-		
-		 alert(now);
-		
-		 },1000); */
+		var pcTime = setInterval(pcTimer, 1000);
 	});
 </script>
 </head>
