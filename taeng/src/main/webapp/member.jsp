@@ -36,6 +36,7 @@
 	});
 </script>
 <style>
+<<<<<<< HEAD
 * {
 	margin: 0 auto;
 	padding: 0;
@@ -63,6 +64,37 @@ header {
 }
 
 /* .add {
+=======
+	
+	* {
+		margin:0 auto;
+		padding:0;
+		list-style:none;
+		text-decoration:none;
+	}
+	
+	.clear {
+		clear:both;
+	}
+	
+	body {
+		background-image:url("image/image.png");
+	}
+	
+	header {
+		width:100%;
+		height:0%;
+	}
+	
+	
+	.top {
+		width:850px;
+		height:300px;
+		float:right;
+	}
+	
+	/* .add {
+>>>>>>> branch 'master' of https://github.com/YoonKyu-Choi/TaengPcRepository.git
 		width:150px;
 		height:50px;
 		text-align:center;
@@ -195,10 +227,8 @@ button {
 					</li>
 				</ul>
 				<div class="btn">
-					<button id="latter">쪽지</button>
-					<br>
-					<button id="move">자리이동</button>
-					<br>
+					<button id="letter">쪽지</button><br>
+					<button id="move">자리이동</button><br>
 					<button id="logout" onclick='window.close()'>종료</button>
 				</div>
 			</div>
