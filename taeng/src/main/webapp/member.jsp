@@ -169,7 +169,7 @@
 			</div>
 			<div class="log">
 				<ul>
-					<li>자리번호 : </li>
+					<li>자리번호 : ${requestScope.seat }</li>
 					<li>이름 : </li>
 					<li>남은시간 : </li>
 				</ul>

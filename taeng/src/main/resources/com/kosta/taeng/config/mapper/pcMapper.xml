@@ -5,6 +5,7 @@
 	<resultMap type="pc" id="pc-resultmap">
 		<id column="pc_num" property="pcNum"/>
 		<result column="pc_cost" property="pcCost"/>
+		<result column="member_id" property="id"/>
 	</resultMap>
 
 	<resultMap type="pc" id="pc-join-member-resultmap" extends="pc-resultmap">
@@ -18,9 +19,16 @@
 		</association>
 	</resultMap>
 	
-	<select id="selectPCByNum" resultMap="pc-join-member-resultmap" parameterType="_int">
-		select p.pc_num, p.pc_cost, m.member_id, m.member_name, m.member_pctime
-		from pc p, member m where p.member_id = m.member_id
+	<select id="selectPCByNum" parameterType="_int" resultMap="pc-resultmap">
+		select pc_num , pc_cost , member_id
+		from pc 
+		where pc_num = #{value}
+	</select>
+	
+	<select id="selectPcNull" resultType="int">
+		select pc_num
+		from pc
+		where member_id is null
 	</select>
 	
 	<update id="updatePC" parameterType="pc">
