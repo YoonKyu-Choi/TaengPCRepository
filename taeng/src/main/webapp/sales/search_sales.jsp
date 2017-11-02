@@ -156,7 +156,7 @@ body {
 
 	<div class="sidenav">
 	<br><br><br><br><br>
-		<a id="menu1">날짜로 조회</a>
+		 <a id="menu1">날짜로 조회</a>
 		 <a id="menu2">전체 매출 목록 조회</a> 
 		 <a id="menu3">전체매출 조회</a> 
 		 <a id="menu4">PC요금 조회</a> 

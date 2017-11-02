@@ -1,5 +1,4 @@
 package com.kosta.taeng.common.util;
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Frame;
@@ -14,10 +13,14 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
-
-public class MsgAdminServer extends Frame implements ActionListener, Runnable { 
+public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 	// 이벤트를 처리하기 위한 액션뭐시기, 보내기 받기를 동시에 하기 위한 러너블
 	private static final long serialVersionUID = 1L;
 
@@ -32,14 +35,45 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 	private ServerSocket ss;
 	private Socket sc;
 
-	private String ip = null;
 	private String str;
 
 	BufferedReader br;
 	PrintWriter pw;
 
+	private static Connection conn = null;
+	private static Statement stmt = null;
+	private static ResultSet rset = null;
+	
+
 	public static void main(String[] args) {
-		new MsgAdminServer().serverStart();
+		try {
+		
+			new MsgAdminServer().serverStart();
+		
+		
+		} finally {
+			if (rset != null) {
+				try {
+					rset.close();
+				} catch (SQLException e3) {
+					e3.printStackTrace();
+				}
+			}
+			if (stmt != null) {
+				try {
+					stmt.close();
+				} catch (SQLException e4) {
+					e4.printStackTrace();
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e5) {
+					e5.printStackTrace();
+				}
+			}
+		}
 	}
 
 	public MsgAdminServer() {
@@ -65,10 +99,13 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 		try {
 			// 서버소켓을 생성한다. 1.
 			ss = new ServerSocket(port);
-			ta.setText("메세지를 켰습니다. \n");
+			ta.setText("메세지 프로그램을 실행했습니다. \n");
+			
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "taeng", "9999");
+			stmt = conn.createStatement();
+			rset = stmt.executeQuery("select member_pcnum from member");
 
 			while (true) {
-
 				// 클라이언트가 접속해서 들어오기를 기다린다.
 				// 클라이언트가 접속할때까지 접속이 멈춰있다가 클라이언트 접속시 깨어난다.
 				sc = ss.accept();
@@ -84,7 +121,6 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 
 	@Override
 	public void run() {
-
 	}
 
 	@Override
@@ -105,7 +141,7 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 
 				// 서버가 채팅을 클라이언트에게 보낸다
 				pw = new PrintWriter(sc.getOutputStream(), true);
-				pw.println(" Admin : " + s); 
+				pw.println(" Admin : " + s);
 
 				ta.append(" Admin : " + s + "\n");
 				tf.setText("");
@@ -123,6 +159,8 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 		Socket sc;
 		BufferedReader br;
 		PrintWriter pw;
+		int pcNum;
+		String memberId;
 
 		public ManageClient(Socket sc) {
 			this.sc = sc;
@@ -130,16 +168,17 @@ public class MsgAdminServer extends Frame implements ActionListener, Runnable {
 
 		@Override
 		public void run() {
-			int pcNum = 10;
+
 			// 여긴 Client가 보낸 문자를 읽는 부분
 			try {
+				
 
 				// 접속한 클라이언트가 없으면
 				if (sc == null)
 					return;
 
-				// 접속한 클라이언트의 IP주소 얻기
-
+				if (rset.next()) 
+					pcNum = rset.getInt(1);
 				ta.append(pcNum + " 번 회원이 메세지를 입력 중입니다. \n");
 
 				// 클라이언트가 보낸정보를 읽어 들이는 입력 스트림
