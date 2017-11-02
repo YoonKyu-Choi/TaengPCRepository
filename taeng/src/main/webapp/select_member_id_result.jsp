@@ -11,6 +11,8 @@ ID : ${requestScope.member.id }<br>
 주민번호 : ${requestScope.member.personNum}<br>
 비밀번호 : ${requestScope.member.password }<br>
 이름 : ${requestScope.member.name }<br>
-남은 시간 : ${requestScope.member.pcTime }
+남은 시간 : ${requestScope.member.pcTime }<br>
+<a href="/taeng/admin.jsp">관리자 페이지로 돌아가기</a>
+<a href="/taeng/manage_member.jsp">이전 페이지로 돌아가기</a>
 </body>
 </html>

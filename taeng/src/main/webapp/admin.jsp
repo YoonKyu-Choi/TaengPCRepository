@@ -6,7 +6,13 @@
 <meta charset="UTF-8">
 <title>Admin</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
-<script></script>
+<script>
+$(document).ready(function(){
+	$(".box").click(function(){
+		$(this).css({"border":"1px solid red"});
+	});
+});
+</script>
 <style>
 	* {
 		margin:0 auto;
@@ -42,10 +48,9 @@
 		border-radius:10px;
 		background-color:#cecece;
 		box-shadow:0px 0px 10px white;
+		cursor:pointer;
 	}
 	
-	.box:
-
 	.bottom {
 		width:700px;
 		height:50px;
@@ -83,16 +88,9 @@
 <body>
 	<div class="contents">
 		<div class="sit">
-			<div class="box" id="box1"></div><div class="box" id="box2"></div><div class="box" id="box3"></div><div class="box" id="box4"></div><div class="box" id="box5"></div>
-			<div class="box" id="box6"></div><div class="box" id="box7"></div><div class="box" id="box8"></div><div class="box" id="box9"></div><div class="box" id="box10"></div>
-			<div class="box" id="box11"></div><div class="box" id="box12"></div><div class="box" id="box13"></div><div class="box" id="box14"></div><div class="box" id="box15"></div>
-			<div class="box" id="box16"></div><div class="box" id="box17"></div><div class="box" id="box18"></div><div class="box" id="box19"></div><div class="box" id="box20"></div>
-			<div class="box" id="box21"></div><div class="box" id="box22"></div><div class="box" id="box23"></div><div class="box" id="box24"></div><div class="box" id="box25"></div>
-			<div class="box" id="box26"></div><div class="box" id="box27"></div><div class="box" id="box28"></div><div class="box" id="box29"></div><div class="box" id="box30"></div>
-			<div class="box" id="box31"></div><div class="box" id="box32"></div><div class="box" id="box33"></div><div class="box" id="box34"></div><div class="box" id="box35"></div>
-			<div class="box" id="box36"></div><div class="box" id="box37"></div><div class="box" id="box38"></div><div class="box" id="box39"></div><div class="box" id="box40"></div>
-			<div class="box" id="box41"></div><div class="box" id="box42"></div><div class="box" id="box43"></div><div class="box" id="box44"></div><div class="box" id="box45"></div>
-			<div class="box" id="box46"></div><div class="box" id="box47"></div><div class="box" id="box48"></div><div class="box" id="box49"></div><div class="box" id="box50"></div>
+			<c:forEach var="i" begin="1" end="50">
+				<div class="box" id="box1"></div>
+			</c:forEach>
 		</div>
 	</div>
 	<div class="clear"></div>
@@ -101,9 +99,9 @@
 		<div class="option">
 			<ul>
 				<li class="one">화면</li>
-				<li class="one">회원</li>
+				<li class="one"><a href="/taeng/manage_member.jsp">회원</a></li>
 				<li class="one">재고</li>
-				<li class="one">매상</li>
+				<li class="one"><a href="/taeng/sales/search_sales.jsp">매상</a></li>
 			</ul>
 		</div>
 	</div>

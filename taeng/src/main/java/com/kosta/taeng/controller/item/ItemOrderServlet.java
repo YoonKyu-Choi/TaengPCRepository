@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kosta.taeng.Exception.ItemNotFoundException;
 import com.kosta.taeng.service.ItemService;
 import com.kosta.taeng.service.SalesService;
 import com.kosta.taeng.service.impl.ItemServiceImpl;
@@ -30,6 +31,12 @@ public class ItemOrderServlet extends HttpServlet {
 		ItemService itemService = ItemServiceImpl.getInstance();
 		
 		Item item = itemService.findItemByName(itemName);
+		item.setItemStock(item.getItemStock()-Integer.parseInt(itemStock));
+		try {
+			itemService.updateItemByName(item);
+		} catch (ItemNotFoundException e) {
+			e.printStackTrace();
+		}
 		salesService.doSales(new Date(), 0, item.getItemPrice()*(Integer.parseInt(itemStock)));
 		request.getRequestDispatcher("");
 		request.getSession().invalidate();

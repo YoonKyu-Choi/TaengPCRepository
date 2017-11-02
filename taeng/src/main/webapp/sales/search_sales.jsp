@@ -97,30 +97,24 @@ form {
 			</form>
 		</div>
 		<div class="box">
-			<form>
-				<br> <a href="/taeng/sales/allSales?select=all"> <span class="lookup">전체매출조회</span></a>
+			<form action="/taeng/sales/allSales" method="post">
+				<br>
+				<input type="hidden" name="select" value="all">
+				<button>전체매출조회</button>
 			</form>
 		</div>
 		<div class="box">
-			<form>
-				<a href="/taeng/sales/allSales?select=pc"> <span class="lookup">PC요금매출조회</span></a><br>
+			<form action="/taeng/sales/allSales" method="post">
 				<br>
-				<br> <a href="/taeng/sales/allSales?select=item"> <span class="lookup">상품요금매출조회</span></a>
+				<input type="hidden" name="select" value="pc">
+				<button>PC요금조회</button>
+			</form>
+			<form action="/taeng/sales/allSales" method="post">
+				<br>
+				<input type="hidden" name="select" value="item">
+				<button>상품요금조회</button>
 			</form>
 		</div>
 	</div>
-		<div class="resultBox">
-			<c:if test="${requestScope.allSales!=null }">
-				<span>전체요금 : ${requestScope.allSales }</span>
-				<br>
-			</c:if>
-			<c:if test="${requestScope.pcSales!=null }">
-				<span>PC 요금 : ${requestScope.pcSales }</span>
-				<br>
-			</c:if>
-			<c:if test="${requestScope.itemSales!=null }">
-				<span>상품요금 : ${requestScope.itemSales }</span>
-			</c:if>
-		</div>
 </body>
 </html>

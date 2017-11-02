@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 				if (member.getPcTime() == 0) {
 					request.setAttribute("errMsg", "요금 충전 후 사용해주세요.");
 				} else if (member.getPcTime() > 0) {
-					response.sendRedirect("/taeng/member_main.jsp");
+					response.sendRedirect("/taeng/member.jsp");
 				}
 			} else {
 				request.setAttribute("errMsg", "비밀번호가 틀립니다.");
