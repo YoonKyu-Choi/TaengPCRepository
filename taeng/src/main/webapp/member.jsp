@@ -40,7 +40,7 @@
 	
 	
 	.top {
-		width:800px;
+		width:850px;
 		height:300px;
 		float:right;
 	}
@@ -174,7 +174,7 @@
 					<li>남은시간 : </li>
 				</ul>
 				<div class="btn">
-					<button id="latter">쪽지</button><br>
+					<button id="letter">쪽지</button><br>
 					<button id="move">자리이동</button><br>
 					<button id="logout" onclick='window.close()'>종료</button>
 				</div>

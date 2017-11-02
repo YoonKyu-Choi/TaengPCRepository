@@ -10,18 +10,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 	function minus(){
-		var a = document.getElementById("up");
-		
-		a.value="-";
+		document.getElementById("up").value="-";
 	}
-	function errer(){
-		var a = document.getElementById("error");
-		var b = document.getElementById("min");
-		
-		alert("상품을 추가해주세요.");
-	}
+
 	
 </script>
 <style>
@@ -81,9 +75,10 @@
 								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
 								<li>가격 : ${item.itemPrice}</li>
-								<li><button type="submit">추가</button>
+								<li>
+									<button type="submit">추가</button>
 									<input type="hidden" id="up" name="up" value="+">
-									<button type="submit" id="min" onclick="minus();">감소</button>
+									<button type="submit" onclick="minus();">감소</button>
 								</li>
 							</ul>
 						</form>

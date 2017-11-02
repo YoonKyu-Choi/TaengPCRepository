@@ -95,13 +95,22 @@ $(document).ready(function(){
       text-align:center;
       cursor:pointer;
    }
-
+   
+   .error {
+   	  text-align:center;
+   	  width:200px;
+   	  height:40px;
+   	  line-height:40px;
+   	  background-color:white;
+   }
 </style>
 </head>
 <body>
-<c:if test="${requestScope.errMsg != null}">
-   <span style="color:red">${requestScope.errMsg }</span><br>
-</c:if>
+	<c:if test="${requestScope.errMsg != null}">
+		<div class="error">
+		 	 <span style="color:red">${requestScope.errMsg }</span><br>
+		</div>
+	</c:if>
 <form action="/taeng/add_forward.jsp" method="post">
    <div class="my">
       <div class="information">
