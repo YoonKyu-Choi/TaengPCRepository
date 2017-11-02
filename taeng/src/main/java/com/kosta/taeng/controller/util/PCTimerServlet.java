@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.kosta.taeng.Exception.PCNotFoundException;
 import com.kosta.taeng.service.MemberService;
+import com.kosta.taeng.service.PCService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
 import com.kosta.taeng.vo.PC;
 
@@ -19,13 +22,24 @@ public class PCTimerServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		PC pc = (PC) session.getAttribute("pc");
-		Member member = pc.getMember();
-		MemberService service = MemberServiceImpl.getInstance();
-		int pcTime = service.selectPCtimeById(member.getId());
-		session.setAttribute("pcTime", pcTime);
+		MemberService mservice = MemberServiceImpl.getInstance();
+		PCService pservice = PCServiceImpl.getInstance();
+		
+		mservice.selectMemberById("id1");
+		
+		try {
+			pservice.selectPCByNum(1);
+			
+		} catch (PCNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+//		session.setAttribute("pcTime", pcTime);
 		request.getRequestDispatcher("/pc_timer.jsp").forward(request, response);
 	}
 }

@@ -12,8 +12,8 @@
 <title>Insert title here</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
-	function minus(){
-		document.getElementById("up").value="-";
+	function minus(btn){
+		btn.previousSibling.previousSibling.value="-";
 	}
 
 	
@@ -78,7 +78,7 @@
 								<li>
 									<button type="submit">추가</button>
 									<input type="hidden" id="up" name="up" value="+">
-									<button type="submit" onclick="minus();">감소</button>
+									<button type="submit" id="min" onclick="minus(this);">감소</button>
 								</li>
 							</ul>
 						</form>

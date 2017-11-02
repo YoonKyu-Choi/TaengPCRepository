@@ -59,14 +59,26 @@ $(document).ready(function(){
       font-size:20px;
    }
    
-   #btn {
-      width:300px;
+   #btn1 {
+      width:200px;
       height:50px;
       border:none;
       background-color:green;
       color:white;
       font-size:20px;
       cursor:pointer;
+      border-right:2px solid white;
+   }
+   
+   #btn2 {
+      width:90px;
+      height:50px;
+      border:none;
+      background-color:green;
+      color:white;
+      font-size:20px;
+      cursor:pointer;
+      margin-left:10px;
    }
 
    .my {
@@ -131,7 +143,7 @@ $(document).ready(function(){
          <form action="/taeng/login" method="post">
             <input type="text" id="id" name="id" placeholder="ID"/><br>
             <input type="password" id="pw" name="pw" placeholder="PassWord"/><br>
-            <button id="btn">LOGIN</button><br>
+            <button id="btn1">LOGIN</button><button id="btn2">결제</button><br>
          </form>
          <span id="sign">Sign Up</span>
       </div>
