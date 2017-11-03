@@ -107,6 +107,5 @@ $(document).ready(function(){
 		</div>
 		</c:if>
 	</div>
-
 </body>
 </html>
