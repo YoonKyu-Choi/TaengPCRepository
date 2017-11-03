@@ -32,7 +32,7 @@ $(document).ready(function(){
    }
    
    body{
-      background-color:#2cb74a;
+      background-color:#100e0e;
    }
    
    a {
@@ -68,7 +68,7 @@ $(document).ready(function(){
       width:200px;
       height:50px;
       border:none;
-      background-color:green;
+      background-color:#a499ca;
       color:white;
       font-size:20px;
       cursor:pointer;
@@ -79,7 +79,7 @@ $(document).ready(function(){
       width:90px;
       height:50px;
       border:none;
-      background-color:green;
+      background-color:#a499ca;
       color:white;
       font-size:20px;
       cursor:pointer;
