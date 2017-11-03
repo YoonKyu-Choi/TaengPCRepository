@@ -154,7 +154,7 @@ body {
 			<h2>&nbsp;&nbsp;&nbsp;&nbsp;상품&nbsp;추가</h2>
 		</div>
 		<br>
-		<form action="/item/addItem" method="post">
+		<form action="/taeng/item/addItem" method="post" enctype="multipart/form-data">
 			이름 : <input type="text" name="itemName"><br> 
 			가격 : <input type="number" name="itemPrice"><br> 
 			수량 : <input type="number" name="itemStock"><br> 
@@ -175,7 +175,7 @@ body {
 
 	<div class="content3">
 		<h2>상품 수정</h2>
-			<form action='<c:url value="/item/updateItem"/>' method="post">
+			<form action='<c:url value="/item/updateItem"/>' method="post" enctype="multipart/form-data">
 				이름 : <input type="text" name="itemName"><br> 
 				가격 : <input type="number" name="itemPrice"><br> 
 				수량 : <input type="number" name="itemStock"><br> 
