@@ -60,7 +60,7 @@ public class LoginPayServlet extends HttpServlet {
 		Date date = new Date();
 		try {
 			mService.updateMember(member);
-			sService.doSales(date, Integer.parseInt(hour)*60, 0);
+			sService.doSales(date, Integer.parseInt(hour)*1000, 0);
 		} catch (MemberNotFoundException e) {
 			e.printStackTrace();
 		}
