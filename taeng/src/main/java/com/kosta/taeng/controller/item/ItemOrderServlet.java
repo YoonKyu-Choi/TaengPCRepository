@@ -38,6 +38,7 @@ public class ItemOrderServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		salesService.doSales(new Date(), 0, item.getItemPrice()*(Integer.parseInt(itemStock)));
+		request.getSession().invalidate();
 		request.getRequestDispatcher("/member.jsp").forward(request, response);
 		
 	}
