@@ -150,7 +150,7 @@ body {
 		<a id="menu3">상품 수정</a> 
 		<a id="menu4">상품 삭제</a> 
 		
-		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin.jsp'">관리자
+		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">관리자
 			페이지 이동</button>
 	</div>
 	

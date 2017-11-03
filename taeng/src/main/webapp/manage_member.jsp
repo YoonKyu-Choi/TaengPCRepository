@@ -141,7 +141,7 @@ body {
       <a id="menu2">이름으로 회원 조회하기</a>
       <a id="menu3">회원 정보 수정</a>
       <br><br>
-      &nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin.jsp'">관리자
+      &nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">관리자
 			페이지 이동</button>
    </div>
    <div class="content1">
