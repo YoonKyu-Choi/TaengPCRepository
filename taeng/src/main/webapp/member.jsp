@@ -34,7 +34,7 @@
 		document.getElementById("pcTime3").value = time;
 	}
 	$(document).ready(function() {
-		var pcTime = setInterval(pcTimer, 1000);
+		var pcTime = setInterval(pcTimer, 60000);
 	});
 	
 	var openItemOrder;
@@ -196,7 +196,7 @@ button {
 					<li>남은시간 :
 						<form id="form" method="post" action="/taeng/pctimer">
 							<span id="timeid">${requestScope.map.member.pcTime}</span> 
-							<input type="hidden" id="pcTime" name="pcTime" value="">
+							<input type="hidden" id="pcTime" name="pcTime" value="${requestScope.map.member.pcTime}">
 							<input type="hidden" name="id" value="${requestScope.map.member.id }">
 						</form>
 					</li>
@@ -204,12 +204,12 @@ button {
 				<div class="btn">
 					<button id="letter">쪽지</button><br>
 					<form method="post" action="/taeng/move">
-					<input type="hidden" id="pcTime2" name="pcTime" value="">
+					<input type="hidden" id="pcTime2" name="pcTime" value="${requestScope.map.member.pcTime}">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
 					<button id="move">자리이동</button><br>
 					</form>
 					<form method="post" action="/taeng/logout">
-					<input type="hidden" id="pcTime3" name="pcTime" value="">
+					<input type="hidden" id="pcTime3" name="pcTime" value="${requestScope.map.member.pcTime}">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
 					<input type="hidden" name="seatNumber" value="${requestScope.map.seatnum }">
 					<button id="logout" onclick='window.close()'>종료</button>

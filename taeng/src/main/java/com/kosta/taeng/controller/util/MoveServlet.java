@@ -18,8 +18,9 @@ public class MoveServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id =  request.getParameter("id");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
 		String pauseTime = request.getParameter("pcTime");
 		if (pauseTime == null) {
 			pauseTime = "0";
