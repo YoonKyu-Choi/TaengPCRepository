@@ -15,6 +15,7 @@ $(document).ready(function(){
    $("#done").click(function(){
       $(".my").hide();
    });
+   
 });
 </script>
 <style type="text/css">
