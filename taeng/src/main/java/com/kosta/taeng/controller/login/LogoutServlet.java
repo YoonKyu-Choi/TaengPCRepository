@@ -11,7 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import com.kosta.taeng.Exception.MemberNotFoundException;
 import com.kosta.taeng.service.MemberService;
+import com.kosta.taeng.service.PCService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
 import com.kosta.taeng.vo.PC;
 
@@ -24,14 +26,17 @@ public class LogoutServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String id =  request.getParameter("id");
 		String pauseTime = request.getParameter("pcTime");
+		String seatNum = request.getParameter("seatNumber");
 		if (pauseTime == null) {
 			pauseTime = "0";
 		}
 		MemberService service = MemberServiceImpl.getInstance();
+		PCService pcService = PCServiceImpl.getInstance();
 		Member member = service.selectMemberById(id);
 		try {
 			member.setPcTime(Integer.parseInt(pauseTime));
 			service.updateMember(member);
+			pcService.updatePC(new PC(Integer.parseInt(seatNum), 0, null));
 		} catch (MemberNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -38,32 +38,33 @@
 	});
 </script>
 <style>
-   * {
-      margin:0 auto;
-      padding:0;
-      list-style:none;
-      text-decoration:none;
-   }
-   
-   .clear {
-      clear:both;
-   }
-   
-   body {
-      background-image:url("image/image.png");
-   }
-   
-   header {
-      width:100%;
-      height:0%;
-   }
-   
-   
-   .top {
-      width:850px;
-      height:300px;
-      float:right;
-   }
+
+	* {
+		margin:0 auto;
+		padding:0;
+		list-style:none;
+		text-decoration:none;
+	}
+	
+	.clear {
+		clear:both;
+	}
+	
+	body {
+		background-image:url("image/image.png");
+	}
+	
+	header {
+		width:100%;
+		height:0%;
+	}
+	
+	
+	.top {
+		width:850px;
+		height:300px;
+		float:right;
+	}
 
 
 .log {
@@ -83,6 +84,12 @@
    float:left;
 }
 
+.log > ul > li {
+	width:150px;
+	float:left;
+	margin-left:10px;
+}
+
 button {
    font-size: 16px;
    margin-left: 15px;
@@ -92,15 +99,16 @@ button {
 }
 
 #thing {
-   width: 150px;
-   height: 50px;
-   text-align: center;
-   float: left;
-   font-size: 20px;
-   border-radius: 5px;
-   background-color: black;
-   color: white;
-   cursor: pointer;
+	width: 150px;
+	height: 50px;
+	text-align: center;
+	float: left;
+	font-size: 20px;
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	margin-left:50px;
 }
 
 .contents {
@@ -155,10 +163,10 @@ button {
 }
 
 #form {
-      width:50px;
-      height:50px;
-      float:right;
-   }
+   	width:50px;
+   	height:50px;
+   	float:right;
+}
 </style>
 </head>
 
@@ -171,7 +179,6 @@ button {
 	<header>
 		<div class="top">
 			<div class="add">
-				<!-- <span id="thing"><img src="image/eat.png">상품구매</span> -->
 				<form action='<c:url value="/item/itemLists"/>' method="post">
 					<button id="thing">상품 주문</button>
 				</form>
@@ -198,6 +205,7 @@ button {
 					<form method="post" action="/taeng/logout">
 					<input type="hidden" id="pcTime3" name="pcTime" value="">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
+					<input type="hidden" name="seatNumber" value="${requestScope.map.seatnum }">
 					<button id="logout" onclick='window.close()'>종료</button>
 					</form>
 				</div>
@@ -209,19 +217,19 @@ button {
 	<div class="contents">
 		<div class="image">
 			<div class="icon" id="pc">
-				<img src="image/pc.png">
+				<img src="${pageContext.request.contextPath}/image/pc.png">
 			</div>
 			<div class="icon" id="cd">
-				<img src="image/cd.png">
+				<img src="${pageContext.request.contextPath}/image/cd.png">
 			</div>
 			<div class="icon" id="internet">
-				<img src="image/internet.png">
+				<img src="${pageContext.request.contextPath}/image/internet.png">
 			</div>
 			<div class="icon" id="message">
-				<img src="image/message.png">
+				<img src="${pageContext.request.contextPath}/image/message.png">
 			</div>
 			<div class="icon" id="utility">
-				<img src="image/utility.png">
+				<img src="${pageContext.request.contextPath}/image/utility.png">
 			</div>
 		</div>
 	</div>
