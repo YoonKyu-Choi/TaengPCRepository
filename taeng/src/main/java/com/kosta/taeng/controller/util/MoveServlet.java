@@ -1,7 +1,6 @@
-package com.kosta.taeng.controller.login;
+package com.kosta.taeng.controller.util;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,22 +16,23 @@ import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
 import com.kosta.taeng.vo.PC;
 
-@WebServlet("/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/move")
+public class MoveServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String id =  request.getParameter("id");
+		String id = request.getParameter("id");
 		String pauseTime = request.getParameter("pcTime");
 		String seatNum = request.getParameter("seatNumber");
+		
 		if (pauseTime == null) {
 			pauseTime = "0";
 		}
 		MemberService service = MemberServiceImpl.getInstance();
-		PCService pcService = PCServiceImpl.getInstance();
 		Member member = service.selectMemberById(id);
+		PCService pcService = PCServiceImpl.getInstance();
 		try {
 			member.setPcTime(Integer.parseInt(pauseTime));
 			service.updateMember(member);
@@ -41,6 +41,6 @@ public class LogoutServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/choice_seat.jsp").forward(request, response);
 	}
 }

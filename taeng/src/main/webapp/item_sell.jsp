@@ -15,8 +15,6 @@
 	function minus(btn){
 		btn.previousSibling.previousSibling.value="-";
 	}
-
-	
 </script>
 <style>
 	* {
@@ -70,7 +68,7 @@
 			<div class="items">
 				<c:forEach items="${requestScope.itemLists}" var="item">
 					<div class="item">
-						<form action="../item/cart" method="post"  class="eat">
+						<form id="itemOrderList" action="../item/cart" method="post"  class="eat">
 							<ul>
 								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
@@ -93,15 +91,15 @@
 					list = (HashMap<String, Integer>) session.getAttribute("itemOrder");
 					Item items = new Item();
 					ItemService service = ItemServiceImpl.getInstance();
-					
+					session.setAttribute("itemOrder", list);
 				%>
-				<%if(list == null){%>
+				<%if(list == null){
 					
-				<%}else{
+				}else{
 					for (String item : list.keySet()) {
 						items = service.findItemByName(item);
 				%>
-				상품명 : <%=items.getItemName()%> |
+					상품명 : <%=items.getItemName()%> |
 				<%=items.getItemPrice()%>원 |
 				<%if(list.get(item)>=0){ %>
 				<%=list.get(item)%>개<br>

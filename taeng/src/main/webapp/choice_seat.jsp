@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 
 <style>
+
+body {
+		background-image:url("image/image.png");
+}
+	
 .sit {
 	width: 90%;
 	height: 550px;

@@ -46,7 +46,7 @@
 <c:if test="${requestScope.errMsg != null}">
 	<h1 style="color:red">${requestScope.errMsg }</h1>
 </c:if>
-
+<a href="/taeng/admin.jsp">돌아가기</a>
 <div class="big">
 	<h1>상품 추가</h1>
 	<div class="box">
@@ -88,15 +88,6 @@
 		<form action='<c:url value="/item/deleteItem"/>' method="post">
 			삭제할 상품의 이름 : <input type="text" name="itemName"><br>
 			<button>삭제</button>
-		</form>
-	</div>
-</div>
-
-<div class="big">
-	<h1>상품 주문</h1>
-	<div class="box">
-		<form action='<c:url value="/item/itemLists"/>' method="post">
-			<button>상품 주문</button>
 		</form>
 	</div>
 </div>
