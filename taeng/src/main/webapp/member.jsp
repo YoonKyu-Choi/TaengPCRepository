@@ -198,6 +198,7 @@ button {
 					<form method="post" action="/taeng/logout">
 					<input type="hidden" id="pcTime3" name="pcTime" value="">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
+					<input type="hidden" name="seatNumber" value="${requestScope.map.seatnum }">
 					<button id="logout" onclick='window.close()'>종료</button>
 					</form>
 				</div>

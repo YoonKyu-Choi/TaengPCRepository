@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kosta.taeng.service.MemberService;
+import com.kosta.taeng.service.PCService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
+import com.kosta.taeng.vo.PC;
 
 /**
  * Servlet implementation class MemberBridgeServlet
@@ -29,11 +32,9 @@ public class MemberBridgeServlet extends HttpServlet {
 
 		// 비즈니스로직.
 		MemberService mService = MemberServiceImpl.getInstance();
+		PCService pcService = PCServiceImpl.getInstance();
 		Member member = mService.selectMemberById(id);
-		
-		System.out.println(member); // check용.
-		System.out.println(id);
-		System.out.println(seatNum);
+		pcService.updatePC(new PC(Integer.parseInt(seatNum), member.getPcTime(), member.getId()));
 		
 		// 응답.
 		HashMap<String,Object> map = new HashMap<String,Object>();
