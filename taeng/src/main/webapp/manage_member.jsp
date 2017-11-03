@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 관리</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -148,8 +148,8 @@ body {
    
 	<div class="content3">
 	<form action="/taeng/update_forward.jsp" method="post">
-		ID : <input type="text" name="id" class="input"><br> 수정할
-		전화번호 : <input type="text" name="phoneNum" class="input"><br>
+		ID : <input type="text" name="id" class="input"><br>
+		수정할 전화번호 : <input type="text" name="phoneNum" class="input"><br>
 		수정할 주민번호 앞자리 : <input type="number" name="personNum" class="input"><br>
 		수정할 비밀번호 : <input type="password" name="password" class="input"><br>
 		수정할 이름 : <input type="text" name="name" class="input"><br>

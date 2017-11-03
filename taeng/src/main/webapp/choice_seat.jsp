@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>자리 이동</title>
 <style>
 body {
 	background-color:#100e0e;

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>search</title>
+<title>매상 관리</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
    $(document).ready(function() {
