@@ -36,7 +36,6 @@
 	});
 </script>
 <style>
-<<<<<<< HEAD
 * {
 	margin: 0 auto;
 	padding: 0;
@@ -220,7 +219,7 @@ button {
 					<li>이름 : ${requestScope.map.member.name }</li>
 					<li>남은시간 :
 						<form id="form" method="post" action="/taeng/pctimer">
-							<span id="timeid"></span> 
+							<span id="timeid">${requestScope.map.member.pcTime}</span> 
 							<input type="hidden" id="pcTime" name="pcTime" value="">
 							<input type="hidden" name="id" value="${requestScope.map.member.id }">
 						</form>

@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.kosta.taeng.Exception.ItemNotFoundException;
 import com.kosta.taeng.service.ItemService;
@@ -29,6 +31,9 @@ public class ItemOrderServlet extends HttpServlet {
 		String itemStock = request.getParameter("itemStock");
 		SalesService salesService = SalesServiceImpl.getInstance();
 		ItemService itemService = ItemServiceImpl.getInstance();
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
 		
 		Item item = itemService.findItemByName(itemName);
 		item.setItemStock(item.getItemStock()-Integer.parseInt(itemStock));
