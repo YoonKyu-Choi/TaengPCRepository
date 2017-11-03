@@ -98,13 +98,13 @@ body {
 	cursor: pointer;
 }
 .backbtn2 {
-	width: 110px;
-	height: 30px;
-	background-color: #4D6C9C;
-	color: #F6F792;
-	font-size: 15px;
-	cursor: pointer;
-	border: thick;
+   width: 170px;
+   height: 30px;
+   background-color: #4D6C9C;
+   color: #F6F792;
+   font-size: 20px;
+   cursor: pointer;
+   border: thick;
 }
 </style>
 </head>
@@ -118,12 +118,11 @@ body {
    
    <div class="sidemenu">
    <br><br><br><br>
-      <a id="menu1">ID로 회원 조회하기</a>
-      <a id="menu2">이름으로 회원 조회하기</a>
-      <a id="menu3">회원 정보 수정</a>
+      <a id="menu1">☆ ID로 회원 조회하기</a>
+      <a id="menu2">☆ 이름으로 회원 조회하기</a>
+      <a id="menu3">☆ 회원 정보 수정</a>
       <br><br>
-      &nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">관리자
-			페이지 이동</button>
+     <button class="backbtn2" onclick="location.href='/taeng/admin/search'">◁ 관리자 페이지</button>
 
    </div>
    

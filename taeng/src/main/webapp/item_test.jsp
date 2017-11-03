@@ -118,13 +118,13 @@ body {
 	cursor: pointer;
 }
 .backbtn2 {
-	width: 110px;
-	height: 30px;
-	background-color: #4D6C9C;
-	color: #F6F792;
-	font-size: 15px;
-	cursor: pointer;
-	border: thick;
+   width: 170px;
+   height: 30px;
+   background-color: #4D6C9C;
+   color: #F6F792;
+   font-size: 20px;
+   cursor: pointer;
+   border: thick;
 }
 </style>
 </head>
@@ -139,13 +139,13 @@ body {
 
 	<div class="sidenav">
 		<br> <br><br><br>
-		<a id="menu1">상품 추가</a>
-		<a id="menu2">상품 목록</a> 
-		<a id="menu3">상품 수정</a> 
-		<a id="menu4">상품 삭제</a> 
+		<a id="menu1" align="center">♧  상품 추가</a>
+		<a id="menu2" align="center">♧  상품 목록</a> 
+		<a id="menu3" align="center">♧  상품 수정</a> 
+		<a id="menu4" align="center">♧ 상품 삭제</a> 
 		
-		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">관리자
-			페이지 이동</button>
+		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">
+		◁ 관리자 페이지</button>
 
 	</div>
 

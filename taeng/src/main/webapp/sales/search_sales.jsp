@@ -143,11 +143,11 @@ body {
 }
 
 .backbtn2 {
-   width: 110px;
+   width: 170px;
    height: 30px;
    background-color: #4D6C9C;
    color: #F6F792;
-   font-size: 15px;
+   font-size: 20px;
    cursor: pointer;
    border: thick;
 }
@@ -165,12 +165,13 @@ body {
    
    <div class="sidenav">
    <br><br><br><br><br>
-       <a id="menu1">날짜로 조회</a>
-       <a id="menu2">전체 매출 목록 조회</a> 
-       <a id="menu3">전체매출 조회</a> 
-       <a id="menu4">PC요금 조회</a> 
-       <a id="menu5">상품요금 조회 </a> 
-       <button class="backbtn" onclick="location.href='/taeng/admin/search'">관리자페이지</button>
+       <a id="menu1">♡ 날짜로 조회</a>
+       <a id="menu2">♡ 전체 매출 목록 조회</a> 
+       <a id="menu3">♡ 전체매출 조회</a> 
+       <a id="menu4">♡ PC요금 조회</a> 
+       <a id="menu5">♡ 상품요금 조회 </a> 
+       <br><br><br>
+       <button class="backbtn2" onclick="location.href='/taeng/admin/search'">◁ 관리자 페이지</button>
    </div>
    <div class="content1">
       <div>
