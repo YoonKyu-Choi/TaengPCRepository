@@ -121,14 +121,18 @@ body {
          ID : <input type="text" name="id" class="input"><br>
          <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
       </form>
-      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+      <form action="/taeng/admin/search" method="post">
+      	<button class="backbtn">관리자 페이지</button>
+      </form>
    </div>
    <div class="content2">
       <form action="/taeng/selectmemberbyname" method="post">
          이름 : <input type="text" name="name" class="input" placeholder="입력하지 않으면 전체 회원이 조회됩니다." style="width: 260px;"><br>
          <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
       </form>
-      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+      <form action="/taeng/admin/search" method="post">
+     	 <button class="backbtn">관리자 페이지</button>
+      </form>
    </div>
    <div class="content3">
       <form action="/taeng/update_forward.jsp" method="post">
@@ -140,7 +144,9 @@ body {
          수정할 남은 시간 : <input type="number" name="pcTime" class="input"><br>
          <button class="btn">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정</button>
       </form>
-      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+      <form action="/taeng/admin/search" method="post">
+      	<button class="backbtn">관리자 페이지</button>
+      </form>
    </div>
 </body>
 </html>
