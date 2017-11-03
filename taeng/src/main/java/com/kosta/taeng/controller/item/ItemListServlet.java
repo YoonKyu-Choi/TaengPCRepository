@@ -24,7 +24,6 @@ public class ItemListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ItemService service = ItemServiceImpl.getInstance();
-		Item item = new Item();
 		
 		List<Item> list = service.getItemList();
 		request.setAttribute("itemLists", list);
