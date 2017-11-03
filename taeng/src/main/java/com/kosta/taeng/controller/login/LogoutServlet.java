@@ -11,7 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import com.kosta.taeng.Exception.MemberNotFoundException;
 import com.kosta.taeng.service.MemberService;
+import com.kosta.taeng.service.PCService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
 import com.kosta.taeng.vo.PC;
 
@@ -20,22 +22,25 @@ public class LogoutServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		Member member = (Member) session.getAttribute("member");
-		String timeOut = request.getParameter("pcTime");
-		
+		String id =  request.getParameter("id");
+		String pauseTime = request.getParameter("pcTime");
+		String seatNum = request.getParameter("seatNumber");
+		if (pauseTime == null) {
+			pauseTime = "0";
+		}
 		MemberService service = MemberServiceImpl.getInstance();
-		
+		PCService pcService = PCServiceImpl.getInstance();
+		Member member = service.selectMemberById(id);
 		try {
-			member.setPcTime(Integer.parseInt(timeOut));
+			member.setPcTime(Integer.parseInt(pauseTime));
 			service.updateMember(member);
+			pcService.updatePC(new PC(Integer.parseInt(seatNum), 0, null));
 		} catch (MemberNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		session.invalidate();
-		request.getRequestDispatcher("/logout_result.jsp").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 }

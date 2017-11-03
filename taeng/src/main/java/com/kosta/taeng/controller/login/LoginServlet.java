@@ -1,16 +1,18 @@
 package com.kosta.taeng.controller.login;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.kosta.taeng.service.MemberService;
+import com.kosta.taeng.service.PCService;
 import com.kosta.taeng.service.impl.MemberServiceImpl;
+import com.kosta.taeng.service.impl.PCServiceImpl;
 import com.kosta.taeng.vo.Member;
 
 @WebServlet("/login")
@@ -24,10 +26,17 @@ public class LoginServlet extends HttpServlet {
 		Object password = request.getParameter("pw"); // "admin";
 		Member member = service.selectMemberById((String) id);
 		
+		PCService pcService = PCServiceImpl.getInstance();
+		List<Integer> list = pcService.selectPcNull();
+
+		for(Integer i : list) {
+			System.out.println(i);
+		}
+		
 		if (id.equals("admin")) {
 			if (password.equals("admin")) {
-				request.getSession().setAttribute("login", true);
-				response.sendRedirect("/taeng/admin.jsp");
+				request.getSession().setAttribute("list", list);
+				request.getRequestDispatcher("/admin.jsp").forward(request, response);
 			} else {
 				request.setAttribute("errMsg", "비밀번호가 틀립니다.");
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
