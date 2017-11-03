@@ -206,6 +206,7 @@ button {
 					<form method="post" action="/taeng/move">
 					<input type="hidden" id="pcTime2" name="pcTime" value="${requestScope.map.member.pcTime}">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
+					<input type="hidden" name="seatNumber" value="${requestScope.map.seatnum }">
 					<button id="move">자리이동</button><br>
 					</form>
 					<form method="post" action="/taeng/logout">
