@@ -47,5 +47,6 @@ body{
 			</c:forEach>
 		</tbody>
 	</table>
+	<a href="/taeng/sales/search_sales.jsp">돌아가기</a>
 </body>
 </html>

@@ -49,6 +49,7 @@ body {
 	box-shadow:0px 0px 10px #a499ca;
 	text-align:center;
 	color:#f0fabc;
+	line-height:90px;
 }
 <%-- 사람 있을 때 --%>
 .box2 {
@@ -95,6 +96,20 @@ a:visited {
 .clear {
 	clear:both;
 }
+.bottom1 {
+		width:700px;
+		height:50px;
+		float:right;
+		
+	}
+	
+	.bo {
+		floatRight;
+		width:250px;
+		height:100px;
+	}
+
+
 </style>
 </head>
 <body>
@@ -121,6 +136,12 @@ a:visited {
 				<li class="one"><a href="/taeng/item_test.jsp">상품관리</a></li>
 				<li class="one"><a href="/taeng/sales/search_sales.jsp">매상관리</a></li>
 			</ul>
+		</div>
+	</div>
+	<div class="bottom1">
+		<div class="bo">
+			<div class="box">빈 자리</div>
+			<div class="box2">사용 중</div>
 		</div>
 	</div>
 </body>
