@@ -38,7 +38,6 @@
 	});
 </script>
 <style>
-<<<<<<< HEAD
    * {
       margin:0 auto;
       padding:0;
@@ -65,15 +64,7 @@
       height:300px;
       float:right;
    }
-   
-=======
-* {
-	margin: 0 auto;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-}
->>>>>>> branch 'master' of https://github.com/YoonKyu-Choi/TaengPcRepository.git
+
 
 .log {
    width: 200px;
