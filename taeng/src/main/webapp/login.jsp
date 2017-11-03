@@ -155,7 +155,6 @@ $(document).ready(function(){
             <input type="password" id="pw" name="pw" placeholder="PassWord"/><br>
             <button id="btn1">LOGIN</button><button id="btn2" type="button" onclick="location.href='/taeng/login_payment.jsp'">결제</button>
          </form>
-         
          <span id="sign">Sign Up</span>
       </div>
    </div>
