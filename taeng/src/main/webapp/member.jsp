@@ -2,7 +2,6 @@
 <%@page import="com.kosta.taeng.vo.Member"%>
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,54 +33,47 @@
 	}
 </script>
 <style>
-	@font-face {
-		font-family:"INTERPARKGOTHICLIGHT";
-		src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
-	}
-
-	* {
-		margin:0 auto;
-		padding:0;
-		list-style:none;
-		text-decoration:none;
-		font-family:"INTERPARKGOTHICLIGHT";
-	}
-	
-	.clear {
-		clear:both;
-	}
-	
-	body {
-		background-image:url("image/image.png");
-	}
-	
-	header {
-		width:100%;
-		height:0%;
-	}
-	.top {
-		width:850px;
-		height:300px;
-		float:right;
-	}
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
+* {
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	text-decoration:none;
+	font-family:"INTERPARKGOTHICLIGHT";
+}
+.clear {
+	clear:both;
+}
+body {
+	background-image:url("image/image.png");
+}
+header {
+	width:100%;
+	height:0%;
+}
+.top {
+	width:850px;
+	height:300px;
+	float:right;
+}
 .log {
    width: 200px;
-   height: 400px;
+   height: 300px;
    float: right;
    font-size: 18px;
    line-height: 60px;
    border-radius: 5px;
    box-shadow:0px 0px 10px #100e0e;
-   color: white;
-   background-color:#100e0e;
+   color:black;
 }
-
 .log > ul > li {
 	width:150px;
 	float:left;
 	margin-left:10px;
 }
-
 button {
    font-size: 16px;
    margin-left: 60px;
@@ -90,7 +82,6 @@ button {
    height: 30px;
    background-color:white;
 }
-
 #thing {
 	width: 150px;
 	height: 50px;
@@ -103,19 +94,16 @@ button {
 	cursor: pointer;
 	margin-left:50px;
 }
-
 .contents {
    width: 650px;
    height: 150px;
    margin-top: 80px;
 }
-
 .image {
    width: 620px;
    height: 100px;
    float: left;
 }
-
 .icon {
    width: 100px;
    height: 100px;
@@ -127,18 +115,15 @@ button {
    background-color: white;
    box-shadow: 0px 20px 15px black;
 }
-
 .icon img {
    width: 70px;
    height: 70px;
    margin-top: 15px;
    margin-left: 15px;
 }
-
 .buy {
    display: none;
 }
-
 .eat {
    width: 700px;
    height: 500px;
@@ -148,13 +133,11 @@ button {
    left: 23%;
    top: 15%;
 }
-
 .close {
    float: right;
    margin-right: 5px;
    cursor: pointer;
 }
-
 #form {
    	width:50px;
    	height:50px;
@@ -162,7 +145,6 @@ button {
 }
 </style>
 </head>
-
 <body>
 	<div class="buy">
 		<div class="eat">
@@ -188,7 +170,6 @@ button {
 					</li>
 				</ul>
 				<div class="btn">
-					<button id="letter">쪽지</button><br>
 					<form method="post" action="/taeng/move">
 					<input type="hidden" id="pcTime2" name="pcTime" value="${requestScope.map.member.pcTime}">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
