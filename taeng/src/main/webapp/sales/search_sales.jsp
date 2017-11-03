@@ -192,7 +192,7 @@ body {
 	
 	<div class="content3">
 		<div class="money">
-			<form action="/taeng/sales/allSales" method="post"
+			<form action="/taeng/sales/allSales" method="post">
 				<input type="hidden" name="select" value="all">
 					${requestScope.money }원
 			</form>
@@ -201,7 +201,7 @@ body {
 	
 	<div class="content4">
 		<div class="money">
-			<form action="/taeng/sales/allSales" method="post"
+			<form action="/taeng/sales/allSales" method="post">
 				<input type="hidden" name="select" value="pc">
 					${requestScope.money }원
 			</form>
@@ -210,7 +210,7 @@ body {
 	
 	<div class="content5">
 		<div class="money">
-			<form action="/taeng/sales/allSales" method="post"
+			<form action="/taeng/sales/allSales" method="post">
 				<input type="hidden" name="select" value="item">
 					${requestScope.money }원
 			</form>
