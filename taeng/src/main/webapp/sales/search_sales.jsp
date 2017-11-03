@@ -162,7 +162,7 @@ body {
    <div class="header">
       <h1>매상 관리하기</h1>
    </div>
-
+   
    <div class="sidenav">
    <br><br><br><br><br>
        <a id="menu1">날짜로 조회</a>
@@ -221,6 +221,5 @@ body {
      	 </form>
       </div>
    </div>
-
 </body>
 </html>
