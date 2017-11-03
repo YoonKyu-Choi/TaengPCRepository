@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="money">
-${requestScope.money } 원
+	${requestScope.money }원
 </div>
 </body> 
 </html>

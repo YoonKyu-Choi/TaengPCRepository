@@ -42,7 +42,7 @@ public class AllSalesServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		request.getRequestDispatcher("/sales/sales_result.jsp").forward(request, response);
+		request.getRequestDispatcher("/sales/search_sales.jsp").forward(request, response);
 	}
 
 }

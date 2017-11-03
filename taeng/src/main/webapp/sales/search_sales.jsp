@@ -43,6 +43,7 @@
 			$(".content4").hide();
 			$(".content5").show();
 		});
+		
 	});
 </script>
 <style type="text/css">
@@ -145,7 +146,12 @@ body {
 	cursor: pointer;
 }
 
-
+.money{
+	font-familly:"맑은 고딕";
+	font-size:80px;
+	text-align:center;
+	margin-top:100px;
+}
 
 </style>
 </head>
@@ -156,7 +162,7 @@ body {
 
 	<div class="sidenav">
 	<br><br><br><br><br>
-		<a id="menu1">날짜로 조회</a>
+		 <a id="menu1">날짜로 조회</a>
 		 <a id="menu2">전체 매출 목록 조회</a> 
 		 <a id="menu3">전체매출 조회</a> 
 		 <a id="menu4">PC요금 조회</a> 
@@ -180,22 +186,34 @@ body {
 		</form>
 	</div>
 	<div class="content3">
-		<form action="/taeng/sales/allSales" method="post">
+		<!-- <form action="/taeng/sales/allSales" method="post">
 			<input type="hidden" name="select" value="all">
 			<button>전체매출조회</button>
-		</form>
+		</form> -->
+		<div class="money">
+			<input type="hidden" name="select" value="all">
+				${requestScope.money }원
+		</div>
 	</div>
 	<div class="content4">
-		<form action="/taeng/sales/allSales" method="post">
+		<!-- <form action="/taeng/sales/allSales" method="post">
 			<input type="hidden" name="select" value="pc">
 			<button>PC요금조회</button>
-		</form>
+		</form> -->
+		<div class="money">
+			<input type="hidden" name="select" value="pc">
+				${requestScope.money }원
+		</div>
 	</div>
 	<div class="content5">
-		<form action="/taeng/sales/allSales" method="post">
+		<!-- <form action="/taeng/sales/allSales" method="post">
 			<input type="hidden" name="select" value="item">
 			<button>상품요금조회</button>
-		</form>
+		</form> -->
+		<div class="money">
+			<input type="hidden" name="select" value="item">
+				${requestScope.money }원
+		</div>
 	</div>
 </body>
 </html>
