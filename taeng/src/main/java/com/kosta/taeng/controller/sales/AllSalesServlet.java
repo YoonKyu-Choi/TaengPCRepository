@@ -31,11 +31,11 @@ public class AllSalesServlet extends HttpServlet {
 		try {
 
 			if (select.equals("all")) {
-				request.setAttribute("money", service.getAllSales());
+				request.setAttribute("all", service.getAllSales());
 			} else if (select.equals("pc")) {
-				request.setAttribute("money", service.getPcSales());
+				request.setAttribute("pc", service.getPcSales());
 			} else if (select.equals("item")) {
-				request.setAttribute("money", service.getItemSales());
+				request.setAttribute("item", service.getItemSales());
 			}
 
 		} catch (SalesNotFoundException e) {
