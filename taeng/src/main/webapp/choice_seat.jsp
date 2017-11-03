@@ -9,14 +9,14 @@
 <style>
 
 body {
-		background-image:url("image/image.png");
+		background-color:#100e0e;
 }
 	
 .sit {
 	width: 90%;
 	height: 550px;
-	color: white;
 	margin-left: 120px;
+	color: #f0fabc;
 }
 
 .box {
@@ -24,11 +24,30 @@ body {
 	height: 90px;
 	margin: 10px;
 	float: left;
-	border: 1px solid white;
+	border: 1px solid #a499ca;
 	border-radius: 10px;
-	background-color: black;
-	box-shadow: 0px 0px 10px white;
+	background-color: #a499ca;
+	box-shadow: 0px 0px 10px #a499ca;
 	cursor: pointer;
+	text-align:center;
+	line-height:90px;
+	font-size:25px;
+}
+
+#btn{
+	font-weight:bold;
+	color:#3A3343;
+	width:100px;
+	height:50px;
+	margin:10px;
+	float:left;
+	border:1px solid #f0fabc;
+	text-align:center;
+	line-height:50px;
+	background-color:#FFF9A2;
+	border-radius:5px;
+	font-size:18px;
+	cursor:pointer;
 }
 </style>
 </head>
@@ -48,7 +67,7 @@ body {
 					</c:forEach>
 				</c:forEach>
 				<div>
-					<button>자리선택</button>
+					<button id="btn">자리선택</button>
 				</div>
 			</form>
 		</div>

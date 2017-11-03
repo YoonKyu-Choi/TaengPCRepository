@@ -9,25 +9,23 @@
 <meta charset="UTF-8">
 <title>Admin</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-	$(".box").click(function(){
-		$(this).css({"border":"1px solid red"});
-	});
-});
-</script>
-
 <style>
+	@font-face {
+		font-family:"INTERPARKGOTHICLIGHT";
+		src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+	}
+
 	* {
 		margin:0 auto;
 		padding:0;
 		list-style:none;
 		text-decoration:none;
-		font-family:"맑은 고딕";
+		font-family:"INTERPARKGOTHICLIGHT";
+		text-align:center;
 	}
 
 	body {
-		background-color:black;
+		background-color:#100e0e;
 		width:100%;
 	}
 
@@ -39,31 +37,36 @@ $(document).ready(function(){
 	.sit {
 		width:90%;
 		height:550px;
-		color:white;
 		margin-left:120px;
+		line-height:90px;
+		font-size:30px;
 	}
 	
-	.box {
+	.box { <%-- 사람 없을때 --%>
 		width:90px;
 		height:90px;
 		margin:10px;
 		float:left;
-		border:1px solid white;
+		border:1px solid #a499ca;
 		border-radius:10px;
-		background-color:#cecece;
-		box-shadow:0px 0px 10px white;
+		background-color:#a499ca;
+		box-shadow:0px 0px 10px #a499ca;
 		cursor:pointer;
+		text-align:center;
+		color:#f0fabc;
 	}
-	.box2 {
+	.box2 { <%-- 사람 있을 때 --%>
+		color:#3A3343;
 		width:90px;
 		height:90px;
 		margin:10px;
 		float:left;
-		border:1px solid white;
+		border:1px solid #f0fabc;
 		border-radius:10px;
-		background-color:black;
-		box-shadow:0px 0px 10px white;
+		background-color:#f0fabc;
+		box-shadow:0px 0px 10px #f0fabc;
 		cursor:pointer;
+		line-height:90px;
 	}
 	
 	.bottom {
@@ -78,16 +81,22 @@ $(document).ready(function(){
 		float:left;
 		margin-left:120px;
 	}
+	
+	a:visited {
+		color:#3A3343;
+	}
 
 	.one {
+		font-weight:bold;
+		color:#3A3343;
 		width:100px;
 		height:50px;
 		margin:10px;
 		float:left;
-		border:1px solid white;
+		border:1px solid #f0fabc;
 		text-align:center;
 		line-height:50px;
-		background-color:#DDEC45;
+		background-color:#FFF9A2;
 		border-radius:5px;
 		font-size:18px;
 		cursor:pointer;
@@ -120,7 +129,7 @@ $(document).ready(function(){
 	<div class="bottom">
 		<div class="option">
 			<ul>
-				<li class="one">화면</li>
+				<li class="one"><a href="/taeng/login.jsp">메인화면</a></li>
 				<li class="one"><a href="/taeng/manage_member.jsp">회원관리</a></li>
 				<li class="one"><a href="/taeng/item_test.jsp">상품관리</a></li>
 				<li class="one"><a href="/taeng/sales/search_sales.jsp">매상관리

@@ -10,17 +10,6 @@
 <title>member</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-	/* $(document).ready(function(){
-	 $(".add").click(function(){
-	 $(".buy").fadeIn();
-	 });
-	 $(".close").click(function(){
-	 $(".buy").fadeOut();
-	 });
-	 }); */
-
-	// PC-Timer
-
 	var time = ${requestScope.map.member.pcTime};
 	function pcTimer() {
 		if (time == 0) {
@@ -45,12 +34,17 @@
 	}
 </script>
 <style>
+	@font-face {
+		font-family:"INTERPARKGOTHICLIGHT";
+		src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+	}
 
 	* {
 		margin:0 auto;
 		padding:0;
 		list-style:none;
 		text-decoration:none;
+		font-family:"INTERPARKGOTHICLIGHT";
 	}
 	
 	.clear {
@@ -65,30 +59,21 @@
 		width:100%;
 		height:0%;
 	}
-	
-	
 	.top {
 		width:850px;
 		height:300px;
 		float:right;
 	}
-
-
 .log {
    width: 200px;
    height: 400px;
    float: right;
    font-size: 18px;
    line-height: 60px;
-   border: 3px solid black;
    border-radius: 5px;
+   box-shadow:0px 0px 10px #100e0e;
    color: white;
-   background-color: #858585;
-}
-
-.log > ul > li {
-   width:150px;
-   float:left;
+   background-color:#100e0e;
 }
 
 .log > ul > li {
@@ -99,10 +84,11 @@
 
 button {
    font-size: 16px;
-   margin-left: 15px;
+   margin-left: 60px;
    border-radius: 5px;
    width: 80px;
    height: 30px;
+   background-color:white;
 }
 
 #thing {
@@ -187,7 +173,7 @@ button {
 		<div class="top">
 			<div class="add">
 				<!-- <span id="thing"><img src="image/eat.png">상품구매</span> -->
-				<button id="thing" onclick="itemOrderWin();">상품 주문</button>
+				<button id="thing" onclick="itemOrderWin();">상&nbsp;품&nbsp;&nbsp;주&nbsp;문</button>
 			</div>
 			<div class="log">
 				<ul>
@@ -206,6 +192,7 @@ button {
 					<form method="post" action="/taeng/move">
 					<input type="hidden" id="pcTime2" name="pcTime" value="${requestScope.map.member.pcTime}">
 					<input type="hidden" name="id" value="${requestScope.map.member.id }">
+					<input type="hidden" name="seatNumber" value="${requestScope.map.seatnum }">
 					<button id="move">자리이동</button><br>
 					</form>
 					<form method="post" action="/taeng/logout">

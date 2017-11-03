@@ -29,9 +29,6 @@ public class LoginServlet extends HttpServlet {
 		PCService pcService = PCServiceImpl.getInstance();
 		List<Integer> list = pcService.selectPcNull();
 
-		for(Integer i : list) {
-			System.out.println(i);
-		}
 		
 		if (id.equals("admin")) {
 			if (password.equals("admin")) {

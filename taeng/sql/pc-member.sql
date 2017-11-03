@@ -87,6 +87,7 @@ insert into pc values (pc_num_seq.nextval , NULL, null);
 insert into pc values (pc_num_seq.nextval , NULL, null);
 insert into pc values (pc_num_seq.nextval, null, null);
 select * from pc;
+delete from pc where pc_num = 51;
 
 delete from member;
 insert into member values('id1','010-1111-1111',940627,'pw1','이름1',60);
