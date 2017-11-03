@@ -139,11 +139,12 @@ $(document).ready(function(){
 <form action="/taeng/add_forward.jsp" method="post">
    <div class="my">
       <div class="information" align="center">
-         NA&nbsp;ME : &nbsp;&nbsp;<input type="text" name="name" id="name" class="up" placeholder="NAME" required/><br>
+        	 NA&nbsp;ME : &nbsp;&nbsp;<input type="text" name="name" id="name" class="up" placeholder="NAME" required/><br>
              I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D : &nbsp;&nbsp;&nbsp;<input type="text" name="id" id="id" class="up" placeholder="ID" required/><br>
              P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W : &nbsp;&nbsp;<input type="password" name="password" id="password" class="up" placeholder="PASSWORD" required/><br>
-                전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"/><br>
+	                전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"/><br>
            	주민번호 : <input type="number" name="personNum" id="personNum" class="up" placeholder="PERSONNUM" required/><br>
+
          <input type="hidden" name="pcTime" value="0">
          <br><br><input type="submit" value="등록">
       </div>

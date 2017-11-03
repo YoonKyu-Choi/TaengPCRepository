@@ -96,6 +96,18 @@ body {
 	font-size: 15px;
 	cursor: pointer;
 }
+
+.btn1 {
+	width:70px;
+	height:40px;
+	lineheight:40px;
+	text-align:center;
+	border:none;
+	background-color:#4D6C9C;
+	color:#F6F792;
+	font-size:18px;
+}
+
 .backbtn {
 	width: 110px;
 	height: 30px;
@@ -143,11 +155,11 @@ body {
 		</div>
 		<br>
 		<form action="/item/addItem" method="post">
-			이름 : <input type="text" name="itemName"><br>
-			가격 : <input type="number" name="itemPrice"><br>
-			수량 : <input type="number" name="itemStock"><br>
+			이름 : <input type="text" name="itemName"><br> 
+			가격 : <input type="number" name="itemPrice"><br> 
+			수량 : <input type="number" name="itemStock"><br> 
 			사진 : <input type="file" name="itemImage"><br>
-			<button>등록</button>
+			<button class="btn1">등록</button>
 		</form>
 	</div>
 
@@ -157,18 +169,18 @@ body {
 		</div>
 		<br>
 		<form action='<c:url value="/item/selectAllItem"/>' method="post">
-			<button>상품 목록 보기</button>
+			<button class="btn2">상품 목록 보기</button>
 		</form>
 	</div>
 
 	<div class="content3">
 		<h2>상품 수정</h2>
 			<form action='<c:url value="/item/updateItem"/>' method="post">
-				이름 : <input type="text" name="itemName"><br>
-				가격 : <input type="number" name="itemPrice"><br>
-				수량 : <input type="number" name="itemStock"><br>
+				이름 : <input type="text" name="itemName"><br> 
+				가격 : <input type="number" name="itemPrice"><br> 
+				수량 : <input type="number" name="itemStock"><br> 
 				사진 : <input type="file" name="itemImage"><br>
-				<button>수정</button>
+				<button class="btn1">수정</button>
 			</form>
 	</div>
 
@@ -176,7 +188,7 @@ body {
 		<h2>상품 삭제</h2>
 			<form action='<c:url value="/item/deleteItem"/>' method="post">
 				삭제할 상품의 이름 : <input type="text" name="itemName"><br>
-				<button>삭제</button>
+				<button class="btn1">삭제</button>
 			</form>
 	</div>
 </body>
