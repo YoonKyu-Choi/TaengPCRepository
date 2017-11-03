@@ -5,20 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <style>
-
 body {
-		background-color:#100e0e;
+	background-color:#100e0e;
 }
-	
 .sit {
 	width: 90%;
 	height: 550px;
 	margin-left: 120px;
 	color: #f0fabc;
 }
-
 .box {
 	width: 90px;
 	height: 90px;
@@ -33,7 +29,6 @@ body {
 	line-height:90px;
 	font-size:25px;
 }
-
 #btn{
 	font-weight:bold;
 	color:#3A3343;

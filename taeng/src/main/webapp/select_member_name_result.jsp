@@ -77,11 +77,11 @@ thead{
 				<c:forEach items="${requestScope.memberList }" var="member" varStatus="cnt">
 					<tr class="menu">
 						<td>${member.id }</td>
-						<td>${member.phoneNum}</td>
-						<td>${member.personNum}</td>
-						<td>${member.password }</td>
 						<td>${member.name }</td>
+						<td>${member.personNum}</td>
 						<td>${member.pcTime }</td>
+						<td>${member.phoneNum}</td>
+						<td>${member.password }</td>
 					</tr>
 				</c:forEach>
 			</tbody>
