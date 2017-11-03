@@ -36,6 +36,13 @@
 	$(document).ready(function() {
 		var pcTime = setInterval(pcTimer, 1000);
 	});
+	
+	var openItemOrder;
+	
+	function itemOrderWin(){
+		window.name="memberForm";
+		openItemOrder = window.open("/taeng/item/itemLists","itemOrderForm","width=1200, height=700, resizable = no, scrollbars = no");
+	}
 </script>
 <style>
    * {
@@ -172,9 +179,7 @@ button {
 		<div class="top">
 			<div class="add">
 				<!-- <span id="thing"><img src="image/eat.png">상품구매</span> -->
-				<form action='<c:url value="/item/itemLists"/>' method="post">
-					<button id="thing">상품 주문</button>
-				</form>
+				<button id="thing" onclick="itemOrderWin();">상품 주문</button>
 			</div>
 			<div class="log">
 				<ul>

@@ -68,7 +68,7 @@
 			<div class="items">
 				<c:forEach items="${requestScope.itemLists}" var="item">
 					<div class="item">
-						<form action="../item/cart" method="post"  class="eat">
+						<form id="itemOrderList" action="../item/cart" method="post"  class="eat">
 							<ul>
 								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
