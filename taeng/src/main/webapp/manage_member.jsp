@@ -37,9 +37,17 @@
 }
 
 body {
-	background-image: url("image/background2.jpg");
+	background-image: url("image/background3.jpg");
 	margin: 0;
 }
+
+.header {
+	background-color: #4D6C9C;
+	padding: 1px;
+	text-align: center;
+	color: #F6F792;
+}
+
 
 /* Style the side navigation */
 .sidemenu {
@@ -57,7 +65,7 @@ body {
 
 /* Side navigation links */
 .sidemenu a {
-	color: white;
+	color: #F6F792;
 	padding: 20px;
 	text-decoration: none;
 	display: block;
@@ -65,7 +73,7 @@ body {
 
 /* Change color on hover */
 .sidemenu a:hover {
-	background-color: white;
+	background-color: #F6F792;
 	color: black;
 }
 
@@ -105,30 +113,54 @@ body {
 	font-size: 15px;
 	cursor: pointer;
 }
+.backbtn2 {
+	width: 110px;
+	height: 30px;
+	background-color: #4D6C9C;
+	color: #F6F792;
+	font-size: 15px;
+	cursor: pointer;
+	border: thick;
+}
+
 </style>
 </head>
 <body>
+
+
    <c:if test="${requestScope.errMsg != null}">
       <span style="color: red">${requestScope.errMsg }</span>
    </c:if>
+   <div class="header">
+		<h1>회원 조회 및 관리 하기</h1>
+	</div>
+   
    <div class="sidemenu">
+   <br><br><br><br>
       <a id="menu1">ID로 회원 조회하기</a>
       <a id="menu2">이름으로 회원 조회하기</a>
       <a id="menu3">회원 정보 수정</a>
+      <br><br>
+      &nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin.jsp'">관리자
+			페이지 이동</button>
    </div>
    <div class="content1">
       <form action="/taeng/selectmemberbyid" method="post">
          ID : <input type="text" name="id" class="input"><br>
          <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
       </form>
-      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+      <form action="/taeng/admin/search" method="post">
+      	<button class="backbtn">관리자 페이지</button>
+      </form>
    </div>
    <div class="content2">
       <form action="/taeng/selectmemberbyname" method="post">
          이름 : <input type="text" name="name" class="input" placeholder="입력하지 않으면 전체 회원이 조회됩니다." style="width: 260px;"><br>
          <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
       </form>
-      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+      <form action="/taeng/admin/search" method="post">
+     	 <button class="backbtn">관리자 페이지</button>
+      </form>
    </div>
    <div class="content3">
       <form action="/taeng/update_forward.jsp" method="post">
@@ -140,7 +172,9 @@ body {
          수정할 남은 시간 : <input type="number" name="pcTime" class="input"><br>
          <button class="btn">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정</button>
       </form>
-      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+      <form action="/taeng/admin/search" method="post">
+      	<button class="backbtn">관리자 페이지</button>
+      </form>
    </div>
 </body>
 </html>
