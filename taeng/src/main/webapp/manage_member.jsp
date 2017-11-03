@@ -108,40 +108,39 @@ body {
 </style>
 </head>
 <body>
-	<c:if test="${requestScope.errMsg != null}">
-		<span style="color: red">${requestScope.errMsg }</span>
-	</c:if>
-	<div class="sidemenu">
-		<a id="menu1">ID로 회원 조회하기</a>
-		<a id="menu2">이름으로 회원 조회하기</a>
-		<a id="menu3">회원 정보 수정</a>
-	</div>
-	<div class="content1">
-		<form action="/taeng/selectmemberbyid" method="post">
-			ID : <input type="text" name="id" class="input"><br>
-			<button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
-		</form>
-		<button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
-	</div>
-	<div class="content2">
-		<form action="/taeng/selectmemberbyname" method="post">
-			이름 : <input type="text" name="name" class="input" placeholder="입력하지 않으면 전체 회원이 조회됩니다." style="width: 260px;"><br>
-			<button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
-		</form>
-		<button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
-	</div>
-	<div class="content3">
-		<form action="/taeng/update_forward.jsp" method="post">
-			ID : <input type="text" name="id" class="input"><br> 수정할
-			전화번호 : <input type="text" name="phoneNum" class="input"><br>
-			수정할 주민번호 앞자리 : <input type="number" name="personNum" class="input"><br>
-			수정할 비밀번호 : <input type="password" name="password" class="input"><br>
-			수정할 이름 : <input type="text" name="name" class="input"><br>
-			수정할 남은 시간 : <input type="number" name="pcTime" class="input"><br>
-			<button class="btn">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정</button>
-		</form>
-		<button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
-	</div>
-	</div>
+   <c:if test="${requestScope.errMsg != null}">
+      <span style="color: red">${requestScope.errMsg }</span>
+   </c:if>
+   <div class="sidemenu">
+      <a id="menu1">ID로 회원 조회하기</a>
+      <a id="menu2">이름으로 회원 조회하기</a>
+      <a id="menu3">회원 정보 수정</a>
+   </div>
+   <div class="content1">
+      <form action="/taeng/selectmemberbyid" method="post">
+         ID : <input type="text" name="id" class="input"><br>
+         <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
+      </form>
+      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+   </div>
+   <div class="content2">
+      <form action="/taeng/selectmemberbyname" method="post">
+         이름 : <input type="text" name="name" class="input" placeholder="입력하지 않으면 전체 회원이 조회됩니다." style="width: 260px;"><br>
+         <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
+      </form>
+      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+   </div>
+   <div class="content3">
+      <form action="/taeng/update_forward.jsp" method="post">
+         ID : <input type="text" name="id" class="input"><br> 수정할
+         전화번호 : <input type="text" name="phoneNum" class="input"><br>
+         수정할 주민번호 앞자리 : <input type="number" name="personNum" class="input"><br>
+         수정할 비밀번호 : <input type="password" name="password" class="input"><br>
+         수정할 이름 : <input type="text" name="name" class="input"><br>
+         수정할 남은 시간 : <input type="number" name="pcTime" class="input"><br>
+         <button class="btn">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정</button>
+      </form>
+      <button class="backbtn" onclick="location.href='admin.jsp'">관리자 페이지</button>
+   </div>
 </body>
 </html>
