@@ -19,19 +19,21 @@ import com.kosta.taeng.vo.Item;
 @WebServlet("/item/itemLists")
 public class ItemListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
 		doPost(req, resp);
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ItemService service = ItemServiceImpl.getInstance();
-		
+
 		List<Item> list = service.getItemList();
 		request.setAttribute("itemLists", list);
 		request.getRequestDispatcher("/item_sell.jsp").forward(request, response);
-		
+
 	}
 
 }

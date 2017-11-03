@@ -33,12 +33,12 @@ public class LoginPayServlet extends HttpServlet {
 		String hour= request.getParameter("hour");
 		if(mService.selectMemberById(id)==null) {
 			request.setAttribute("errMsg", "없는 id입니다.");
-			request.getRequestDispatcher("/gusukTest/login_payment.jsp").forward(request, response);
+			request.getRequestDispatcher("/login_payment.jsp").forward(request, response);
 			return;
 		}
 		if(hour==null || hour.equals("")) {
 			request.setAttribute("errMsg", "시간을 선택해주세요.");
-			request.getRequestDispatcher("/gusukTest/login_payment.jsp").forward(request, response);
+			request.getRequestDispatcher("/login_payment.jsp").forward(request, response);
 			return;
 		}
 		
