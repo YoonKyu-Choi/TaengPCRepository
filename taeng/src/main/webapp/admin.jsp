@@ -105,6 +105,5 @@ $(document).ready(function(){
 			</ul>
 		</div>
 	</div>
-
 </body>
 </html>

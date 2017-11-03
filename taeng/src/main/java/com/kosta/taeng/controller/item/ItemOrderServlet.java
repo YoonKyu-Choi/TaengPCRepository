@@ -19,7 +19,7 @@ import com.kosta.taeng.vo.Item;
 /**
  * Servlet implementation class ItemOrderServlet
  */
-@WebServlet("/ItemOrderServlet")
+@WebServlet("/item/order")
 public class ItemOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// 매출 계산해서 table에 넣어주는 과정.
@@ -38,9 +38,6 @@ public class ItemOrderServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		salesService.doSales(new Date(), 0, item.getItemPrice()*(Integer.parseInt(itemStock)));
-		request.getRequestDispatcher("");
-		request.getSession().invalidate();
-		
-		
+		request.getRequestDispatcher("/member.jsp").forward(request, response);
 	}
 }

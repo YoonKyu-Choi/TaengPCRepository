@@ -7,97 +7,103 @@
 <title>Insert title here</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-   $(document).ready(function() {
-      $("#menu1").click(function() {
-         $(".content1").show();
-         $(".content2").hide();
-         $(".content3").hide();
-      });
-      $("#menu2").click(function() {
-         $(".content1").hide();
-         $(".content2").show();
-         $(".content3").hide();
-      });
-      $("#menu3").click(function() {
-         $(".content1").hide();
-         $(".content2").hide();
-         $(".content3").show();
-      });
-   });
+	$(document).ready(function() {
+		$("#menu1").click(function() {
+			$(".content1").show();
+			$(".content2").hide();
+			$(".content3").hide();
+		});
+		$("#menu2").click(function() {
+			$(".content1").hide();
+			$(".content2").show();
+			$(".content3").hide();
+		});
+		$("#menu3").click(function() {
+			$(".content1").hide();
+			$(".content2").hide();
+			$(".content3").show();
+		});
+	});
 </script>
 <style>
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
+
 * {
-   box-sizing: border-box;
+	box-sizing: border-box;
+	font-family:"INTERPARKGOTHICLIGHT";
 }
 
 body {
-   background-image: url("image/background2.jpg");
-   margin: 0;
+	background-image: url("image/background2.jpg");
+	margin: 0;
 }
 
 /* Style the side navigation */
 .sidemenu {
-   height: 100%;
-   width: 250px;
-   position: fixed;
-   z-index: 1;
-   top: 0;
-   left: 0;
-   background-color: #4D6C9C;
-   overflow-x: hidden;
-   cursor: pointer;
-   font-size: 18px;
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #4D6C9C;
+	overflow-x: hidden;
+	cursor: pointer;
+	font-size: 18px;
 }
 
 /* Side navigation links */
 .sidemenu a {
-   color: white;
-   padding: 20px;
-   text-decoration: none;
-   display: block;
+	color: white;
+	padding: 20px;
+	text-decoration: none;
+	display: block;
 }
 
 /* Change color on hover */
 .sidemenu a:hover {
-   background-color: white;
-   color: black;
+	background-color: white;
+	color: black;
 }
 
 /* Style the content */
 .content1, .content2, .content3 {
-   font-size: 20px;
-   line-height: 60px;
-   margin-top: 20px;
-   margin-left: 250px;
-   padding-left: 20px;
+	font-size: 20px;
+	line-height: 60px;
+	margin-top: 20px;
+	margin-left: 250px;
+	padding-left: 20px;
 }
 
 .content2, .content3 {
-   display: none;
+	display: none;
 }
 
 .input {
-   height: 30px;
+	height: 30px;
 }
 
 .btn {
-   width: 110px;
-   height: 30px;
-   border: none;
-   background-color: #DBD4D0;
-   color: black;
-   font-size: 15px;
-   cursor: pointer;
+	width: 110px;
+	height: 30px;
+	border: none;
+	background-color: #DBD4D0;
+	color: black;
+	font-size: 15px;
+	cursor: pointer;
 }
 
 .backbtn {
-   width: 110px;
-   height: 30px;
-   border: none;
-   background-color: #DBD4D0;
-   color: black;
-   font-size: 15px;
-   cursor: pointer;
+	width: 110px;
+	height: 30px;
+	border: none;
+	background-color: #DBD4D0;
+	color: black;
+	font-size: 15px;
+	cursor: pointer;
 }
 </style>
 </head>
