@@ -29,5 +29,10 @@ public class SearchSeatNullServlet extends HttpServlet {
 		req.getSession().setAttribute("list", list);
 		req.getRequestDispatcher("/admin.jsp").forward(req, resp);
 	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
 
 }

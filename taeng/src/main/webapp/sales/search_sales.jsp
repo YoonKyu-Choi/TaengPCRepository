@@ -162,7 +162,7 @@ body {
    <div class="header">
       <h1>매상 관리하기</h1>
    </div>
-
+   
    <div class="sidenav">
    <br><br><br><br><br>
        <a id="menu1">날짜로 조회</a>
@@ -170,7 +170,7 @@ body {
        <a id="menu3">전체매출 조회</a> 
        <a id="menu4">PC요금 조회</a> 
        <a id="menu5">상품요금 조회 </a> 
-       <button class="backbtn" onclick="location.href='/taeng/admin.jsp'">관리자페이지</button>
+       <button class="backbtn" onclick="location.href='/taeng/admin/search'">관리자페이지</button>
    </div>
    <div class="content1">
       <div>
@@ -221,6 +221,5 @@ body {
      	 </form>
       </div>
    </div>
-
 </body>
 </html>
