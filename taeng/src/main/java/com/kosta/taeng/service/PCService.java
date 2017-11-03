@@ -12,4 +12,6 @@ public interface PCService {
 	void updatePC(PC pc);
 	
 	List<Integer> selectPcNull();
+	
+	List<String> selectPcid();
 }

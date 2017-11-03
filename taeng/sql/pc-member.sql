@@ -89,8 +89,16 @@ insert into pc values (pc_num_seq.nextval, null, null);
 select * from pc;
 delete from pc where pc_num = 51;
 
+update pc set pc_cost=0, member_id=null where pc_num = 28;
+update pc set pc_cost=0, member_id=null where pc_num = 39;
 delete from member;
 insert into member values('id1','010-1111-1111',940627,'pw1','이름1',60);
 insert into member values('id2','010-1111-1111',940627,'pw2','이름1',2);
 insert into member values('id3','010-1111-1111',940627,'pw3','이름1',3);
 insert into member values('id4','010-1111-1111',940627,'pw4','이름1',4);
+
+
+		SELECT member_id
+		FROM pc
+		where pc_cost > 0 
+

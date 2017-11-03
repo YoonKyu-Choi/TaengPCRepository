@@ -32,9 +32,7 @@ public class LoginSeatServlet extends HttpServlet {
 		// 빈자리 찾기 로직.
 		PCService service = PCServiceImpl.getInstance();
 		List<Integer> list = service.selectPcNull();
-		for(Integer i : list) {
-			System.out.println(i);
-		}
+		
 		request.getSession().setAttribute("list", list);
 		response.sendRedirect("/taeng/choice_seat.jsp");
 	

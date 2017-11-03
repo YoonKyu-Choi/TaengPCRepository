@@ -68,6 +68,17 @@ public class PCServiceImpl implements PCService {
 			session.close();
 		}
 	}
+
+	@Override
+	public List<String> selectPcid() {
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			return dao.selectPcid(session);
+		} finally {
+			session.close();
+		}
+	}
 	
 	
 }
