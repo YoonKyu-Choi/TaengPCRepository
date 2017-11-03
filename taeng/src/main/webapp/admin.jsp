@@ -96,6 +96,7 @@ $(document).ready(function(){
 	<div class="clear"></div>
 
 	<div class="bottom">
+		<c:if test="${sessionScope.id }">
 		<div class="option">
 			<ul>
 				<li class="one">화면</li>
@@ -104,6 +105,7 @@ $(document).ready(function(){
 				<li class="one"><a href="/taeng/sales/search_sales.jsp">매상</a></li>
 			</ul>
 		</div>
+		</c:if>
 	</div>
 
 </body>
