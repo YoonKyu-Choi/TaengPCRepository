@@ -30,172 +30,144 @@
 		time -= 1;
 		document.getElementById("timeid").innerHTML = "<b>" + time + "</b>";
 		document.getElementById("pcTime").value = time;
+		document.getElementById("pcTime2").value = time;
+		document.getElementById("pcTime3").value = time;
 	}
 	$(document).ready(function() {
 		var pcTime = setInterval(pcTimer, 1000);
 	});
 </script>
 <style>
+<<<<<<< HEAD
+   * {
+      margin:0 auto;
+      padding:0;
+      list-style:none;
+      text-decoration:none;
+   }
+   
+   .clear {
+      clear:both;
+   }
+   
+   body {
+      background-image:url("image/image.png");
+   }
+   
+   header {
+      width:100%;
+      height:0%;
+   }
+   
+   
+   .top {
+      width:850px;
+      height:300px;
+      float:right;
+   }
+   
+=======
 * {
 	margin: 0 auto;
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
 }
-
-.clear {
-	clear: both;
-}
-
-body {
-	background-image: url("image/image.png");
-}
-
-header {
-	width: 100%;
-	height: 0%;
-}
-
-.top {
-	width: 800px;
-	height: 300px;
-	float: right;
-}
-
-/* .add {
-=======
-	
-	* {
-		margin:0 auto;
-		padding:0;
-		list-style:none;
-		text-decoration:none;
-	}
-	
-	.clear {
-		clear:both;
-	}
-	
-	body {
-		background-image:url("image/image.png");
-	}
-	
-	header {
-		width:100%;
-		height:0%;
-	}
-	
-	
-	.top {
-		width:850px;
-		height:300px;
-		float:right;
-	}
-	
-	/* .add {
 >>>>>>> branch 'master' of https://github.com/YoonKyu-Choi/TaengPcRepository.git
-		width:150px;
-		height:50px;
-		text-align:center;
-		float:left;
-		border:1px solid black;
-		line-height:50px;
-		font-size:20px;
-		border-radius:5px;
-		background-color:black;
-		color:white;
-		cursor:pointer;
-	} */
 
-/* #thing > img {
-		width:30px;
-		height:30px;
-		float:left;
-		margin-top:10px;
-		margin-left:10px;
-	} */
 .log {
-	width: 200px;
-	height: 400px;
-	float: right;
-	font-size: 18px;
-	line-height: 60px;
-	border: 3px solid black;
-	border-radius: 5px;
-	color: white;
-	background-color: #858585;
+   width: 200px;
+   height: 400px;
+   float: right;
+   font-size: 18px;
+   line-height: 60px;
+   border: 3px solid black;
+   border-radius: 5px;
+   color: white;
+   background-color: #858585;
+}
+
+.log > ul > li {
+   width:150px;
+   float:left;
 }
 
 button {
-	font-size: 16px;
-	margin-left: 15px;
-	border-radius: 5px;
-	width: 80px;
-	height: 30px;
+   font-size: 16px;
+   margin-left: 15px;
+   border-radius: 5px;
+   width: 80px;
+   height: 30px;
 }
 
 #thing {
-	width: 150px;
-	height: 50px;
-	text-align: center;
-	float: left;
-	font-size: 20px;
-	border-radius: 5px;
-	background-color: black;
-	color: white;
-	cursor: pointer;
+   width: 150px;
+   height: 50px;
+   text-align: center;
+   float: left;
+   font-size: 20px;
+   border-radius: 5px;
+   background-color: black;
+   color: white;
+   cursor: pointer;
 }
 
 .contents {
-	width: 650px;
-	height: 150px;
-	margin-top: 80px;
+   width: 650px;
+   height: 150px;
+   margin-top: 80px;
 }
 
 .image {
-	width: 620px;
-	height: 100px;
-	float: left;
+   width: 620px;
+   height: 100px;
+   float: left;
 }
 
 .icon {
-	width: 100px;
-	height: 100px;
-	border-radius: 100px;
-	float: left;
-	border: 1px solid black;
-	position: center;
-	margin: 10px;
-	background-color: white;
-	box-shadow: 0px 20px 15px black;
+   width: 100px;
+   height: 100px;
+   border-radius: 100px;
+   float: left;
+   border: 1px solid black;
+   position: center;
+   margin: 10px;
+   background-color: white;
+   box-shadow: 0px 20px 15px black;
 }
 
 .icon img {
-	width: 70px;
-	height: 70px;
-	margin-top: 15px;
-	margin-left: 15px;
+   width: 70px;
+   height: 70px;
+   margin-top: 15px;
+   margin-left: 15px;
 }
 
 .buy {
-	display: none;
+   display: none;
 }
 
 .eat {
-	width: 700px;
-	height: 500px;
-	border: 1px solid black;
-	background-color: white;
-	position: absolute;
-	left: 23%;
-	top: 15%;
+   width: 700px;
+   height: 500px;
+   border: 1px solid black;
+   background-color: white;
+   position: absolute;
+   left: 23%;
+   top: 15%;
 }
 
 .close {
-	float: right;
-	margin-right: 5px;
-	cursor: pointer;
+   float: right;
+   margin-right: 5px;
+   cursor: pointer;
 }
+
+#form {
+      width:50px;
+      height:50px;
+      float:right;
+   }
 </style>
 </head>
 
@@ -227,8 +199,16 @@ button {
 				</ul>
 				<div class="btn">
 					<button id="letter">쪽지</button><br>
+					<form method="post" action="/taeng/move">
+					<input type="hidden" id="pcTime2" name="pcTime" value="">
+					<input type="hidden" name="id" value="${requestScope.map.member.id }">
 					<button id="move">자리이동</button><br>
+					</form>
+					<form method="post" action="/taeng/logout">
+					<input type="hidden" id="pcTime3" name="pcTime" value="">
+					<input type="hidden" name="id" value="${requestScope.map.member.id }">
 					<button id="logout" onclick='window.close()'>종료</button>
+					</form>
 				</div>
 			</div>
 		</div>
