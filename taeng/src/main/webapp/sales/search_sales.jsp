@@ -45,37 +45,26 @@
 		});
 	});
 </script>
-<style type="text/css">
+<style>
+@font-face {
+	font-family: "INTERPARKGOTHICLIGHT";
+	src: url("/taeng/font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
+
 * {
-	box-sizing: border-box;
-	font-family: "맑은 고딕";
+	font-family: "INTERPARKGOTHICLIGHT";
 }
 
-a:link {
-	color: red;
-}
-
-a:visited {
-	color: green;
-}
-
-a:hover {
-	color: hotpink;
-}
-
-a:active {
-	color: blue;
-}
 
 body {
-	background-color: #F6F792;
+	background-image: url("/taeng/image/background3.jpg");
 	margin: 0;
 }
 
 /* Style the header */
 .header {
-	background-color: #4e63ad;
-	padding: 20px;
+	background-color: #4D6C9C;
+	padding: 1px;
 	text-align: center;
 	color: #F6F792;
 }
@@ -88,7 +77,7 @@ body {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #4e63ad;
+	background-color: #4D6C9C;
 	overflow-x: hidden;
 	cursor: pointer;
 	font-size: 18px;
@@ -145,26 +134,37 @@ body {
 	cursor: pointer;
 }
 
-
+.backbtn2 {
+	width: 110px;
+	height: 30px;
+	background-color: #4D6C9C;
+	color: #F6F792;
+	font-size: 15px;
+	cursor: pointer;
+	border: thick;
+}
 
 </style>
 </head>
 <body>
+	<c:if test="${requestScope.errMsg != null}">
+		<span style="color: red">${requestScope.errMsg }</span>
+	</c:if>
+
 	<div class="header">
-		<h1>조회하기</h1>
+		<h1>매상 관리하기</h1>
 	</div>
 
 	<div class="sidenav">
-	<br><br><br><br><br>
-		 <a id="menu1">날짜로 조회</a>
-		 <a id="menu2">전체 매출 목록 조회</a> 
-		 <a id="menu3">전체매출 조회</a> 
-		 <a id="menu4">PC요금 조회</a> 
-		 <a id="menu5">상품요금 조회 </a>
+		<br> <br> <br> <br> <br> <a id="menu1">날짜로
+			조회</a> <a id="menu2">전체 매출 목록 조회</a> <a id="menu3">전체매출 조회</a> <a
+			id="menu4">PC요금 조회</a> <a id="menu5">상품요금 조회 </a>
+			<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin.jsp'">관리자
+			페이지 이동</button>
 	</div>
 	<div class="content1">
-		<div><br>
-			<span>날짜로 조회하기</span>
+		<div>
+			<br> <span>날짜로 조회하기</span>
 		</div>
 		<br>
 		<form action="/taeng/sales/salesByDate" method="post">
@@ -173,29 +173,35 @@ body {
 			<button>조회</button>
 		</form>
 	</div>
+	
 	<div class="content2">
 		<form action="/taeng/salesList" method="post">
 			전체 매출 목록조회
 			<button>조회</button>
 		</form>
 	</div>
+	
 	<div class="content3">
 		<form action="/taeng/sales/allSales" method="post">
 			<input type="hidden" name="select" value="all">
 			<button>전체매출조회</button>
 		</form>
 	</div>
+	
 	<div class="content4">
 		<form action="/taeng/sales/allSales" method="post">
 			<input type="hidden" name="select" value="pc">
 			<button>PC요금조회</button>
 		</form>
 	</div>
+	
 	<div class="content5">
 		<form action="/taeng/sales/allSales" method="post">
 			<input type="hidden" name="select" value="item">
-			<button>상품요금조회</button>
+			<button class="btn">상품요금조회</button>
 		</form>
+		<button class="backbtn" onclick="location.href='/taeng/admin.jsp'">관리자
+			페이지</button>
 	</div>
 </body>
 </html>
