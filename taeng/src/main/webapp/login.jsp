@@ -19,11 +19,11 @@ $(document).ready(function(){
 });
 </script>
 <style type="text/css">
-	@font-face {
-	font-family:"DXWNDS-KSCPC-EUC-H";
-	src:url("font/DXWNDS-KSCPC-EUC-H.TTF") format("truetype");
-	}
-	
+   @font-face {
+   font-family:"DXWNDS-KSCPC-EUC-H";
+   src:url("font/DXWNDS-KSCPC-EUC-H.TTF") format("truetype");
+   }
+   
    * {
       margin:0 auto;
       padding:0;
@@ -112,45 +112,45 @@ $(document).ready(function(){
       text-align:center;
       cursor:pointer;
    }
-	.title{
-		width:400px;
-		height:20px;
-		padding-top:50px;
-		font-size:30px;
-		text-align:center;
-		font-family:"DXWNDS-KSCPC-EUC-H";
-	}
+   .title{
+      width:400px;
+      height:20px;
+      padding-top:50px;
+      font-size:30px;
+      text-align:center;
+      font-family:"DXWNDS-KSCPC-EUC-H";
+   }
    .error {
-   	  text-align:center;
-   	  width:200px;
-   	  height:40px;
-   	  line-height:40px;
-   	  background-color:white;
+        text-align:center;
+        width:200px;
+        height:40px;
+        line-height:40px;
+        background-color:white;
    }
 
 </style>
 </head>
 <body>
-	<c:if test="${requestScope.errMsg != null}">
-		<div class="error">
-		 	 <span style="color:red">${requestScope.errMsg }</span><br>
-		</div>
-	</c:if>
+   <c:if test="${requestScope.errMsg != null}">
+      <div class="error">
+           <span style="color:red">${requestScope.errMsg }</span><br>
+      </div>
+   </c:if>
 <form action="/taeng/add_forward.jsp" method="post">
    <div class="my">
-      <div class="information">
-         NAME : &nbsp;<input type="text" name="name" id="name" class="up" placeholder="NAME" required/><br>
-         I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D : &nbsp;<input type="text" name="id" id="id" class="up" placeholder="ID" required/><br>
-         P&nbsp;&nbsp;&nbsp;&nbsp;W : &nbsp;<input type="password" name="password" id="password" class="up" placeholder="PASSWORD" required/><br>
-                전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"/><br>
-       	 주민번호 : <input type="number" name="personNum" id="personNum" class="up" placeholder="PERSONNUM" required/><br>
+      <div class="information" align="center">
+        	 NA&nbsp;ME : &nbsp;&nbsp;<input type="text" name="name" id="name" class="up" placeholder="NAME" required/><br>
+             I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D : &nbsp;&nbsp;&nbsp;<input type="text" name="id" id="id" class="up" placeholder="ID" required/><br>
+             P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W : &nbsp;&nbsp;<input type="password" name="password" id="password" class="up" placeholder="PASSWORD" required/><br>
+                       전화번호 : <input type="text" name="phoneNum" id="phoneNum" class="up" placeholder="PHONE"/><br>
+           	 주민번호 : <input type="number" name="personNum" id="personNum" class="up" placeholder="PERSONNUM" required/><br>
          <input type="hidden" name="pcTime" value="0">
-         <input type="submit" value="등록">
+         <br><br><input type="submit" value="등록">
       </div>
    </div>
 </form>
    <div class="mainbox">
-   	<div class="title">태은이네 PC방</div>
+      <div class="title">태은이네 PC방</div>
       <div class="box">
          <form action="/taeng/login" method="post">
             <input type="text" id="id" name="id" placeholder="ID"/><br>

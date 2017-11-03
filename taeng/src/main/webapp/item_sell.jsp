@@ -2,8 +2,7 @@
 <%@page import="com.kosta.taeng.service.ItemService"%>
 <%@page import="com.kosta.taeng.vo.Item"%>
 <%@page import="java.util.HashMap"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,49 +16,42 @@
 	}
 </script>
 <style>
-	* {
-		margin:0 auto;
-		padding:0;
-		list-style:none;
-		text-decoration:none;
-	}
-	
-	img {
-		width:200px;
-		height:200px;
-	}
-	
-	.items {
-		width:1000px;
-		height:0%;
-		float:left;
-	}
-	
-	
-	.eat {
-		float:left;
-		width:200px;
-		height:300px;
-	}
-	
-	.eat2 {
-		float:right;
-		font-size:15px;
-		width:250px;
-		height:0%;
-		border:1px solid black;
-		line-height:30px;
-	}
-	
-	form > ul > li {
-		text-align:center;
-	}
-	
-	.btn {
-		width:70px;
-		height:40px;
-		font-size:16px;
-	}
+* {
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	text-decoration:none;
+}
+img {
+	width:200px;
+	height:200px;
+}
+.items {
+	width:1000px;
+	height:0%;
+	float:left;
+}
+.eat {
+	float:left;
+	width:200px;
+	height:300px;
+}
+.eat2 {
+	float:right;
+	font-size:15px;
+	width:250px;
+	height:0%;
+	border:1px solid black;
+	line-height:30px;
+}
+form > ul > li {
+	text-align:center;
+}
+.btn {
+	width:70px;
+	height:40px;
+	font-size:16px;
+}
 </style>
 </head>
 <body>

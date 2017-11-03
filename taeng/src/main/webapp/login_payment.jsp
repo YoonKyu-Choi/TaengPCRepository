@@ -6,80 +6,88 @@
 <meta charset="UTF-8">
 <title>Payment</title>
 <style>
-
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
 * {
 	margin: 0 auto;
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
-	font-family: "맑은 고딕";
+	font-family:"INTERPARKGOTHICLIGHT";
 }
-
 body {
-	background-color:#2cb74a;
+	background-color:#100e0e;
 }
-
 form {
 	width:1000px;
-	height:300px;
+	height:250px;
 	margin-top:150px;
 	background-color:white;
-	box-shadow:0px 0px 15px black;
 }
-
 .timelist {
 	width: 1000px;
-	height: 200px;
+	height: 350px;
 	text-align: center;
 	margin: 0 auto;
-	font-color: white;
-	margin-top:30px;
+	font-color:#100e0e;
+	margin-top:50px;
 }
-
 .one {
-	width:198px;
-	height: 50px;
+	width:180px;
+	height:60px;
 	float:left;
-	line-height:50px;
-	border:1px solid white;
-	background-color:#2db72d;
-	color:white;
+	line-height:60px;
+	background-color:#a499ca;
+	color:#100e0e;
+	margin-left:15px;
+	font-size:20px;
+	border-radius: 5px;
+   	box-shadow:0px 0px 10px #a499ca;
 }
-
 button{
 	width:100px;
-	height:70px;
-	font-size:15px;
+	height:50px;
+	font-size:20px;
 	text-align : center;
-	line-height:70px;
+	line-height:50px;
 	margin-top: 20px;
-	background-color:gray;
+	background-color:#a499ca;
 	border-radius:10px;
-	color:white;
+	color:#100e0e;
 }
-
+.idinput {
+	width:600px;
+	height:45px;
+	line-height:100px;
+	font-size:30px;
+	margin-left:340px;
+}
+#id {
+	width:200px;
+	height:42px;
+	font-size:20px;
+}
 .clear {
 	clear:both;
 }
-
-
 </style>
-
 </head>
 <body>
 	<form action="/taeng/login/payment" method="post">
 		<div class="input">
 			<div class="idinput">
-				ID : <input type="text" name="id">
+				ID : <input id="id" type="text" name="id">
 			</div>
 			
 			<div class="timelist">
 				<ul>
-					<li class="one"><span>1시간 : 1000원</span> <input type="radio" name="hour" value="1"></li>
-					<li class="one"><span>2시간 : 2000원</span> <input type="radio" name="hour" value="2"></li>
-					<li class="one"><span>3시간 : 3000원</span> <input type="radio" name="hour" value="3"></li>
-					<li class="one"><span>4시간 : 4000원</span> <input type="radio" name="hour" value="4"></li>
-					<li class="one"><span>5시간 : 5000원</span> <input type="radio" name="hour" value="5"></li>
+					<li class="one"><span>1시간 : 1,000원</span> <input type="radio" name="hour" value="1"></li>
+					<li class="one"><span>2시간 : 2,000원</span> <input type="radio" name="hour" value="2"></li>
+					<li class="one"><span>3시간 : 3,000원</span> <input type="radio" name="hour" value="3"></li>
+					<li class="one"><span>4시간 : 4,000원</span> <input type="radio" name="hour" value="4"></li>
+					<li class="one"><span>5시간 : 5,000원</span> <input type="radio" name="hour" value="5"></li>
 				</ul>
 				<button>결제</button>
 			</div>

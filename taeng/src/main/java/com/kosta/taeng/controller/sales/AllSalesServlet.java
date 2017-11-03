@@ -23,6 +23,11 @@ public class AllSalesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SalesService service = SalesServiceImpl.getInstance();
@@ -31,11 +36,11 @@ public class AllSalesServlet extends HttpServlet {
 		try {
 
 			if (select.equals("all")) {
-				request.setAttribute("money", service.getAllSales());
+				request.setAttribute("all", service.getAllSales());
 			} else if (select.equals("pc")) {
-				request.setAttribute("money", service.getPcSales());
+				request.setAttribute("pc", service.getPcSales());
 			} else if (select.equals("item")) {
-				request.setAttribute("money", service.getItemSales());
+				request.setAttribute("item", service.getItemSales());
 			}
 
 		} catch (SalesNotFoundException e) {
