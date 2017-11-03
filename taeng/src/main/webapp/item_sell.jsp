@@ -101,7 +101,7 @@
 					for (String item : list.keySet()) {
 						items = service.findItemByName(item);
 				%>
-				상품명 : <%=items.getItemName()%> |
+					상품명 : <%=items.getItemName()%> |
 				<%=items.getItemPrice()%>원 |
 				<%if(list.get(item)>=0){ %>
 				<%=list.get(item)%>개<br>

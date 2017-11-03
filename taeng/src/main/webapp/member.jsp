@@ -36,36 +36,6 @@
 	});
 </script>
 <style>
-<<<<<<< HEAD
-* {
-	margin: 0 auto;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-}
-
-.clear {
-	clear: both;
-}
-
-body {
-	background-image: url("image/image.png");
-}
-
-header {
-	width: 100%;
-	height: 0%;
-}
-
-.top {
-	width: 800px;
-	height: 300px;
-	float: right;
-}
-
-/* .add {
-=======
-	
 	* {
 		margin:0 auto;
 		padding:0;
@@ -93,28 +63,7 @@ header {
 		float:right;
 	}
 	
-	/* .add {
->>>>>>> branch 'master' of https://github.com/YoonKyu-Choi/TaengPcRepository.git
-		width:150px;
-		height:50px;
-		text-align:center;
-		float:left;
-		border:1px solid black;
-		line-height:50px;
-		font-size:20px;
-		border-radius:5px;
-		background-color:black;
-		color:white;
-		cursor:pointer;
-	} */
 
-/* #thing > img {
-		width:30px;
-		height:30px;
-		float:left;
-		margin-top:10px;
-		margin-left:10px;
-	} */
 .log {
 	width: 200px;
 	height: 400px;
@@ -125,6 +74,12 @@ header {
 	border-radius: 5px;
 	color: white;
 	background-color: #858585;
+}
+
+.log > ul > li {
+	width:150px;
+	float:left;
+	margin-left:10px;
 }
 
 button {
@@ -145,6 +100,7 @@ button {
 	background-color: black;
 	color: white;
 	cursor: pointer;
+	margin-left:50px;
 }
 
 .contents {
@@ -197,6 +153,12 @@ button {
 	margin-right: 5px;
 	cursor: pointer;
 }
+
+#form {
+   	width:50px;
+   	height:50px;
+   	float:right;
+   }
 </style>
 </head>
 
@@ -209,7 +171,6 @@ button {
 	<header>
 		<div class="top">
 			<div class="add">
-				<!-- <span id="thing"><img src="image/eat.png">상품구매</span> -->
 				<form action='<c:url value="/item/itemLists"/>' method="post">
 					<button id="thing">상품 주문</button>
 				</form>
@@ -239,19 +200,19 @@ button {
 	<div class="contents">
 		<div class="image">
 			<div class="icon" id="pc">
-				<img src="image/pc.png">
+				<img src="${pageContext.request.contextPath}/image/pc.png">
 			</div>
 			<div class="icon" id="cd">
-				<img src="image/cd.png">
+				<img src="${pageContext.request.contextPath}/image/cd.png">
 			</div>
 			<div class="icon" id="internet">
-				<img src="image/internet.png">
+				<img src="${pageContext.request.contextPath}/image/internet.png">
 			</div>
 			<div class="icon" id="message">
-				<img src="image/message.png">
+				<img src="${pageContext.request.contextPath}/image/message.png">
 			</div>
 			<div class="icon" id="utility">
-				<img src="image/utility.png">
+				<img src="${pageContext.request.contextPath}/image/utility.png">
 			</div>
 		</div>
 	</div>

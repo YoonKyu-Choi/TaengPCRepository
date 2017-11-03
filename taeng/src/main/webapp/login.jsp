@@ -115,6 +115,7 @@ $(document).ready(function(){
    	  line-height:40px;
    	  background-color:white;
    }
+
 </style>
 </head>
 <body>
