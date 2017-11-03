@@ -15,8 +15,6 @@
 	function minus(btn){
 		btn.previousSibling.previousSibling.value="-";
 	}
-
-	
 </script>
 <style>
 	* {
@@ -93,11 +91,11 @@
 					list = (HashMap<String, Integer>) session.getAttribute("itemOrder");
 					Item items = new Item();
 					ItemService service = ItemServiceImpl.getInstance();
-					
+					session.setAttribute("itemOrder", list);
 				%>
-				<%if(list == null){%>
+				<%if(list == null){
 					
-				<%}else{
+				}else{
 					for (String item : list.keySet()) {
 						items = service.findItemByName(item);
 				%>
