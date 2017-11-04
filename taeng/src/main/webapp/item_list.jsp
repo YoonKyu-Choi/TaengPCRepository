@@ -23,7 +23,7 @@
 		이름 : ${item.itemName}<br>
 		가격 : ${item.itemPrice }<br>
 		수량 : ${item.itemStock }<br>
-		<h2>상품 이미지 :</h2> <img src='<c:url value="/itemImage/${item.itemImage}"/>'><br>
+		<h2>상품 이미지 :</h2> <img src='<c:url value="/itemImage/${item.itemImage}"/>' width="100px" height="100px"><br>
 	</c:forEach>
 </body>
 </html>

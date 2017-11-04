@@ -90,12 +90,16 @@ body {
    padding: 20px;
    text-decoration: none;
    display: block;
+   -webkit-transition:1s;
+	-webkit-transform:scale(1,1);
 }
 
 /* Change color on hover */
 .sidenav a:hover {
    background-color: #F6F792;
    color: black;
+   -webkit-transition:1s;
+	-webkit-transform:scale(1.15,1.15);
 }
 
 /* Style the content */
@@ -111,17 +115,28 @@ body {
    display: none;
 }
 
-.input {
+.day {
    height: 30px;
+   font-size:20px;
 }
 
 .btn {
-   width: 110px;
+   width: 170px;
    height: 30px;
    border: none;
    background-color: #DBD4D0;
    color: black;
-   font-size: 15px;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+.btn2 {
+   width: 100px;
+   height: 30px;
+   border: none;
+   background-color: #DBD4D0;
+   color: black;
+   font-size: 20px;
    cursor: pointer;
 }
 
@@ -143,13 +158,16 @@ body {
 }
 
 .backbtn2 {
-   width: 170px;
+   width: 200px;
    height: 30px;
    background-color: #4D6C9C;
    color: #F6F792;
    font-size: 20px;
    cursor: pointer;
    border: thick;
+}
+.input {
+	height:30px;
 }
 
 </style>
@@ -170,25 +188,24 @@ body {
        <a id="menu3">♡ 전체매출 조회</a> 
        <a id="menu4">♡ PC요금 조회</a> 
        <a id="menu5">♡ 상품요금 조회 </a> 
-       <br><br><br>
-       <button class="backbtn2" onclick="location.href='/taeng/admin/search'">◁ 관리자 페이지</button>
+       <br>
+       <button class="backbtn2" onclick="location.href='/taeng/admin/search'">&nbsp;&nbsp;&nbsp;&nbsp;◁ 관리자 페이지</button>
    </div>
    <div class="content1">
       <div>
-         <br> <span>날짜로 조회하기</span>
+         <span>날짜로 조회하기</span>
       </div>
-      <br>
       <form action="/taeng/sales/salesByDate" method="post">
          <input type="date" class="day" name="sDay"> ~ <input
             type="date" name="eDay" class="day">
-         <button>조회</button>
+         <button class="btn2">조회</button>
       </form>
    </div>
    
    <div class="content2">
       <form action="/taeng/salesList" method="post">
-         전체 매출 목록조회
-         <button>조회</button>
+        	 전체 매출 목록조회<br>
+         <button class="btn2">조회</button>
       </form>
    </div>
    
@@ -196,8 +213,8 @@ body {
       <div class="money">
          <form action="/taeng/sales/allSales" method="post">
             <input type="hidden" name="select" value="all">
-               ${requestScope.all }원
-                <button class="btn">상품요금조회</button>
+               ${requestScope.all }원<br>
+                <button class="btn">전체 매출 조회</button>
          </form>
       </div>
    </div>
@@ -206,8 +223,8 @@ body {
       <div class="money">
            <form action="/taeng/sales/allSales" method="post">
             <input type="hidden" name="select" value="pc">
-               ${requestScope.pc }원
-              <button class="btn">상품요금조회</button>
+               ${requestScope.pc }원<br>
+              <button class="btn">PC 요금 조회</button>
          </form>
       </div>
    </div>
@@ -216,9 +233,8 @@ body {
       <div class="money">
          <form action="/taeng/sales/allSales" method="post">
             <input type="hidden" name="select" value="item">
-               ${requestScope.item }원
-         
-         <button class="btn">상품요금조회</button>
+               ${requestScope.item }원<br>
+         <button class="btn">상품 요금 조회</button>
      	 </form>
       </div>
    </div>

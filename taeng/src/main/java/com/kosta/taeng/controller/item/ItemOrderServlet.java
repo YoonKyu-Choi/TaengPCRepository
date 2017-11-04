@@ -34,7 +34,9 @@ public class ItemOrderServlet extends HttpServlet {
 		
 		try {
 		HttpSession session = request.getSession();
-		session.invalidate();
+		
+		//이거 추가됨
+		session.removeAttribute("itemOrder");
 		
 		item = itemService.findItemByName(itemName);
 		item.setItemStock(item.getItemStock()-Integer.parseInt(itemStock));
