@@ -16,11 +16,16 @@
 	}
 </script>
 <style>
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
 * {
 	margin:0 auto;
 	padding:0;
 	list-style:none;
 	text-decoration:none;
+	font-family:"INTERPARKGOTHICLIGHT";
 }
 img {
 	width:200px;
@@ -51,6 +56,12 @@ form > ul > li {
 	width:70px;
 	height:40px;
 	font-size:16px;
+	margin-left:95px;
+}
+.item_order {
+	width:300px;
+	height:200px;
+	font-family:"INTERPARKGOTHICLIGHT";
 }
 </style>
 </head>
@@ -60,7 +71,7 @@ form > ul > li {
 			<div class="items">
 				<c:forEach items="${requestScope.itemLists}" var="item">
 					<div class="item">
-						<form id="itemOrderList" action="../item/cart" method="post"  class="eat">
+						<form id="itemOrderList" action="../item/cart" method="post" class="eat">
 							<ul>
 								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>' width="150px" height="150px"></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
@@ -78,20 +89,20 @@ form > ul > li {
 		</div>
 		<form action="/taeng/item/order" method="post" class="eat2">
 			<div class="item_order">
-				<%
+ 				<%
 					HashMap<String, Integer> list  = (HashMap<String, Integer>) session.getAttribute("itemOrder");
 					Item items = new Item();
 					ItemService service = ItemServiceImpl.getInstance();
 					session.setAttribute("itemOrder", list);
 				%>
 				<%if(list == null){%>
-					<h1 class="no_item">상품 추가해 띨빡아</h1>
+					<h1 class="no_item">선택된 상품이 없습니다.</h1>
 				<%}else{
 					for (String item : list.keySet()) {
 						items = service.findItemByName(item);
 				%>
-					상품명 : <%=items.getItemName()%> |
-				<%=items.getItemPrice()%>원 |
+					주문내역 : <%=items.getItemName()%> |
+				<%=(items.getItemPrice())*list.get(item)%>원 |
 				<%if(list.get(item)>=0){ %>
 				<%=list.get(item)%>개<br>
 				<input type="hidden" name="itemName" value="<%=items.getItemName()%>">

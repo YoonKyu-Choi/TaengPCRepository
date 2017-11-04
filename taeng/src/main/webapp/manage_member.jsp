@@ -98,7 +98,7 @@ body {
 	cursor: pointer;
 }
 .backbtn2 {
-   width: 170px;
+   width: 200px;
    height: 30px;
    background-color: #4D6C9C;
    color: #F6F792;
@@ -121,9 +121,8 @@ body {
       <a id="menu1">☆ ID로 회원 조회하기</a>
       <a id="menu2">☆ 이름으로 회원 조회하기</a>
       <a id="menu3">☆ 회원 정보 수정</a>
-      <br><br>
-     <button class="backbtn2" onclick="location.href='/taeng/admin/search'">◁ 관리자 페이지</button>
-
+      <br>
+     <button class="backbtn2" onclick="location.href='/taeng/admin/search'">&nbsp;&nbsp;&nbsp;◁ 관리자 페이지</button>
    </div>
    
    <div class="content1">
@@ -131,18 +130,12 @@ body {
          ID : <input type="text" name="id" class="input"><br>
          <button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
       </form>
-      <form action="/taeng/admin/search" method="post">
-      	<button class="backbtn">관리자 페이지</button>
-      </form>
    </div>
    
    <div class="content2">
 		<form action="/taeng/selectmemberbyname" method="post">
 			 이름 : <input type="text" name="name" class="input" placeholder="입력하지 않으면 전체 회원이 조회됩니다." style="width: 260px;"><br>
 			<button class="btn">조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회</button>
-		</form>
-		<form action="/taeng/admin/search" method="post">
-			<button class="backbtn">관리자 페이지</button>
 		</form>
 	</div>
    
@@ -155,9 +148,6 @@ body {
 		수정할 이름 : <input type="text" name="name" class="input"><br>
 		수정할 남은 시간 : <input type="number" name="pcTime" class="input"><br>
         <button class="btn">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정</button>
-	</form>
-	<form action="/taeng/admin/search" method="post">
-		<button class="backbtn">관리자 페이지</button>
 	</form>
 	</div>
 </body>
