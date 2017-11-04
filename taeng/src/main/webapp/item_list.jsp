@@ -5,9 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+.btn {
+	width: 110px;
+	height: 30px;
+	border: none;
+	background-color: #DBD4D0;
+	color: black;
+	font-size: 15px;
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
-<a href="../item_test.jsp">돌아가기</a><br>
+<button class="btn" onclick="location.href='/taeng/item_test.jsp'">이전 페이지</button><br>
 	<c:forEach items="${requestScope.itemList}" var="item">
 		이름 : ${item.itemName}<br>
 		가격 : ${item.itemPrice }<br>

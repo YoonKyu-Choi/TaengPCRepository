@@ -97,7 +97,7 @@ body {
 	cursor: pointer;
 }
 
-.btn1 {
+.btn{
 	width:70px;
 	height:40px;
 	lineheight:40px;
@@ -108,6 +108,16 @@ body {
 	font-size:18px;
 }
 
+.btn2 {
+	width:140px;
+	height:40px;
+	lineheight:40px;
+	text-align:center;
+	border:none;
+	background-color:#4D6C9C;
+	color:#F6F792;
+	font-size:18px;
+}
 .backbtn {
 	width: 110px;
 	height: 30px;
@@ -118,13 +128,16 @@ body {
 	cursor: pointer;
 }
 .backbtn2 {
-	width: 110px;
+   width: 170px;
+   height: 30px;
+   background-color: #4D6C9C;
+   color: #F6F792;
+   font-size: 20px;
+   cursor: pointer;
+   border: thick;
+}
+.input {
 	height: 30px;
-	background-color: #4D6C9C;
-	color: #F6F792;
-	font-size: 15px;
-	cursor: pointer;
-	border: thick;
 }
 </style>
 </head>
@@ -139,13 +152,13 @@ body {
 
 	<div class="sidenav">
 		<br> <br><br><br>
-		<a id="menu1">상품 추가</a>
-		<a id="menu2">상품 목록</a> 
-		<a id="menu3">상품 수정</a> 
-		<a id="menu4">상품 삭제</a> 
+		<a id="menu1" align="center">♧  상품 추가</a>
+		<a id="menu2" align="center">♧  상품 목록</a> 
+		<a id="menu3" align="center">♧  상품 수정</a> 
+		<a id="menu4" align="center">♧  상품 삭제</a> 
 		
-		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">관리자
-			페이지 이동</button>
+		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">
+		◁ 관리자 페이지</button>
 
 	</div>
 
@@ -159,7 +172,7 @@ body {
 			가격 : <input type="number" name="itemPrice" required><br> 
 			수량 : <input type="number" name="itemStock" required><br> 
 			사진 : <input type="file" name="itemImage" required><br>
-			<button class="btn1">등록</button>
+			<button class="btn">등록</button>
 		</form>
 	</div>
 
@@ -180,7 +193,7 @@ body {
 				가격 : <input type="number" name="itemPrice" required><br> 
 				수량 : <input type="number" name="itemStock" required><br> 
 				사진 : <input type="file" name="itemImage" required><br>
-				<button class="btn1">수정</button>
+				<button class="btn">수정</button>
 			</form>
 	</div>
 
@@ -188,7 +201,7 @@ body {
 		<h2>상품 삭제</h2>
 			<form action='<c:url value="/item/deleteItem"/>' method="post">
 				삭제할 상품의 이름 : <input type="text" name="itemName" required><br>
-				<button class="btn1">삭제</button>
+				<button class="btn">삭제</button>
 			</form>
 	</div>
 </body>

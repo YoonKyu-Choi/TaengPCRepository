@@ -31,6 +31,12 @@
 		where member_id is null
 	</select>
 	
+	<select id="selectPcid" resultType="string">
+		SELECT member_id id
+		FROM pc
+		where pc_cost > 0 
+	</select>
+	
 	<update id="updatePC" parameterType="pc">
 		update	pc p
 		set		p.pc_cost = #{pcCost},

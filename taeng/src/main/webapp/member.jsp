@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>member</title>
+<title>회원</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 	var time = ${requestScope.map.member.pcTime};

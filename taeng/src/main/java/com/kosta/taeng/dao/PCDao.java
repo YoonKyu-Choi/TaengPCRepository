@@ -15,4 +15,6 @@ public interface PCDao {
 	public int updatePC(SqlSession session, PC pc);
 	
 	List<Integer> selectPcNull(SqlSession session);
+	
+	List<String> selectPcid(SqlSession session);
 }

@@ -21,15 +21,24 @@ public class LoginServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberService service = MemberServiceImpl.getInstance();
-		
+
 		Object id = request.getParameter("id"); // "admin";
 		Object password = request.getParameter("pw"); // "admin";
 		Member member = service.selectMemberById((String) id);
-		
+
+		System.out.println(id);
+		boolean flag = true;
 		PCService pcService = PCServiceImpl.getInstance();
 		List<Integer> list = pcService.selectPcNull();
+		List<String> idList = pcService.selectPcid();
+		if (!idList.isEmpty()) {
+			for (String s : idList) {
+				if (s.equals((String) id)) {
+					flag = false;
+				}
+			}
+		}
 
-		
 		if (id.equals("admin")) {
 			if (password.equals("admin")) {
 				request.getSession().setAttribute("list", list);
@@ -38,14 +47,18 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("errMsg", "비밀번호가 틀립니다.");
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
+		}
+		if (!flag) {
+			request.setAttribute("errMsg", "이미 로그인 중인 id입니다.");
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
 		} else if (member != null) {
 			if (password.equals(member.getPassword())) {
-				
+
 				if (member.getPcTime() == 0) {
 					request.setAttribute("errMsg", "요금 충전 후 사용해주세요.");
 					request.getRequestDispatcher("/login.jsp").forward(request, response);
 				} else if (member.getPcTime() > 0) {
-					request.getSession().setAttribute("id",id);
+					request.getSession().setAttribute("id", id);
 					response.sendRedirect("/taeng/login/seat");
 				}
 			} else {

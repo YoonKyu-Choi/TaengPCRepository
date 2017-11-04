@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 관리</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -98,13 +98,13 @@ body {
 	cursor: pointer;
 }
 .backbtn2 {
-	width: 110px;
-	height: 30px;
-	background-color: #4D6C9C;
-	color: #F6F792;
-	font-size: 15px;
-	cursor: pointer;
-	border: thick;
+   width: 170px;
+   height: 30px;
+   background-color: #4D6C9C;
+   color: #F6F792;
+   font-size: 20px;
+   cursor: pointer;
+   border: thick;
 }
 </style>
 </head>
@@ -118,12 +118,11 @@ body {
    
    <div class="sidemenu">
    <br><br><br><br>
-      <a id="menu1">ID로 회원 조회하기</a>
-      <a id="menu2">이름으로 회원 조회하기</a>
-      <a id="menu3">회원 정보 수정</a>
+      <a id="menu1">☆ ID로 회원 조회하기</a>
+      <a id="menu2">☆ 이름으로 회원 조회하기</a>
+      <a id="menu3">☆ 회원 정보 수정</a>
       <br><br>
-      &nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">관리자
-			페이지 이동</button>
+     <button class="backbtn2" onclick="location.href='/taeng/admin/search'">◁ 관리자 페이지</button>
 
    </div>
    
@@ -149,8 +148,8 @@ body {
    
 	<div class="content3">
 	<form action="/taeng/update_forward.jsp" method="post">
-		ID : <input type="text" name="id" class="input"><br> 수정할
-		전화번호 : <input type="text" name="phoneNum" class="input"><br>
+		ID : <input type="text" name="id" class="input"><br>
+		수정할 전화번호 : <input type="text" name="phoneNum" class="input"><br>
 		수정할 주민번호 앞자리 : <input type="number" name="personNum" class="input"><br>
 		수정할 비밀번호 : <input type="password" name="password" class="input"><br>
 		수정할 이름 : <input type="text" name="name" class="input"><br>

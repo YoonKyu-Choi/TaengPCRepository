@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>태은이네 PC방 로그인</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 $(document).ready(function(){

@@ -37,6 +37,12 @@ public class PCDaoImpl implements PCDao {
 		return session.update(makeSql("updatePC"), pc);
 	}
 	
+	
+	@Override
+	public List<String> selectPcid(SqlSession session) {
+		return session.selectList(makeSql("selectPcid"));
+	}
+
 	@Override
 	public List<Integer> selectPcNull(SqlSession session){
 		return session.selectList(makeSql("selectPcNull"));
