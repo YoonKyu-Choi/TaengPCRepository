@@ -155,10 +155,10 @@ body {
 		</div>
 		<br>
 		<form action="/taeng/item/addItem" method="post" enctype="multipart/form-data">
-			이름 : <input type="text" name="itemName"><br> 
-			가격 : <input type="number" name="itemPrice"><br> 
-			수량 : <input type="number" name="itemStock"><br> 
-			사진 : <input type="file" name="itemImage"><br>
+			이름 : <input type="text" name="itemName" required><br> 
+			가격 : <input type="number" name="itemPrice" required><br> 
+			수량 : <input type="number" name="itemStock" required><br> 
+			사진 : <input type="file" name="itemImage" required><br>
 			<button class="btn1">등록</button>
 		</form>
 	</div>
@@ -176,10 +176,10 @@ body {
 	<div class="content3">
 		<h2>상품 수정</h2>
 			<form action='<c:url value="/item/updateItem"/>' method="post" enctype="multipart/form-data">
-				이름 : <input type="text" name="itemName"><br> 
-				가격 : <input type="number" name="itemPrice"><br> 
-				수량 : <input type="number" name="itemStock"><br> 
-				사진 : <input type="file" name="itemImage"><br>
+				이름 : <input type="text" name="itemName" required><br> 
+				가격 : <input type="number" name="itemPrice" required><br> 
+				수량 : <input type="number" name="itemStock" required><br> 
+				사진 : <input type="file" name="itemImage" required><br>
 				<button class="btn1">수정</button>
 			</form>
 	</div>
@@ -187,7 +187,7 @@ body {
 	<div class="content4">
 		<h2>상품 삭제</h2>
 			<form action='<c:url value="/item/deleteItem"/>' method="post">
-				삭제할 상품의 이름 : <input type="text" name="itemName"><br>
+				삭제할 상품의 이름 : <input type="text" name="itemName" required><br>
 				<button class="btn1">삭제</button>
 			</form>
 	</div>
