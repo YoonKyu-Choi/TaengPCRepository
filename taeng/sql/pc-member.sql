@@ -1,5 +1,4 @@
 drop table member;
-
 create table member (
 	member_id varchar2(20) primary key, /* 아이디 */
 	member_phonenum varchar2(15), /* 핸드폰 */

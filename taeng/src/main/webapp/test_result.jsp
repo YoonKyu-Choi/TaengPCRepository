@@ -4,21 +4,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>상품 관리</title>
+<title>상품 관리 완료</title>
 <style>
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
+* {
+	font-size:20px;
+	font-family:"INTERPARKGOTHICLIGHT";
+}
+
 .btn {
-	width: 110px;
-	height: 30px;
-	border: none;
-	background-color: #DBD4D0;
-	color: black;
-	font-size: 15px;
-	cursor: pointer;
+	width: 170px;
+ 	height: 30px;
+	background-color: #4D6C9C;
+   	color: #F6F792;
+   	cursor: pointer;
+   	border: thick;
 }
 </style>
 </head>
 <body>
-   <h1>완료</h1>
-   <button class="btn" onclick="location.href='/taeng/item_test.jsp'">이전 페이지</button><br>
+상품 수정이 완료됐습니다.<br><br>
+<button class="btn" onclick="location.href='/taeng/admin.jsp'">관리자 페이지</button>
+<button class="btn" onclick="location.href='/taeng/item_test.jsp'">이전 페이지</button>
 </body>
 </html>
