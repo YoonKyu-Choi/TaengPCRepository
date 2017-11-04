@@ -62,7 +62,7 @@ form > ul > li {
 					<div class="item">
 						<form id="itemOrderList" action="../item/cart" method="post"  class="eat">
 							<ul>
-								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>'></li>
+								<li><img src='<c:url value="/itemImage/${item.itemImage}"/>' width="150px" height="150px"></li>
 								<li>이름 : ${item.itemName}<input type="hidden" name="itemName" value="${item.itemName}"></li>
 								<li>가격 : ${item.itemPrice}</li>
 								<li>
@@ -79,15 +79,14 @@ form > ul > li {
 		<form action="/taeng/item/order" method="post" class="eat2">
 			<div class="item_order">
 				<%
-					HashMap<String, Integer> list = new HashMap<>();
-					list = (HashMap<String, Integer>) session.getAttribute("itemOrder");
+					HashMap<String, Integer> list  = (HashMap<String, Integer>) session.getAttribute("itemOrder");
 					Item items = new Item();
 					ItemService service = ItemServiceImpl.getInstance();
 					session.setAttribute("itemOrder", list);
 				%>
-				<%if(list == null){
-					
-				}else{
+				<%if(list == null){%>
+					<h1 class="no_item">상품 추가해 띨빡아</h1>
+				<%}else{
 					for (String item : list.keySet()) {
 						items = service.findItemByName(item);
 				%>
