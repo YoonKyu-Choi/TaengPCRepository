@@ -90,12 +90,16 @@ body {
    padding: 20px;
    text-decoration: none;
    display: block;
+   -webkit-transition:1s;
+	-webkit-transform:scale(1,1);
 }
 
 /* Change color on hover */
 .sidenav a:hover {
    background-color: #F6F792;
    color: black;
+   -webkit-transition:1s;
+	-webkit-transform:scale(1.15,1.15);
 }
 
 /* Style the content */

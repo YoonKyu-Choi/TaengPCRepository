@@ -69,10 +69,14 @@ body {
 	padding: 20px;
 	text-decoration: none;
 	display: block;
+	-webkit-transition:1s;
+	-webkit-transform:scale(1,1);
 }
 .sidenav a:hover {
 	background-color: #F6F792;
 	color: black;
+	-webkit-transition:1s;
+	-webkit-transform:scale(1.15,1.15);
 }
 .content1, .content2, .content3, .content4 {
 	font-size: 20px;
