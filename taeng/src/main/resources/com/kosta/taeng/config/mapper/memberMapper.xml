@@ -35,7 +35,7 @@
 	
 	<update id="updateMember" parameterType="member">
 		update	member
-		set		member_phonenum = #{phoneNum}, 
+		set		
 				member_personnum = #{personNum}, 
 				member_pw = #{password},
 				member_name = #{name},

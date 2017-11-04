@@ -69,10 +69,14 @@ body {
 	padding: 20px;
 	text-decoration: none;
 	display: block;
+	-webkit-transition:1s;
+	-webkit-transform:scale(1,1);
 }
 .sidenav a:hover {
 	background-color: #F6F792;
 	color: black;
+	-webkit-transition:1s;
+	-webkit-transform:scale(1.15,1.15);
 }
 .content1, .content2, .content3, .content4 {
 	font-size: 20px;
@@ -156,22 +160,15 @@ body {
 		<a id="menu2" align="center">♧  상품 목록</a> 
 		<a id="menu3" align="center">♧  상품 수정</a> 
 		<a id="menu4" align="center">♧  상품 삭제</a> 
-		
-		<br><br>&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">
-		◁ 관리자 페이지</button>
-
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="backbtn2" onclick="location.href='/taeng/admin/search'">◁ 관리자 페이지</button>
 	</div>
 
 	<div class="content1">
-		<div>
-			<h2>&nbsp;&nbsp;&nbsp;&nbsp;상품&nbsp;추가</h2>
-		</div>
-		<br>
 		<form action="/taeng/item/addItem" method="post" enctype="multipart/form-data">
-			이름 : <input type="text" name="itemName" class="input"><br> 
-			가격 : <input type="number" name="itemPrice" class="input"><br> 
-			수량 : <input type="number" name="itemStock" class="input"><br> 
-			사진 : <input type="file" name="itemImage" class="input"><br>
+			이름 : <input class="input" type="text" name="itemName" required><br> 
+			가격 : <input class="input" type="number" name="itemPrice" required><br> 
+			수량 : <input class="input" type="number" name="itemStock" required><br> 
+			사진 : <input class="input" type="file" name="itemImage" required><br>
 			<button class="btn">등록</button>
 		</form>
 	</div>
@@ -180,29 +177,26 @@ body {
 		<div>
 			<h2>상품 목록</h2>
 		</div>
-		<br>
 		<form action='<c:url value="/item/selectAllItem"/>' method="post">
 			<button class="btn2">상품 목록 보기</button>
 		</form>
 	</div>
 
 	<div class="content3">
-		<h2>상품 수정</h2>
-			<form action='<c:url value="/item/updateItem"/>' method="post" enctype="multipart/form-data">
-				이름 : <input type="text" name="itemName" class="input"><br> 
-				가격 : <input type="number" name="itemPrice" class="input"><br> 
-				수량 : <input type="number" name="itemStock" class="input"><br> 
-				사진 : <input type="file" name="itemImage" class="input"><br>
-				<button class="btn">수정</button>
-			</form>
+		<form action='<c:url value="/item/updateItem"/>' method="post" enctype="multipart/form-data">
+			이름 : <input class="input" type="text" name="itemName" required><br> 
+			가격 : <input class="input" type="number" name="itemPrice" required><br> 
+			수량 : <input class="input" type="number" name="itemStock" required><br> 
+			사진 : <input class="input" type="file" name="itemImage" required><br>
+			<button class="btn">수정</button>
+		</form>
 	</div>
 
 	<div class="content4">
-		<h2>상품 삭제</h2>
-			<form action='<c:url value="/item/deleteItem"/>' method="post">
-				삭제할 상품의 이름 : <input type="text" name="itemName" class="input"><br>
-				<button class="btn">삭제</button>
-			</form>
+		<form action='<c:url value="/item/deleteItem"/>' method="post">
+			삭제할 상품의 이름 : <input class="input" type="text" name="itemName" required><br>
+			<button class="btn">삭제</button>
+		</form>
 	</div>
 </body>
 </html>

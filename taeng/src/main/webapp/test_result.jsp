@@ -21,4 +21,4 @@
    <h1>완료</h1>
    <button class="btn" onclick="location.href='/taeng/item_test.jsp'">이전 페이지</button><br>
 </body>
-</html></html>
+</html>
