@@ -139,6 +139,9 @@ body {
 .input {
 	height: 30px;
 }
+h{
+	text-align:center;
+}
 </style>
 </head>
 <body>
