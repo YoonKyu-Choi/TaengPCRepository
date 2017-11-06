@@ -2,6 +2,7 @@ package com.kosta.taeng.common.util;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,6 +34,21 @@ public class MemberBridgeServlet extends HttpServlet {
 		// 비즈니스로직.
 		MemberService mService = MemberServiceImpl.getInstance();
 		PCService pcService = PCServiceImpl.getInstance();
+		
+		List<Integer> list = pcService.selectPcNull();
+		int num = Integer.parseInt(seatNum);
+		boolean flag = true;
+		for(int i : list) {
+			if(i==num) {
+				flag = false;
+			}
+		}
+		if(flag) {
+			request.setAttribute("errMsg", "자리선택 중 다른 사람이 로그인했습니다.");
+			request.getRequestDispatcher("/choice_seat.jsp").forward(request, response);
+			return;
+		}
+		
 		Member member = mService.selectMemberById(id);
 		pcService.updatePC(new PC(Integer.parseInt(seatNum), member.getPcTime(), member.getId()));
 		

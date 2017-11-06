@@ -44,6 +44,9 @@ body {
 	font-size:18px;
 	cursor:pointer;
 }
+.msg{
+	color:red;
+}
 </style>
 </head>
 <body>
@@ -66,6 +69,9 @@ body {
 				</div>
 			</form>
 		</div>
+	</div>
+	<div class="msg">
+		${requestScope.errMsg }
 	</div>
 </body>
 </html>
