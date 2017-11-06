@@ -7,6 +7,23 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
+
+.btn {
+	width: 170px;
+ 	height: 30px;
+	background-color: #4D6C9C;
+   	color: #F6F792;
+   	cursor: pointer;
+   	border: thick;
+	font-size:20px;
+	font-family:"INTERPARKGOTHICLIGHT";
+}
+
 a:link {
 	/*방문하지 않은 링크 설정.*/
 	text-decoration: none; /*밑줄 안나오도록 처리.*/
@@ -133,10 +150,6 @@ body{
 		<a href="/taeng/salesList?page=${requestScope.pageBean.totalPage}">마지막 페이지</a>
 	</p>
 	<br>
-	<a href="/taeng/sales/search_sales.jsp">돌아가기</a>
+	<button class="btn" onclick="location.href='/taeng/sales/search_sales.jsp'">이전 페이지</button>
 </body>
 </html>
-
-
-
-

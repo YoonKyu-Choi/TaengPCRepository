@@ -23,6 +23,22 @@ td, th {
 body{
 	align-content:center;
 }
+
+@font-face {
+	font-family:"INTERPARKGOTHICLIGHT";
+	src:url("font/INTERPARKGOTHICLIGHT.TTF") format("truetype");
+}
+
+.btn {
+	width: 170px;
+ 	height: 30px;
+	background-color: #4D6C9C;
+   	color: #F6F792;
+   	cursor: pointer;
+   	border: thick;
+   	font-size:20px;
+	font-family:"INTERPARKGOTHICLIGHT";
+}
 </style>
 </head>
 <body>
@@ -47,6 +63,7 @@ body{
 			</c:forEach>
 		</tbody>
 	</table>
-	<a href="/taeng/sales/search_sales.jsp">돌아가기</a>
+	<br>
+	<button class="btn" onclick="location.href='/taeng/sales/search_sales.jsp'">이전 페이지</button>
 </body>
 </html>

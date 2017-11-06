@@ -1,6 +1,4 @@
-
 drop table sales
-
 create table sales(
 	sales_date VARCHAR2(20),
 	sales_pccost NUMBER(7),
